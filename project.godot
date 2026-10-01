@@ -16,6 +16,7 @@ config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [autoload]
 
+_mcp_game_helper="*res://addons/godot_ai/runtime/game_helper.gd"
 
 [display]
 
@@ -36,7 +37,7 @@ export/convert_text_resources_to_binary=false
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/exchanger_theme_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/exchanger_theme_manager/plugin.cfg", "res://addons/godot_ai/plugin.cfg")
 
 [rendering]
 
