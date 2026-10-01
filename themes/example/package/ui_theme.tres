@@ -1,0 +1,59 @@
+[gd_resource type="Theme" load_steps=3 format=3]
+
+[sub_resource type="StyleBoxFlat" id="Panel"]
+content_margin_left = 24.0
+content_margin_top = 24.0
+content_margin_right = 24.0
+content_margin_bottom = 24.0
+bg_color = Color(0.96, 0.97, 0.99, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="StyleBoxFlat" id="Button"]
+content_margin_left = 20.0
+content_margin_top = 16.0
+content_margin_right = 20.0
+content_margin_bottom = 16.0
+bg_color = Color(0.2, 0.64, 0.36, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[resource]
+default_font_size = 24
+AdvertisementPanel/base_type = &"PanelContainer"
+BackButton/base_type = &"Button"
+Label/colors/font_color = Color(0.06, 0.1, 0.16, 1)
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/styles/normal = SubResource("Button")
+Button/styles/hover = SubResource("Button")
+Button/styles/pressed = SubResource("Button")
+PanelContainer/styles/panel = SubResource("Panel")
+CompactButton/base_type = &"Button"
+KeyboardActionButton/base_type = &"Button"
+KeyboardActionButton/font_sizes/font_size = 22
+KeypadButton/base_type = &"Button"
+DangerButton/base_type = &"Button"
+ErrorText/base_type = &"Label"
+ErrorText/colors/font_color = Color(0.75, 0.12, 0.16, 1)
+FieldLabel/base_type = &"Label"
+FooterPanel/base_type = &"PanelContainer"
+PanelText/base_type = &"Label"
+PanelTitle/base_type = &"Label"
+PrimaryButton/base_type = &"Button"
+ScreenDescription/base_type = &"Label"
+ScreenDescription/colors/font_color = Color(1, 1, 1, 1)
+ScreenTitle/base_type = &"Label"
+ScreenTitle/colors/font_color = Color(1, 1, 1, 1)
+SecondaryButton/base_type = &"Button"
+SectionTabButton/base_type = &"Button"
+StatusPanel/base_type = &"PanelContainer"
+StatusText/base_type = &"Label"
+SupportText/base_type = &"Label"
+SupportText/colors/font_color = Color(1, 1, 1, 1)
+WarningText/base_type = &"Label"
+WarningText/colors/font_color = Color(0.82, 0.5, 0.08, 1)
+WhitePanel/base_type = &"PanelContainer"

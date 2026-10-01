@@ -1,0 +1,252 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Theme" path="../ui_theme.tres" id="1_ui_theme"]
+[ext_resource type="Texture2D" path="../assets/background/background.png" id="1_background"]
+[ext_resource type="PackedScene" path="../background_decoration.tscn" id="1_decoration"]
+[ext_resource type="PackedScene" path="../components/footer.tscn" id="2_footer"]
+
+[node name="ThemeScreen_ServiceAccess" type="Control"]
+metadata/exchanger_screen_binding_id = "screen.service_access"
+metadata/exchanger_self_contained_visuals = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ui_theme")
+
+[node name="ThemeBackground" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_background")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BackgroundDecoration" parent="." instance=ExtResource("1_decoration")]
+
+[node name="SafeMargin" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Content" type="Control" parent="SafeMargin"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HomeNavigationButton" type="Button" parent="SafeMargin/Content"]
+metadata/exchanger_binding_id = "service_access.content.home_navigation_button"
+layout_mode = 0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 76.0
+offset_bottom = 68.0
+tooltip_text = "ГЛАВНАЯ"
+theme_type_variation = &"KeypadButton"
+
+[node name="House" type="Polygon2D" parent="SafeMargin/Content/HomeNavigationButton"]
+polygon = PackedVector2Array(8, 27, 26, 27, 17, 13)
+color = Color(1, 1, 1, 1)
+
+[node name="HouseBody" type="Polygon2D" parent="SafeMargin/Content/HomeNavigationButton"]
+polygon = PackedVector2Array(11, 26, 23, 26, 23, 40, 18, 40, 18, 32, 16, 32, 16, 40, 11, 40)
+color = Color(1, 1, 1, 1)
+
+[node name="Header" type="Label" parent="SafeMargin/Content"]
+metadata/exchanger_binding_id = "service_access.content.header"
+layout_mode = 0
+offset_left = 40.0
+offset_top = 18.0
+offset_right = 680.0
+offset_bottom = 72.0
+theme_type_variation = &"ScreenTitle"
+theme_override_font_sizes/font_size = 34
+text = "ВХОД В НАСТРОЙКИ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="SafeMargin/Content"]
+metadata/exchanger_binding_id = "service_access.content.description"
+layout_mode = 0
+offset_left = 52.0
+offset_top = 78.0
+offset_right = 668.0
+offset_bottom = 140.0
+theme_type_variation = &"ScreenDescription"
+theme_override_font_sizes/font_size = 16
+text = "ВВЕДИТЕ PIN-КОД, ЧТОБЫ ОТКРЫТЬ НАСТРОЙКИ"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AccessPanel" type="PanelContainer" parent="SafeMargin/Content"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 152.0
+offset_right = 660.0
+offset_bottom = 916.0
+theme_type_variation = &"WhitePanel"
+
+[node name="Fields" type="VBoxContainer" parent="SafeMargin/Content/AccessPanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PinLabel" type="Label" parent="SafeMargin/Content/AccessPanel/Fields"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.pin_label"
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_type_variation = &"PanelTitle"
+text = "PIN-КОД"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PinDisplay" type="Label" parent="SafeMargin/Content/AccessPanel/Fields"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.pin_display"
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_type_variation = &"StatusText"
+theme_override_font_sizes/font_size = 34
+text = "—"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Status" type="Label" parent="SafeMargin/Content/AccessPanel/Fields"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.status"
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 2
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 17
+text = "ВВЕДИТЕ PIN-КОД"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="KeypadCenter" type="CenterContainer" parent="SafeMargin/Content/AccessPanel/Fields"]
+custom_minimum_size = Vector2(0, 484)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Keypad" type="GridContainer" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter"]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 3
+
+[node name="Digit1" type="Button" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter/Keypad"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.keypad.digit1"
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+theme_type_variation = &"KeypadButton"
+text = "1"
+
+[node name="Digit2" type="Button" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter/Keypad"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.keypad.digit2"
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+theme_type_variation = &"KeypadButton"
+text = "2"
+
+[node name="Digit3" type="Button" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter/Keypad"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.keypad.digit3"
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+theme_type_variation = &"KeypadButton"
+text = "3"
+
+[node name="Digit4" type="Button" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter/Keypad"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.keypad.digit4"
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+theme_type_variation = &"KeypadButton"
+text = "4"
+
+[node name="Digit5" type="Button" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter/Keypad"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.keypad.digit5"
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+theme_type_variation = &"KeypadButton"
+text = "5"
+
+[node name="Digit6" type="Button" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter/Keypad"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.keypad.digit6"
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+theme_type_variation = &"KeypadButton"
+text = "6"
+
+[node name="Digit7" type="Button" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter/Keypad"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.keypad.digit7"
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+theme_type_variation = &"KeypadButton"
+text = "7"
+
+[node name="Digit8" type="Button" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter/Keypad"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.keypad.digit8"
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+theme_type_variation = &"KeypadButton"
+text = "8"
+
+[node name="Digit9" type="Button" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter/Keypad"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.keypad.digit9"
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+theme_type_variation = &"KeypadButton"
+text = "9"
+
+[node name="Clear" type="Button" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter/Keypad"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.keypad.clear"
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+theme_type_variation = &"KeypadButton"
+theme_override_font_sizes/font_size = 16
+text = "СБРОС"
+
+[node name="Digit0" type="Button" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter/Keypad"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.keypad.digit0"
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+theme_type_variation = &"KeypadButton"
+text = "0"
+
+[node name="Erase" type="Button" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter/Keypad"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.keypad.erase"
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+theme_type_variation = &"KeypadButton"
+text = "⌫"
+
+[node name="EnterButton" type="Button" parent="SafeMargin/Content/AccessPanel/Fields"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.enter_button"
+custom_minimum_size = Vector2(0, 76)
+layout_mode = 2
+theme_type_variation = &"PrimaryButton"
+theme_override_font_sizes/font_size = 30
+text = "ВОЙТИ"
+
+[node name="CancelButton" type="Button" parent="SafeMargin/Content"]
+metadata/exchanger_binding_id = "service_access.content.cancel_button"
+layout_mode = 0
+offset_left = 110.0
+offset_top = 940.0
+offset_right = 610.0
+offset_bottom = 1026.0
+theme_type_variation = &"SecondaryButton"
+text = "ОТМЕНА"
+
+[node name="Footer" parent="SafeMargin/Content" instance=ExtResource("2_footer")]
+layout_mode = 1

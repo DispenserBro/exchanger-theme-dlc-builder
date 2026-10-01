@@ -1,0 +1,33 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Texture2D" path="../assets/animations/bill/frame_01.png" id="1_bill_1"]
+[ext_resource type="Texture2D" path="../assets/animations/bill/frame_02.png" id="2_bill_2"]
+[ext_resource type="Texture2D" path="../assets/animations/bill/frame_03.png" id="3_bill_3"]
+[ext_resource type="Texture2D" path="../assets/animations/bill/frame_04.png" id="4_bill_4"]
+[ext_resource type="Texture2D" path="../assets/animations/coin/frame_01.png" id="5_coin_1"]
+[ext_resource type="Texture2D" path="../assets/animations/coin/frame_02.png" id="6_coin_2"]
+[ext_resource type="Texture2D" path="../assets/animations/coin/frame_03.png" id="7_coin_3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bill"]
+animations = [{"frames": [{"duration": 1.0, "texture": ExtResource("1_bill_1")}, {"duration": 1.0, "texture": ExtResource("2_bill_2")}, {"duration": 1.0, "texture": ExtResource("3_bill_3")}, {"duration": 1.0, "texture": ExtResource("4_bill_4")}], "loop": true, "name": &"default", "speed": 4.0}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_coin"]
+animations = [{"frames": [{"duration": 1.0, "texture": ExtResource("5_coin_1")}, {"duration": 1.0, "texture": ExtResource("6_coin_2")}, {"duration": 1.0, "texture": ExtResource("7_coin_3")}], "loop": true, "name": &"default", "speed": 3.0}]
+
+[node name="CashInstructions" type="Control"]
+custom_minimum_size = Vector2(648, 322)
+mouse_filter = 2
+
+[node name="Bill" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(188, 93)
+scale = Vector2(0.667, 0.667)
+sprite_frames = SubResource("SpriteFrames_bill")
+autoplay = "default"
+
+[node name="Coin" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(184, 241)
+scale = Vector2(0.667, 0.667)
+sprite_frames = SubResource("SpriteFrames_coin")
+autoplay = "default"

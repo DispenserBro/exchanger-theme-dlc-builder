@@ -1,0 +1,182 @@
+[gd_scene format=3 uid="uid://dmbn0n0i8vyij"]
+
+[ext_resource type="PackedScene" path="res://preview_scenes/PreviewFooter.tscn" id="1_footer"]
+[ext_resource type="Texture2D" uid="uid://sntindr0yqtc" path="res://exchanger_theme_dlc/assets/ui/back_button.png" id="2_back"]
+
+[node name="KEYPAD" type="Control" unique_id=1473255093]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackIcon" type="TextureRect" parent="." unique_id=2063912065]
+texture_filter = 1
+layout_mode = 0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 76.0
+offset_bottom = 68.0
+texture = ExtResource("2_back")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BackText" type="Label" parent="." unique_id=973004298]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 66.0
+offset_right = 84.0
+offset_bottom = 92.0
+theme_type_variation = &"SupportText"
+theme_override_font_sizes/font_size = 13
+text = "НАЗАД"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="." unique_id=650414558]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 20.0
+offset_right = 696.0
+offset_bottom = 80.0
+theme_type_variation = &"ScreenTitle"
+text = "ДРУГАЯ СУММА"
+horizontal_alignment = 1
+
+[node name="AmountPanel" type="PanelContainer" parent="." unique_id=833520481]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 112.0
+offset_right = 650.0
+offset_bottom = 288.0
+theme_type_variation = &"WhitePanel"
+
+[node name="Content" type="VBoxContainer" parent="AmountPanel" unique_id=1256168150]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="Header" type="Label" parent="AmountPanel/Content" unique_id=2076137117]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+theme_type_variation = &"PanelTitle"
+text = "СУММА ОПЛАТЫ"
+vertical_alignment = 1
+
+[node name="Amount" type="Label" parent="AmountPanel/Content" unique_id=794675741]
+layout_mode = 2
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 36
+text = "1000 ₽  •  100 ЖЕТОНОВ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeypadPanel" type="PanelContainer" parent="." unique_id=223784690]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 320.0
+offset_right = 616.0
+offset_bottom = 872.0
+theme_type_variation = &"WhitePanel"
+
+[node name="Content" type="VBoxContainer" parent="KeypadPanel" unique_id=1346008923]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="Header" type="Label" parent="KeypadPanel/Content" unique_id=979359435]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+theme_type_variation = &"PanelTitle"
+text = "ВВЕДИТЕ СУММУ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Grid" type="GridContainer" parent="KeypadPanel/Content" unique_id=19340587]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 3
+
+[node name="Key1" type="Button" parent="KeypadPanel/Content/Grid" unique_id=292513137]
+custom_minimum_size = Vector2(145, 82)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "1"
+
+[node name="Key2" type="Button" parent="KeypadPanel/Content/Grid" unique_id=2059796320]
+custom_minimum_size = Vector2(145, 82)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "2"
+
+[node name="Key3" type="Button" parent="KeypadPanel/Content/Grid" unique_id=1606281080]
+custom_minimum_size = Vector2(145, 82)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "3"
+
+[node name="Key4" type="Button" parent="KeypadPanel/Content/Grid" unique_id=1575091527]
+custom_minimum_size = Vector2(145, 82)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "4"
+
+[node name="Key5" type="Button" parent="KeypadPanel/Content/Grid" unique_id=1264618676]
+custom_minimum_size = Vector2(145, 82)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "5"
+
+[node name="Key6" type="Button" parent="KeypadPanel/Content/Grid" unique_id=1221752006]
+custom_minimum_size = Vector2(145, 82)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "6"
+
+[node name="Key7" type="Button" parent="KeypadPanel/Content/Grid" unique_id=1146303995]
+custom_minimum_size = Vector2(145, 82)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "7"
+
+[node name="Key8" type="Button" parent="KeypadPanel/Content/Grid" unique_id=1022590765]
+custom_minimum_size = Vector2(145, 82)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "8"
+
+[node name="Key9" type="Button" parent="KeypadPanel/Content/Grid" unique_id=1628652970]
+custom_minimum_size = Vector2(145, 82)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "9"
+
+[node name="Clear" type="Button" parent="KeypadPanel/Content/Grid" unique_id=1400291329]
+custom_minimum_size = Vector2(145, 82)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+theme_override_font_sizes/font_size = 17
+text = "СБРОС"
+
+[node name="Key0" type="Button" parent="KeypadPanel/Content/Grid" unique_id=2048436846]
+custom_minimum_size = Vector2(145, 82)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "0"
+
+[node name="Backspace" type="Button" parent="KeypadPanel/Content/Grid" unique_id=980931690]
+custom_minimum_size = Vector2(145, 82)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "⌫"
+
+[node name="Confirm" type="Button" parent="." unique_id=892179263]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 902.0
+offset_right = 650.0
+offset_bottom = 996.0
+theme_type_variation = &"PrimaryButton"
+text = "ПОДТВЕРДИТЬ"
+
+[node name="Footer" parent="." unique_id=191299046 instance=ExtResource("1_footer")]
+layout_mode = 1

@@ -1,0 +1,212 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Theme" path="../ui_theme.tres" id="1_screen_theme"]
+[ext_resource type="Texture2D" path="../assets/background/background.png" id="2_screen_background"]
+[ext_resource type="PackedScene" path="../background_decoration.tscn" id="3_screen_decoration"]
+[ext_resource type="PackedScene" path="../components/footer.tscn" id="3_footer"]
+[ext_resource type="PackedScene" path="../visuals/result_error.tscn" id="4_result_visual"]
+[ext_resource type="Texture2D" path="../assets/ui/interactive_pet/home.png" id="5_home_icon"]
+
+[node name="ThemeScreen_Error" type="Control"]
+texture_filter = 1
+metadata/exchanger_screen_binding_id = "screen.error"
+metadata/exchanger_self_contained_visuals = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_screen_theme")
+
+[node name="ThemeBackground" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_screen_background")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BackgroundDecoration" parent="." instance=ExtResource("3_screen_decoration")]
+scale = Vector2(0.666667, 0.666667)
+
+[node name="PetNavigation" type="Node2D" parent="."]
+metadata/exchanger_pet_navigation_root = true
+metadata/exchanger_pet_navigation_version = 1
+metadata/exchanger_pet_default_surface_id = &"floor"
+metadata/exchanger_pet_roaming_bounds = Rect2(32, 32, 656, 1208)
+
+[node name="Floor" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"floor"
+metadata/exchanger_pet_surface_from_x = 40.0
+metadata/exchanger_pet_surface_to_x = 680.0
+metadata/exchanger_pet_surface_y = 1240.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(96, 360, 624)
+
+[node name="ErrorWindow" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"error_window"
+metadata/exchanger_pet_surface_from_x = 96.0
+metadata/exchanger_pet_surface_to_x = 624.0
+metadata/exchanger_pet_surface_y = 176.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(360)
+
+[node name="HomeButton" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"home_button"
+metadata/exchanger_pet_surface_from_x = 84.0
+metadata/exchanger_pet_surface_to_x = 636.0
+metadata/exchanger_pet_surface_y = 862.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(360)
+
+[node name="HomeNavigationButton" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"home_navigation_button"
+metadata/exchanger_pet_surface_from_x = 49.0
+metadata/exchanger_pet_surface_to_x = 101.0
+metadata/exchanger_pet_surface_y = 42.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(75)
+
+[node name="FloorToHomeNavigation" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_home_navigation"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"home_navigation_button"
+metadata/exchanger_pet_climb_x = 49.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 42.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToError" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_error"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"error_window"
+metadata/exchanger_pet_climb_x = 96.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 176.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToHome" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_home"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"home_button"
+metadata/exchanger_pet_climb_x = 84.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 862.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="SafeMargin" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Content" type="Control" parent="SafeMargin"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HomeNavigationButton" type="Button" parent="SafeMargin/Content"]
+metadata/exchanger_binding_id = "error.content.home_navigation_button"
+layout_mode = 0
+offset_left = 49.0
+offset_top = 42.0
+offset_right = 101.0
+offset_bottom = 94.0
+tooltip_text = "ГЛАВНАЯ"
+theme_type_variation = &"KeypadButton"
+icon = ExtResource("5_home_icon")
+expand_icon = true
+icon_max_width = 30
+
+[node name="ScreenTitle" type="Label" parent="SafeMargin/Content"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 44.0
+offset_right = 680.0
+offset_bottom = 112.0
+theme_type_variation = &"ScreenTitle"
+text = "ОПЛАТА НЕ ПРОШЛА"
+horizontal_alignment = 1
+
+[node name="ErrorPanel" type="PanelContainer" parent="SafeMargin/Content"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 176.0
+offset_right = 624.0
+offset_bottom = 826.0
+theme_type_variation = &"WhitePanel"
+
+[node name="Margin" type="MarginContainer" parent="SafeMargin/Content/ErrorPanel"]
+layout_mode = 2
+
+[node name="Values" type="VBoxContainer" parent="SafeMargin/Content/ErrorPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="Title" type="Label" parent="SafeMargin/Content/ErrorPanel/Margin/Values"]
+metadata/exchanger_binding_id = "error.content.error_panel.margin.values.title"
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_type_variation = &"PanelTitle"
+text = "ОШИБКА ОПЛАТЫ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Body" type="Control" parent="SafeMargin/Content/ErrorPanel/Margin/Values"]
+custom_minimum_size = Vector2(0, 538)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SpacePixelVisual" parent="SafeMargin/Content/ErrorPanel/Margin/Values/Body" instance=ExtResource("4_result_visual")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Message" type="Label" parent="SafeMargin/Content/ErrorPanel/Margin/Values/Body"]
+metadata/exchanger_binding_id = "error.content.error_panel.margin.values.body.message"
+layout_mode = 0
+offset_left = 30.0
+offset_top = 410.0
+offset_right = 454.0
+offset_bottom = 506.0
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 22
+text = "ПОПРОБУЙТЕ ЕЩЁ РАЗ\nИЛИ ВЫБЕРИТЕ ДРУГОЙ СПОСОБ"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Countdown" type="Label" parent="SafeMargin/Content"]
+metadata/exchanger_binding_id = "error.content.countdown"
+visible = false
+theme_type_variation = &"ErrorText"
+
+[node name="HomeButton" type="Button" parent="SafeMargin/Content"]
+metadata/exchanger_binding_id = "error.content.home_button"
+layout_mode = 0
+offset_left = 84.0
+offset_top = 862.0
+offset_right = 636.0
+offset_bottom = 956.0
+theme_type_variation = &"PrimaryButton"
+text = "НА ГЛАВНЫЙ ЭКРАН"
+
+[node name="Footer" parent="SafeMargin/Content" instance=ExtResource("3_footer")]
+layout_mode = 1

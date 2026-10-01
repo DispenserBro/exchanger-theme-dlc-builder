@@ -1,0 +1,725 @@
+[gd_scene load_steps=20 format=3]
+
+[ext_resource type="Theme" path="../ui_theme.tres" id="1_screen_theme"]
+[ext_resource type="Texture2D" path="../assets/background/background.png" id="2_screen_background"]
+[ext_resource type="PackedScene" path="../background_decoration.tscn" id="3_screen_decoration"]
+[ext_resource type="PackedScene" path="../components/footer.tscn" id="2_footer"]
+[ext_resource type="Texture2D" path="../assets/ui/sum_bar.png" id="5_sum_bar"]
+[ext_resource type="Texture2D" path="../assets/animations/banner/frame_01.png" id="6_banner_1"]
+[ext_resource type="Texture2D" path="../assets/animations/banner/frame_02.png" id="7_banner_2"]
+[ext_resource type="Texture2D" path="../assets/ui/panel_medium.png" id="8_panel_medium"]
+[ext_resource type="Texture2D" path="../assets/ui/button_square.png" id="9_button_square"]
+[ext_resource type="Script" path="../scripts/stable_banner_animation.gd" id="10_banner_script"]
+[ext_resource type="Texture2D" path="../assets/ui/interactive_pet/home.png" id="11_home_icon"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_card_custom_amount_banner"]
+animations = [{"frames": [{"duration": 1.0, "texture": ExtResource("6_banner_1")}, {"duration": 1.0, "texture": ExtResource("7_banner_2")}], "loop": true, "name": &"default", "speed": 1.0}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_panel_header"]
+atlas = ExtResource("8_panel_medium")
+region = Rect2(4, 34, 504, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_panel_body"]
+atlas = ExtResource("8_panel_medium")
+region = Rect2(5, 102, 502, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_panel_bottom"]
+atlas = ExtResource("8_panel_medium")
+region = Rect2(5, 200, 502, 20)
+
+[sub_resource type="StyleBoxTexture" id="StyleBox_ref_keypad_normal"]
+content_margin_left = 8.0
+content_margin_top = 6.0
+content_margin_right = 8.0
+content_margin_bottom = 10.0
+texture = ExtResource("9_button_square")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBox_ref_keypad_hover"]
+content_margin_left = 8.0
+content_margin_top = 6.0
+content_margin_right = 8.0
+content_margin_bottom = 10.0
+texture = ExtResource("9_button_square")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+modulate_color = Color(1.12, 1.12, 1.12, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBox_ref_keypad_pressed"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+texture = ExtResource("9_button_square")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+modulate_color = Color(0.72, 0.8, 0.76, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBox_ref_keypad_disabled"]
+content_margin_left = 8.0
+content_margin_top = 6.0
+content_margin_right = 8.0
+content_margin_bottom = 10.0
+texture = ExtResource("9_button_square")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+modulate_color = Color(0.36, 0.42, 0.5, 0.7)
+
+[node name="ThemeScreen_CardCustomAmount" type="Control"]
+texture_filter = 1
+metadata/exchanger_screen_binding_id = "screen.card_custom_amount"
+metadata/exchanger_self_contained_visuals = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_screen_theme")
+
+[node name="ThemeBackground" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_screen_background")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BackgroundDecoration" parent="." instance=ExtResource("3_screen_decoration")]
+scale = Vector2(0.666667, 0.666667)
+
+[node name="PetNavigation" type="Node2D" parent="."]
+metadata/exchanger_pet_navigation_root = true
+metadata/exchanger_pet_navigation_version = 1
+metadata/exchanger_pet_default_surface_id = &"floor"
+metadata/exchanger_pet_roaming_bounds = Rect2(32, 32, 656, 1208)
+
+[node name="Floor" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"floor"
+metadata/exchanger_pet_surface_from_x = 40.0
+metadata/exchanger_pet_surface_to_x = 680.0
+metadata/exchanger_pet_surface_y = 1240.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(96, 360, 624)
+
+[node name="BackButton" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"back_button"
+metadata/exchanger_pet_surface_from_x = 48.0
+metadata/exchanger_pet_surface_to_x = 161.0
+metadata/exchanger_pet_surface_y = 42.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(72, 135)
+
+[node name="AmountWindow" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"amount_window"
+metadata/exchanger_pet_surface_from_x = 38.0
+metadata/exchanger_pet_surface_to_x = 684.0
+metadata/exchanger_pet_surface_y = 184.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(360)
+
+[node name="KeypadWindow" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"keypad_window"
+metadata/exchanger_pet_surface_from_x = 38.0
+metadata/exchanger_pet_surface_to_x = 684.0
+metadata/exchanger_pet_surface_y = 378.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(360)
+
+[node name="KeypadRow1" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"keypad_row_1"
+metadata/exchanger_pet_surface_from_x = 277.0
+metadata/exchanger_pet_surface_to_x = 443.0
+metadata/exchanger_pet_surface_y = 568.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(300, 360, 420)
+
+[node name="KeypadRow2" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"keypad_row_2"
+metadata/exchanger_pet_surface_from_x = 277.0
+metadata/exchanger_pet_surface_to_x = 443.0
+metadata/exchanger_pet_surface_y = 626.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(300, 360, 420)
+
+[node name="KeypadRow3" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"keypad_row_3"
+metadata/exchanger_pet_surface_from_x = 277.0
+metadata/exchanger_pet_surface_to_x = 443.0
+metadata/exchanger_pet_surface_y = 685.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(300, 360, 420)
+
+[node name="KeypadActionRow" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"keypad_action_row"
+metadata/exchanger_pet_surface_from_x = 147.0
+metadata/exchanger_pet_surface_to_x = 550.0
+metadata/exchanger_pet_surface_y = 741.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(223, 360, 473)
+
+[node name="FloorToBack" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_back"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"back_button"
+metadata/exchanger_pet_climb_x = 48.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 42.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToAmount" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_amount"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"amount_window"
+metadata/exchanger_pet_climb_x = 40.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 184.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToKeypad" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_keypad"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"keypad_window"
+metadata/exchanger_pet_climb_x = 40.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 378.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToRow1" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_row_1"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"keypad_row_1"
+metadata/exchanger_pet_climb_x = 277.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 568.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToRow2" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_row_2"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"keypad_row_2"
+metadata/exchanger_pet_climb_x = 277.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 626.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToRow3" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_row_3"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"keypad_row_3"
+metadata/exchanger_pet_climb_x = 277.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 685.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToActions" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_actions"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"keypad_action_row"
+metadata/exchanger_pet_climb_x = 147.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 741.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="SafeMargin" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Content" type="Control" parent="SafeMargin"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopBar" type="Control" parent="SafeMargin/Content"]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 92.0
+
+[node name="BackButton" type="Button" parent="SafeMargin/Content/TopBar"]
+metadata/exchanger_binding_id = "card_custom_amount.content.top_bar.back_button"
+layout_mode = 0
+offset_left = 48.0
+offset_top = 42.0
+offset_right = 96.0
+offset_bottom = 90.0
+theme_type_variation = &"BackButton"
+
+[node name="HomeNavigationButton" type="Button" parent="SafeMargin/Content/TopBar"]
+metadata/exchanger_binding_id = "card_custom_amount.content.top_bar.home_navigation_button"
+layout_mode = 0
+offset_left = 109.0
+offset_top = 42.0
+offset_right = 161.0
+offset_bottom = 94.0
+tooltip_text = "ГЛАВНАЯ"
+theme_type_variation = &"KeypadButton"
+icon = ExtResource("11_home_icon")
+expand_icon = true
+icon_max_width = 30
+
+[node name="BackText" type="Label" parent="SafeMargin/Content/TopBar"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 94.0
+offset_right = 108.0
+offset_bottom = 118.0
+mouse_filter = 2
+theme_type_variation = &"SupportText"
+theme_override_font_sizes/font_size = 14
+text = "НАЗАД"
+horizontal_alignment = 1
+pivot_offset = Vector2(36, 12)
+scale = Vector2(1.45, 1)
+
+[node name="Title" type="Label" parent="SafeMargin/Content/TopBar"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 44.0
+offset_right = 728.0
+offset_bottom = 108.0
+theme_type_variation = &"ScreenTitle"
+text = "ОПЛАТА КАРТОЙ"
+horizontal_alignment = 1
+pivot_offset = Vector2(264, 32)
+scale = Vector2(1.35, 1)
+
+[node name="AmountPanel" type="Control" parent="SafeMargin/Content"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 184.0
+offset_right = 684.0
+offset_bottom = 359.0
+
+[node name="BackgroundHeader" type="TextureRect" parent="SafeMargin/Content/AmountPanel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -2.0
+offset_right = 646.0
+offset_bottom = 46.0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_panel_header")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="BackgroundBody" type="TextureRect" parent="SafeMargin/Content/AmountPanel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -4.0
+offset_top = 46.0
+offset_right = 648.0
+offset_bottom = 148.0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_panel_body")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="BackgroundBottom" type="TextureRect" parent="SafeMargin/Content/AmountPanel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -4.0
+offset_top = 148.0
+offset_right = 648.0
+offset_bottom = 175.0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_panel_bottom")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="Margin" type="MarginContainer" parent="SafeMargin/Content/AmountPanel"]
+layout_mode = 0
+offset_left = 22.0
+offset_right = 624.0
+offset_bottom = 175.0
+
+[node name="Values" type="Control" parent="SafeMargin/Content/AmountPanel/Margin"]
+layout_mode = 2
+
+[node name="Header" type="Label" parent="SafeMargin/Content/AmountPanel/Margin/Values"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 0
+offset_right = 602.0
+offset_bottom = 44.0
+theme_type_variation = &"PanelTitle"
+text = "К ВЫДАЧЕ"
+vertical_alignment = 1
+pivot_offset = Vector2(0, 22)
+scale = Vector2(1.25, 1)
+
+[node name="Amount" type="Label" parent="SafeMargin/Content/AmountPanel/Margin/Values"]
+metadata/exchanger_binding_id = "card_custom_amount.content.amount_panel.margin.values.amount"
+layout_mode = 0
+offset_left = 4.0
+offset_top = 57.0
+offset_right = 294.0
+offset_bottom = 137.0
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 27
+text = "100 ЖЕТОНОВ"
+vertical_alignment = 1
+pivot_offset = Vector2(0, 40)
+scale = Vector2(1.2, 1)
+
+[node name="Tokens" type="Label" parent="SafeMargin/Content/AmountPanel/Margin/Values"]
+metadata/exchanger_binding_id = "card_custom_amount.content.amount_panel.margin.values.tokens"
+layout_mode = 0
+offset_left = 296.0
+offset_top = 55.0
+offset_right = 602.0
+offset_bottom = 139.0
+theme_type_variation = &"PanelText"
+theme_override_colors/font_color = Color(0, 0.0627451, 0.552941, 1)
+theme_override_font_sizes/font_size = 25
+text = "+ 50 ЖЕТОНОВ\nВ ПОДАРОК"
+horizontal_alignment = 1
+vertical_alignment = 1
+pivot_offset = Vector2(153, 42)
+scale = Vector2(1.3, 1)
+
+[node name="KeypadPanel" type="Control" parent="SafeMargin/Content"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 378.0
+offset_right = 684.0
+offset_bottom = 844.0
+
+[node name="BackgroundHeader" type="TextureRect" parent="SafeMargin/Content/KeypadPanel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 646.0
+offset_bottom = 45.0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_panel_header")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="BackgroundBody" type="TextureRect" parent="SafeMargin/Content/KeypadPanel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -4.0
+offset_top = 45.0
+offset_right = 648.0
+offset_bottom = 442.0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_panel_body")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="BackgroundBottom" type="TextureRect" parent="SafeMargin/Content/KeypadPanel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -4.0
+offset_top = 442.0
+offset_right = 648.0
+offset_bottom = 466.0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_panel_bottom")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="Content" type="Control" parent="SafeMargin/Content/KeypadPanel"]
+layout_mode = 0
+offset_left = 22.0
+offset_right = 624.0
+offset_bottom = 466.0
+
+[node name="Header" type="Label" parent="SafeMargin/Content/KeypadPanel/Content"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 0
+offset_right = 602.0
+offset_bottom = 44.0
+theme_type_variation = &"PanelTitle"
+text = "ОПЛАТА"
+vertical_alignment = 1
+pivot_offset = Vector2(0, 22)
+scale = Vector2(1.17, 1)
+
+[node name="Prompt" type="Label" parent="SafeMargin/Content/KeypadPanel/Content"]
+layout_mode = 0
+offset_top = 62.0
+offset_right = 602.0
+offset_bottom = 106.0
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 28
+text = "ВВЕДИТЕ СУММУ"
+horizontal_alignment = 1
+vertical_alignment = 1
+pivot_offset = Vector2(301, 22)
+scale = Vector2(1.17, 1)
+
+[node name="InputBar" type="TextureRect" parent="SafeMargin/Content/KeypadPanel/Content"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 131.0
+offset_top = 120.0
+offset_right = 470.0
+offset_bottom = 164.0
+mouse_filter = 2
+texture = ExtResource("5_sum_bar")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="InputValue" type="Label" parent="SafeMargin/Content/KeypadPanel/Content"]
+metadata/exchanger_binding_id = "card_custom_amount.content.keypad_panel.content.input_value"
+layout_mode = 0
+offset_top = 118.0
+offset_left = 205.0
+offset_right = 397.0
+offset_bottom = 164.0
+theme_type_variation = &"PanelText"
+theme_override_colors/font_color = Color(0, 0.0627451, 0.552941, 1)
+theme_override_font_sizes/font_size = 28
+text = "1000"
+horizontal_alignment = 1
+vertical_alignment = 1
+pivot_offset = Vector2(96, 23)
+scale = Vector2(1.15, 1)
+
+[node name="Keypad" type="Control" parent="SafeMargin/Content/KeypadPanel/Content"]
+layout_mode = 0
+offset_right = 602.0
+offset_bottom = 444.0
+
+[node name="Digit1" type="Button" parent="SafeMargin/Content/KeypadPanel/Content/Keypad"]
+metadata/exchanger_binding_id = "card_custom_amount.content.keypad_panel.content.keypad.digit1"
+layout_mode = 0
+offset_left = 217.0
+offset_top = 190.0
+offset_right = 263.0
+offset_bottom = 236.0
+theme_type_variation = &"KeypadButton"
+theme_override_styles/disabled = SubResource("StyleBox_ref_keypad_disabled")
+theme_override_styles/hover = SubResource("StyleBox_ref_keypad_hover")
+theme_override_styles/normal = SubResource("StyleBox_ref_keypad_normal")
+theme_override_styles/pressed = SubResource("StyleBox_ref_keypad_pressed")
+theme_override_font_sizes/font_size = 27
+text = "1"
+[node name="Digit2" type="Button" parent="SafeMargin/Content/KeypadPanel/Content/Keypad"]
+metadata/exchanger_binding_id = "card_custom_amount.content.keypad_panel.content.keypad.digit2"
+layout_mode = 0
+offset_left = 277.0
+offset_top = 190.0
+offset_right = 323.0
+offset_bottom = 236.0
+theme_type_variation = &"KeypadButton"
+theme_override_styles/disabled = SubResource("StyleBox_ref_keypad_disabled")
+theme_override_styles/hover = SubResource("StyleBox_ref_keypad_hover")
+theme_override_styles/normal = SubResource("StyleBox_ref_keypad_normal")
+theme_override_styles/pressed = SubResource("StyleBox_ref_keypad_pressed")
+theme_override_font_sizes/font_size = 27
+text = "2"
+[node name="Digit3" type="Button" parent="SafeMargin/Content/KeypadPanel/Content/Keypad"]
+metadata/exchanger_binding_id = "card_custom_amount.content.keypad_panel.content.keypad.digit3"
+layout_mode = 0
+offset_left = 337.0
+offset_top = 190.0
+offset_right = 383.0
+offset_bottom = 236.0
+theme_type_variation = &"KeypadButton"
+theme_override_styles/disabled = SubResource("StyleBox_ref_keypad_disabled")
+theme_override_styles/hover = SubResource("StyleBox_ref_keypad_hover")
+theme_override_styles/normal = SubResource("StyleBox_ref_keypad_normal")
+theme_override_styles/pressed = SubResource("StyleBox_ref_keypad_pressed")
+theme_override_font_sizes/font_size = 27
+text = "3"
+[node name="Digit4" type="Button" parent="SafeMargin/Content/KeypadPanel/Content/Keypad"]
+metadata/exchanger_binding_id = "card_custom_amount.content.keypad_panel.content.keypad.digit4"
+layout_mode = 0
+offset_left = 217.0
+offset_top = 248.0
+offset_right = 263.0
+offset_bottom = 294.0
+theme_type_variation = &"KeypadButton"
+theme_override_styles/disabled = SubResource("StyleBox_ref_keypad_disabled")
+theme_override_styles/hover = SubResource("StyleBox_ref_keypad_hover")
+theme_override_styles/normal = SubResource("StyleBox_ref_keypad_normal")
+theme_override_styles/pressed = SubResource("StyleBox_ref_keypad_pressed")
+theme_override_font_sizes/font_size = 27
+text = "4"
+[node name="Digit5" type="Button" parent="SafeMargin/Content/KeypadPanel/Content/Keypad"]
+metadata/exchanger_binding_id = "card_custom_amount.content.keypad_panel.content.keypad.digit5"
+layout_mode = 0
+offset_left = 277.0
+offset_top = 248.0
+offset_right = 323.0
+offset_bottom = 294.0
+theme_type_variation = &"KeypadButton"
+theme_override_styles/disabled = SubResource("StyleBox_ref_keypad_disabled")
+theme_override_styles/hover = SubResource("StyleBox_ref_keypad_hover")
+theme_override_styles/normal = SubResource("StyleBox_ref_keypad_normal")
+theme_override_styles/pressed = SubResource("StyleBox_ref_keypad_pressed")
+theme_override_font_sizes/font_size = 27
+text = "5"
+[node name="Digit6" type="Button" parent="SafeMargin/Content/KeypadPanel/Content/Keypad"]
+metadata/exchanger_binding_id = "card_custom_amount.content.keypad_panel.content.keypad.digit6"
+layout_mode = 0
+offset_left = 337.0
+offset_top = 248.0
+offset_right = 383.0
+offset_bottom = 294.0
+theme_type_variation = &"KeypadButton"
+theme_override_styles/disabled = SubResource("StyleBox_ref_keypad_disabled")
+theme_override_styles/hover = SubResource("StyleBox_ref_keypad_hover")
+theme_override_styles/normal = SubResource("StyleBox_ref_keypad_normal")
+theme_override_styles/pressed = SubResource("StyleBox_ref_keypad_pressed")
+theme_override_font_sizes/font_size = 27
+text = "6"
+[node name="Digit7" type="Button" parent="SafeMargin/Content/KeypadPanel/Content/Keypad"]
+metadata/exchanger_binding_id = "card_custom_amount.content.keypad_panel.content.keypad.digit7"
+layout_mode = 0
+offset_left = 217.0
+offset_top = 307.0
+offset_right = 263.0
+offset_bottom = 353.0
+theme_type_variation = &"KeypadButton"
+theme_override_styles/disabled = SubResource("StyleBox_ref_keypad_disabled")
+theme_override_styles/hover = SubResource("StyleBox_ref_keypad_hover")
+theme_override_styles/normal = SubResource("StyleBox_ref_keypad_normal")
+theme_override_styles/pressed = SubResource("StyleBox_ref_keypad_pressed")
+theme_override_font_sizes/font_size = 27
+text = "7"
+[node name="Digit8" type="Button" parent="SafeMargin/Content/KeypadPanel/Content/Keypad"]
+metadata/exchanger_binding_id = "card_custom_amount.content.keypad_panel.content.keypad.digit8"
+layout_mode = 0
+offset_left = 277.0
+offset_top = 307.0
+offset_right = 323.0
+offset_bottom = 353.0
+theme_type_variation = &"KeypadButton"
+theme_override_styles/disabled = SubResource("StyleBox_ref_keypad_disabled")
+theme_override_styles/hover = SubResource("StyleBox_ref_keypad_hover")
+theme_override_styles/normal = SubResource("StyleBox_ref_keypad_normal")
+theme_override_styles/pressed = SubResource("StyleBox_ref_keypad_pressed")
+theme_override_font_sizes/font_size = 27
+text = "8"
+[node name="Digit9" type="Button" parent="SafeMargin/Content/KeypadPanel/Content/Keypad"]
+metadata/exchanger_binding_id = "card_custom_amount.content.keypad_panel.content.keypad.digit9"
+layout_mode = 0
+offset_left = 337.0
+offset_top = 307.0
+offset_right = 383.0
+offset_bottom = 353.0
+theme_type_variation = &"KeypadButton"
+theme_override_styles/disabled = SubResource("StyleBox_ref_keypad_disabled")
+theme_override_styles/hover = SubResource("StyleBox_ref_keypad_hover")
+theme_override_styles/normal = SubResource("StyleBox_ref_keypad_normal")
+theme_override_styles/pressed = SubResource("StyleBox_ref_keypad_pressed")
+theme_override_font_sizes/font_size = 27
+text = "9"
+
+[node name="ClearButton" type="Button" parent="SafeMargin/Content/KeypadPanel/Content/Keypad"]
+metadata/exchanger_binding_id = "card_custom_amount.content.keypad_panel.content.keypad.clear_button"
+layout_mode = 0
+offset_left = 87.0
+offset_top = 363.0
+offset_right = 239.6
+offset_bottom = 408.0
+pivot_offset = Vector2(0, 22.5)
+scale = Vector2(1.16, 1)
+theme_type_variation = &"CancelButton"
+theme_override_font_sizes/font_size = 28
+text = "СТЕРЕТЬ"
+
+[node name="Digit0" type="Button" parent="SafeMargin/Content/KeypadPanel/Content/Keypad"]
+metadata/exchanger_binding_id = "card_custom_amount.content.keypad_panel.content.keypad.digit0"
+layout_mode = 0
+offset_left = 277.0
+offset_top = 364.0
+offset_right = 323.0
+offset_bottom = 410.0
+theme_type_variation = &"KeypadButton"
+theme_override_styles/disabled = SubResource("StyleBox_ref_keypad_disabled")
+theme_override_styles/hover = SubResource("StyleBox_ref_keypad_hover")
+theme_override_styles/normal = SubResource("StyleBox_ref_keypad_normal")
+theme_override_styles/pressed = SubResource("StyleBox_ref_keypad_pressed")
+theme_override_font_sizes/font_size = 27
+text = "0"
+
+[node name="BackspaceButton" type="Button" parent="SafeMargin/Content/KeypadPanel/Content/Keypad"]
+metadata/exchanger_binding_id = "card_custom_amount.content.keypad_panel.content.keypad.backspace_button"
+visible = false
+layout_mode = 0
+offset_left = 337.0
+offset_top = 365.0
+offset_right = 383.0
+offset_bottom = 411.0
+theme_type_variation = &"KeypadButton"
+theme_override_styles/disabled = SubResource("StyleBox_ref_keypad_disabled")
+theme_override_styles/hover = SubResource("StyleBox_ref_keypad_hover")
+theme_override_styles/normal = SubResource("StyleBox_ref_keypad_normal")
+theme_override_styles/pressed = SubResource("StyleBox_ref_keypad_pressed")
+theme_override_font_sizes/font_size = 27
+text = "⌫"
+
+[node name="ConfirmButton" type="Button" parent="SafeMargin/Content"]
+metadata/exchanger_binding_id = "card_custom_amount.content.confirm_button"
+layout_mode = 0
+offset_left = 397.0
+offset_top = 741.0
+offset_right = 549.6
+offset_bottom = 786.0
+pivot_offset = Vector2(0, 22.5)
+scale = Vector2(1.16, 1)
+theme_type_variation = &"KeyboardActionButton"
+theme_override_font_sizes/font_size = 28
+text = "OK"
+
+[node name="BottomTip" type="Control" parent="SafeMargin/Content"]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 1128.0
+mouse_filter = 2
+
+[node name="Banner" type="AnimatedSprite2D" parent="SafeMargin/Content/BottomTip"]
+texture_filter = 1
+position = Vector2(376.5, 1067.5)
+scale = Vector2(0.667, 0.667)
+sprite_frames = SubResource("SpriteFrames_card_custom_amount_banner")
+autoplay = "default"
+script = ExtResource("10_banner_script")
+
+[node name="Hint" type="Label" parent="SafeMargin/Content"]
+metadata/exchanger_binding_id = "card_custom_amount.content.hint"
+visible = false
+layout_mode = 0
+offset_left = 225.0
+offset_top = 1022.0
+offset_right = 660.0
+offset_bottom = 1092.0
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Footer" parent="SafeMargin/Content" instance=ExtResource("2_footer")]
+layout_mode = 1

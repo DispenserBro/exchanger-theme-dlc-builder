@@ -1,0 +1,550 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="../assets/ui/keyboard_hide.svg" id="1_hide_icon"]
+
+[node name="KeyboardOverlay" type="Control"]
+z_index = 30
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextKeyboard" type="PanelContainer" parent="."]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard"
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_right = 1.0
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -512.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 0
+
+[node name="Content" type="VBoxContainer" parent="TextKeyboard"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Header" type="HBoxContainer" parent="TextKeyboard/Content"]
+custom_minimum_size = Vector2(0, 58)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="TextKeyboard/Content/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "ЭКРАННАЯ КЛАВИАТУРА"
+vertical_alignment = 1
+
+[node name="HideButton" type="Button" parent="TextKeyboard/Content/Header"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.header.hide_button"
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+focus_mode = 0
+tooltip_text = "Скрыть клавиатуру"
+icon = ExtResource("1_hide_icon")
+icon_max_width = 40
+expand_icon = true
+
+[node name="LetterRows" type="VBoxContainer" parent="TextKeyboard/Content"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Row0" type="HBoxContainer" parent="TextKeyboard/Content/LetterRows"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Key00" type="Button" parent="TextKeyboard/Content/LetterRows/Row0"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row0.key_00"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "й"
+
+[node name="Key01" type="Button" parent="TextKeyboard/Content/LetterRows/Row0"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row0.key_01"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ц"
+
+[node name="Key02" type="Button" parent="TextKeyboard/Content/LetterRows/Row0"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row0.key_02"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "у"
+
+[node name="Key03" type="Button" parent="TextKeyboard/Content/LetterRows/Row0"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row0.key_03"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "к"
+
+[node name="Key04" type="Button" parent="TextKeyboard/Content/LetterRows/Row0"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row0.key_04"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "е"
+
+[node name="Key05" type="Button" parent="TextKeyboard/Content/LetterRows/Row0"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row0.key_05"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "н"
+
+[node name="Key06" type="Button" parent="TextKeyboard/Content/LetterRows/Row0"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row0.key_06"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "г"
+
+[node name="Key07" type="Button" parent="TextKeyboard/Content/LetterRows/Row0"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row0.key_07"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ш"
+
+[node name="Key08" type="Button" parent="TextKeyboard/Content/LetterRows/Row0"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row0.key_08"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "щ"
+
+[node name="Key09" type="Button" parent="TextKeyboard/Content/LetterRows/Row0"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row0.key_09"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "з"
+
+[node name="Key10" type="Button" parent="TextKeyboard/Content/LetterRows/Row0"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row0.key_10"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "х"
+
+[node name="Key11" type="Button" parent="TextKeyboard/Content/LetterRows/Row0"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row0.key_11"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ъ"
+
+[node name="Row1" type="HBoxContainer" parent="TextKeyboard/Content/LetterRows"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Key12" type="Button" parent="TextKeyboard/Content/LetterRows/Row1"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row1.key_12"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ф"
+
+[node name="Key13" type="Button" parent="TextKeyboard/Content/LetterRows/Row1"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row1.key_13"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ы"
+
+[node name="Key14" type="Button" parent="TextKeyboard/Content/LetterRows/Row1"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row1.key_14"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "в"
+
+[node name="Key15" type="Button" parent="TextKeyboard/Content/LetterRows/Row1"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row1.key_15"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "а"
+
+[node name="Key16" type="Button" parent="TextKeyboard/Content/LetterRows/Row1"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row1.key_16"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "п"
+
+[node name="Key17" type="Button" parent="TextKeyboard/Content/LetterRows/Row1"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row1.key_17"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "р"
+
+[node name="Key18" type="Button" parent="TextKeyboard/Content/LetterRows/Row1"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row1.key_18"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "о"
+
+[node name="Key19" type="Button" parent="TextKeyboard/Content/LetterRows/Row1"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row1.key_19"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "л"
+
+[node name="Key20" type="Button" parent="TextKeyboard/Content/LetterRows/Row1"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row1.key_20"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "д"
+
+[node name="Key21" type="Button" parent="TextKeyboard/Content/LetterRows/Row1"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row1.key_21"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ж"
+
+[node name="Key22" type="Button" parent="TextKeyboard/Content/LetterRows/Row1"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row1.key_22"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "э"
+
+[node name="Row2" type="HBoxContainer" parent="TextKeyboard/Content/LetterRows"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Key23" type="Button" parent="TextKeyboard/Content/LetterRows/Row2"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row2.key_23"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "я"
+
+[node name="Key24" type="Button" parent="TextKeyboard/Content/LetterRows/Row2"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row2.key_24"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ч"
+
+[node name="Key25" type="Button" parent="TextKeyboard/Content/LetterRows/Row2"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row2.key_25"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "с"
+
+[node name="Key26" type="Button" parent="TextKeyboard/Content/LetterRows/Row2"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row2.key_26"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "м"
+
+[node name="Key27" type="Button" parent="TextKeyboard/Content/LetterRows/Row2"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row2.key_27"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "и"
+
+[node name="Key28" type="Button" parent="TextKeyboard/Content/LetterRows/Row2"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row2.key_28"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "т"
+
+[node name="Key29" type="Button" parent="TextKeyboard/Content/LetterRows/Row2"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row2.key_29"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ь"
+
+[node name="Key30" type="Button" parent="TextKeyboard/Content/LetterRows/Row2"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row2.key_30"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "б"
+
+[node name="Key31" type="Button" parent="TextKeyboard/Content/LetterRows/Row2"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row2.key_31"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ю"
+
+[node name="Key32" type="Button" parent="TextKeyboard/Content/LetterRows/Row2"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.letter_rows.row2.key_32"
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ё"
+
+[node name="PrimaryActions" type="HBoxContainer" parent="TextKeyboard/Content"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ShiftButton" type="Button" parent="TextKeyboard/Content/PrimaryActions"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.primary_actions.shift_button"
+custom_minimum_size = Vector2(128, 76)
+layout_mode = 2
+focus_mode = 0
+text = "SHIFT"
+theme_type_variation = &"KeyboardActionButton"
+
+[node name="LanguageButton" type="Button" parent="TextKeyboard/Content/PrimaryActions"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.primary_actions.language_button"
+custom_minimum_size = Vector2(96, 76)
+layout_mode = 2
+focus_mode = 0
+text = "RU"
+theme_type_variation = &"KeyboardActionButton"
+
+[node name="SymbolsButton" type="Button" parent="TextKeyboard/Content/PrimaryActions"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.primary_actions.symbols_button"
+custom_minimum_size = Vector2(116, 76)
+layout_mode = 2
+focus_mode = 0
+text = "?123"
+theme_type_variation = &"KeyboardActionButton"
+
+[node name="BackspaceButton" type="Button" parent="TextKeyboard/Content/PrimaryActions"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.primary_actions.backspace_button"
+custom_minimum_size = Vector2(236, 76)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "СТЕРЕТЬ"
+theme_type_variation = &"KeyboardActionButton"
+
+[node name="SecondaryActions" type="HBoxContainer" parent="TextKeyboard/Content"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ClearButton" type="Button" parent="TextKeyboard/Content/SecondaryActions"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.secondary_actions.clear_button"
+custom_minimum_size = Vector2(164, 76)
+layout_mode = 2
+focus_mode = 0
+text = "ОЧИСТИТЬ"
+theme_type_variation = &"KeyboardActionButton"
+
+[node name="CaretLeftButton" type="Button" parent="TextKeyboard/Content/SecondaryActions"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.secondary_actions.caret_left_button"
+custom_minimum_size = Vector2(88, 76)
+layout_mode = 2
+focus_mode = 0
+text = "<"
+theme_type_variation = &"KeyboardActionButton"
+
+[node name="SpaceButton" type="Button" parent="TextKeyboard/Content/SecondaryActions"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.secondary_actions.space_button"
+custom_minimum_size = Vector2(220, 76)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ПРОБЕЛ"
+theme_type_variation = &"KeyboardActionButton"
+
+[node name="CaretRightButton" type="Button" parent="TextKeyboard/Content/SecondaryActions"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.text_keyboard.content.secondary_actions.caret_right_button"
+custom_minimum_size = Vector2(88, 76)
+layout_mode = 2
+focus_mode = 0
+text = ">"
+theme_type_variation = &"KeyboardActionButton"
+
+[node name="NumericKeyboard" type="PanelContainer" parent="."]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.numeric_keyboard"
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_top = -520.0
+offset_right = 280.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 0
+
+[node name="Content" type="VBoxContainer" parent="NumericKeyboard"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="HBoxContainer" parent="NumericKeyboard/Content"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="NumericKeyboard/Content/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "ЦИФРОВАЯ КЛАВИАТУРА"
+vertical_alignment = 1
+
+[node name="HideButton" type="Button" parent="NumericKeyboard/Content/Header"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.numeric_keyboard.content.header.hide_button"
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+focus_mode = 0
+tooltip_text = "Скрыть клавиатуру"
+icon = ExtResource("1_hide_icon")
+icon_max_width = 40
+expand_icon = true
+
+[node name="Grid" type="GridContainer" parent="NumericKeyboard/Content"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 3
+
+[node name="Digit1" type="Button" parent="NumericKeyboard/Content/Grid"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.numeric_keyboard.content.grid.digit1"
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "1"
+
+[node name="Digit2" type="Button" parent="NumericKeyboard/Content/Grid"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.numeric_keyboard.content.grid.digit2"
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "2"
+
+[node name="Digit3" type="Button" parent="NumericKeyboard/Content/Grid"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.numeric_keyboard.content.grid.digit3"
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "3"
+
+[node name="Digit4" type="Button" parent="NumericKeyboard/Content/Grid"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.numeric_keyboard.content.grid.digit4"
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "4"
+
+[node name="Digit5" type="Button" parent="NumericKeyboard/Content/Grid"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.numeric_keyboard.content.grid.digit5"
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "5"
+
+[node name="Digit6" type="Button" parent="NumericKeyboard/Content/Grid"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.numeric_keyboard.content.grid.digit6"
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "6"
+
+[node name="Digit7" type="Button" parent="NumericKeyboard/Content/Grid"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.numeric_keyboard.content.grid.digit7"
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "7"
+
+[node name="Digit8" type="Button" parent="NumericKeyboard/Content/Grid"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.numeric_keyboard.content.grid.digit8"
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "8"
+
+[node name="Digit9" type="Button" parent="NumericKeyboard/Content/Grid"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.numeric_keyboard.content.grid.digit9"
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "9"
+
+[node name="ClearButton" type="Button" parent="NumericKeyboard/Content/Grid"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.numeric_keyboard.content.grid.clear_button"
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ОЧИСТИТЬ"
+
+[node name="Digit0" type="Button" parent="NumericKeyboard/Content/Grid"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.numeric_keyboard.content.grid.digit0"
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "0"
+
+[node name="BackspaceButton" type="Button" parent="NumericKeyboard/Content/Grid"]
+metadata/exchanger_binding_id = "settings.keyboard_overlay.numeric_keyboard.content.grid.backspace_button"
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "СТЕРЕТЬ"

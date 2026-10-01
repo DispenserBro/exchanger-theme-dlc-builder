@@ -1,0 +1,33 @@
+{
+  "Format": "ExchangerThemeDlc",
+  "FormatVersion": 2,
+  "ThemeId": "space-pixel",
+  "DisplayName": "Космическая pixel-тема",
+  "UiThemePath": "res://exchanger_theme_dlc/ui_theme.tres",
+  "BackgroundTexturePath": "",
+  "BackgroundDecorationPath": "",
+  "BackgroundDecorationScale": 0.666667,
+  "InteractivePetScene": "res://exchanger_theme_dlc/components/interactive_pet.tscn",
+  "ScreenScenes": {
+    "screen.home": "res://exchanger_theme_dlc/scenes/screen_home.tscn",
+    "screen.cash_payment": "res://exchanger_theme_dlc/scenes/screen_cash_payment.tscn",
+    "screen.card_amount": "res://exchanger_theme_dlc/scenes/screen_card_amount.tscn",
+    "screen.card_custom_amount": "res://exchanger_theme_dlc/scenes/screen_card_custom_amount.tscn",
+    "screen.card_terminal": "res://exchanger_theme_dlc/scenes/screen_card_terminal.tscn",
+    "screen.success": "res://exchanger_theme_dlc/scenes/screen_success.tscn",
+    "screen.error": "res://exchanger_theme_dlc/scenes/screen_error.tscn",
+    "screen.service_access": "res://exchanger_theme_dlc/scenes/screen_service_access.tscn",
+    "screen.settings": "res://exchanger_theme_dlc/scenes/screen_settings.tscn"
+  },
+  "VisualSlots": {
+    "home.top": "res://exchanger_theme_dlc/visuals/home_top.tscn",
+    "home.advertisement": "res://exchanger_theme_dlc/visuals/home_advertisement.tscn",
+    "cash.instructions": "res://exchanger_theme_dlc/visuals/cash_instructions.tscn",
+    "cash.tip": "res://exchanger_theme_dlc/visuals/cash_tip.tscn",
+    "card.terminal": "res://exchanger_theme_dlc/visuals/card_terminal.tscn",
+    "result.success": "res://exchanger_theme_dlc/visuals/result_success.tscn",
+    "result.error": "res://exchanger_theme_dlc/visuals/result_error.tscn"
+  },
+  "FallbackColor": "#00183D",
+  "UseNearestTextureFilter": true
+}

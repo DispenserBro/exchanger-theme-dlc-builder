@@ -1,0 +1,408 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Theme" path="../ui_theme.tres" id="1_screen_theme"]
+[ext_resource type="Texture2D" path="../assets/background/background.png" id="2_screen_background"]
+[ext_resource type="PackedScene" path="../background_decoration.tscn" id="3_screen_decoration"]
+[ext_resource type="PackedScene" path="../components/footer.tscn" id="2_footer"]
+[ext_resource type="Texture2D" path="../assets/ui/interactive_pet/home.png" id="4_home_icon"]
+
+[node name="ThemeScreen_ServiceAccess" type="Control"]
+texture_filter = 1
+metadata/exchanger_screen_binding_id = "screen.service_access"
+metadata/exchanger_self_contained_visuals = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_screen_theme")
+
+[node name="ThemeBackground" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_screen_background")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BackgroundDecoration" parent="." instance=ExtResource("3_screen_decoration")]
+scale = Vector2(0.666667, 0.666667)
+
+[node name="PetNavigation" type="Node2D" parent="."]
+metadata/exchanger_pet_navigation_root = true
+metadata/exchanger_pet_navigation_version = 1
+metadata/exchanger_pet_default_surface_id = &"floor"
+metadata/exchanger_pet_roaming_bounds = Rect2(32, 32, 656, 1208)
+
+[node name="Floor" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"floor"
+metadata/exchanger_pet_surface_from_x = 40.0
+metadata/exchanger_pet_surface_to_x = 680.0
+metadata/exchanger_pet_surface_y = 1240.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(96, 360, 624)
+
+[node name="AccessWindow" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"access_window"
+metadata/exchanger_pet_surface_from_x = 60.0
+metadata/exchanger_pet_surface_to_x = 660.0
+metadata/exchanger_pet_surface_y = 152.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(360)
+
+[node name="KeypadRow1" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"keypad_row_1"
+metadata/exchanger_pet_surface_from_x = 180.0
+metadata/exchanger_pet_surface_to_x = 540.0
+metadata/exchanger_pet_surface_y = 318.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(236, 360, 484)
+
+[node name="KeypadRow2" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"keypad_row_2"
+metadata/exchanger_pet_surface_from_x = 180.0
+metadata/exchanger_pet_surface_to_x = 540.0
+metadata/exchanger_pet_surface_y = 442.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(236, 360, 484)
+
+[node name="KeypadRow3" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"keypad_row_3"
+metadata/exchanger_pet_surface_from_x = 180.0
+metadata/exchanger_pet_surface_to_x = 540.0
+metadata/exchanger_pet_surface_y = 566.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(236, 360, 484)
+
+[node name="KeypadRow4" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"keypad_row_4"
+metadata/exchanger_pet_surface_from_x = 180.0
+metadata/exchanger_pet_surface_to_x = 540.0
+metadata/exchanger_pet_surface_y = 690.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(236, 360, 484)
+
+[node name="EnterButton" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"enter_button"
+metadata/exchanger_pet_surface_from_x = 82.0
+metadata/exchanger_pet_surface_to_x = 638.0
+metadata/exchanger_pet_surface_y = 822.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(360)
+
+[node name="CancelButton" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"cancel_button"
+metadata/exchanger_pet_surface_from_x = 110.0
+metadata/exchanger_pet_surface_to_x = 610.0
+metadata/exchanger_pet_surface_y = 940.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(360)
+
+[node name="HomeNavigationButton" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"home_navigation_button"
+metadata/exchanger_pet_surface_from_x = 49.0
+metadata/exchanger_pet_surface_to_x = 101.0
+metadata/exchanger_pet_surface_y = 42.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(75)
+
+[node name="FloorToHomeNavigation" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_home_navigation"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"home_navigation_button"
+metadata/exchanger_pet_climb_x = 49.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 42.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToAccess" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_access"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"access_window"
+metadata/exchanger_pet_climb_x = 60.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 152.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToRow1" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_row_1"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"keypad_row_1"
+metadata/exchanger_pet_climb_x = 180.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 318.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToRow2" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_row_2"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"keypad_row_2"
+metadata/exchanger_pet_climb_x = 180.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 442.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToRow3" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_row_3"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"keypad_row_3"
+metadata/exchanger_pet_climb_x = 180.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 566.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToRow4" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_row_4"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"keypad_row_4"
+metadata/exchanger_pet_climb_x = 180.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 690.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToEnter" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_enter"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"enter_button"
+metadata/exchanger_pet_climb_x = 82.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 822.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToCancel" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_cancel"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"cancel_button"
+metadata/exchanger_pet_climb_x = 110.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 940.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="SafeMargin" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Content" type="Control" parent="SafeMargin"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HomeNavigationButton" type="Button" parent="SafeMargin/Content"]
+metadata/exchanger_binding_id = "service_access.content.home_navigation_button"
+layout_mode = 0
+offset_left = 49.0
+offset_top = 42.0
+offset_right = 101.0
+offset_bottom = 94.0
+tooltip_text = "ГЛАВНАЯ"
+theme_type_variation = &"KeypadButton"
+icon = ExtResource("4_home_icon")
+expand_icon = true
+icon_max_width = 30
+
+[node name="Header" type="Label" parent="SafeMargin/Content"]
+metadata/exchanger_binding_id = "service_access.content.header"
+layout_mode = 0
+offset_left = 40.0
+offset_top = 18.0
+offset_right = 680.0
+offset_bottom = 72.0
+theme_type_variation = &"ScreenTitle"
+theme_override_font_sizes/font_size = 30
+text = "ВХОД В НАСТРОЙКИ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="SafeMargin/Content"]
+metadata/exchanger_binding_id = "service_access.content.description"
+layout_mode = 0
+offset_left = 52.0
+offset_top = 78.0
+offset_right = 668.0
+offset_bottom = 140.0
+theme_type_variation = &"ScreenDescription"
+theme_override_font_sizes/font_size = 16
+text = "ВВЕДИТЕ PIN-КОД, ЧТОБЫ ОТКРЫТЬ НАСТРОЙКИ"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AccessPanel" type="PanelContainer" parent="SafeMargin/Content"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 152.0
+offset_right = 660.0
+offset_bottom = 916.0
+theme_type_variation = &"WhitePanel"
+
+[node name="Fields" type="VBoxContainer" parent="SafeMargin/Content/AccessPanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PinLabel" type="Label" parent="SafeMargin/Content/AccessPanel/Fields"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.pin_label"
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_type_variation = &"PanelTitle"
+text = "PIN-КОД"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PinDisplay" type="Label" parent="SafeMargin/Content/AccessPanel/Fields"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.pin_display"
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_type_variation = &"StatusText"
+theme_override_font_sizes/font_size = 34
+text = "—"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Status" type="Label" parent="SafeMargin/Content/AccessPanel/Fields"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.status"
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 2
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 17
+text = "ВВЕДИТЕ PIN-КОД"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="KeypadCenter" type="CenterContainer" parent="SafeMargin/Content/AccessPanel/Fields"]
+custom_minimum_size = Vector2(0, 484)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Keypad" type="GridContainer" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter"]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 3
+
+[node name="Digit1" type="Button" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter/Keypad"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.keypad.digit1"
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+theme_type_variation = &"KeypadButton"
+text = "1"
+
+[node name="Digit2" type="Button" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter/Keypad"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.keypad.digit2"
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+theme_type_variation = &"KeypadButton"
+text = "2"
+
+[node name="Digit3" type="Button" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter/Keypad"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.keypad.digit3"
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+theme_type_variation = &"KeypadButton"
+text = "3"
+
+[node name="Digit4" type="Button" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter/Keypad"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.keypad.digit4"
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+theme_type_variation = &"KeypadButton"
+text = "4"
+
+[node name="Digit5" type="Button" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter/Keypad"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.keypad.digit5"
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+theme_type_variation = &"KeypadButton"
+text = "5"
+
+[node name="Digit6" type="Button" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter/Keypad"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.keypad.digit6"
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+theme_type_variation = &"KeypadButton"
+text = "6"
+
+[node name="Digit7" type="Button" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter/Keypad"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.keypad.digit7"
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+theme_type_variation = &"KeypadButton"
+text = "7"
+
+[node name="Digit8" type="Button" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter/Keypad"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.keypad.digit8"
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+theme_type_variation = &"KeypadButton"
+text = "8"
+
+[node name="Digit9" type="Button" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter/Keypad"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.keypad.digit9"
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+theme_type_variation = &"KeypadButton"
+text = "9"
+
+[node name="Clear" type="Button" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter/Keypad"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.keypad.clear"
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+theme_type_variation = &"KeypadButton"
+theme_override_font_sizes/font_size = 16
+text = "СБРОС"
+
+[node name="Digit0" type="Button" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter/Keypad"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.keypad.digit0"
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+theme_type_variation = &"KeypadButton"
+text = "0"
+
+[node name="Erase" type="Button" parent="SafeMargin/Content/AccessPanel/Fields/KeypadCenter/Keypad"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.keypad.erase"
+custom_minimum_size = Vector2(112, 112)
+layout_mode = 2
+theme_type_variation = &"KeypadButton"
+text = "⌫"
+
+[node name="EnterButton" type="Button" parent="SafeMargin/Content/AccessPanel/Fields"]
+metadata/exchanger_binding_id = "service_access.content.access_panel.fields.enter_button"
+custom_minimum_size = Vector2(0, 76)
+layout_mode = 2
+theme_type_variation = &"PrimaryButton"
+theme_override_font_sizes/font_size = 30
+text = "ВОЙТИ"
+
+[node name="CancelButton" type="Button" parent="SafeMargin/Content"]
+metadata/exchanger_binding_id = "service_access.content.cancel_button"
+layout_mode = 0
+offset_left = 110.0
+offset_top = 940.0
+offset_right = 610.0
+offset_bottom = 1026.0
+theme_type_variation = &"CancelButton"
+text = "ОТМЕНА"
+
+[node name="Footer" parent="SafeMargin/Content" instance=ExtResource("2_footer")]
+layout_mode = 1

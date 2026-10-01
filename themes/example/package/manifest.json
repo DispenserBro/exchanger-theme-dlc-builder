@@ -1,0 +1,23 @@
+{
+  "Format": "ExchangerThemeDlc",
+  "FormatVersion": 2,
+  "ThemeId": "example",
+  "DisplayName": "Пример темы",
+  "UiThemePath": "res://exchanger_theme_dlc/ui_theme.tres",
+  "BackgroundTexturePath": "",
+  "BackgroundDecorationPath": "",
+  "BackgroundDecorationScale": 1.0,
+  "ScreenScenes": {
+    "screen.home": "res://exchanger_theme_dlc/scenes/screen_home.tscn",
+    "screen.cash_payment": "res://exchanger_theme_dlc/scenes/screen_cash_payment.tscn",
+    "screen.card_amount": "res://exchanger_theme_dlc/scenes/screen_card_amount.tscn",
+    "screen.card_custom_amount": "res://exchanger_theme_dlc/scenes/screen_card_custom_amount.tscn",
+    "screen.card_terminal": "res://exchanger_theme_dlc/scenes/screen_card_terminal.tscn",
+    "screen.success": "res://exchanger_theme_dlc/scenes/screen_success.tscn",
+    "screen.error": "res://exchanger_theme_dlc/scenes/screen_error.tscn",
+    "screen.service_access": "res://exchanger_theme_dlc/scenes/screen_service_access.tscn",
+    "screen.settings": "res://exchanger_theme_dlc/scenes/screen_settings.tscn"
+  },
+  "FallbackColor": "#101722",
+  "UseNearestTextureFilter": false
+}

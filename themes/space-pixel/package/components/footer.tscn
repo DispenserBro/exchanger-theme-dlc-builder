@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Texture2D" path="../assets/ui/logo.png" id="1_logo"]
+[ext_resource type="Script" path="../scripts/home_reference_label.gd" id="2_reference_label"]
+
+[node name="PreviewFooter" type="Control"]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -152.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="Logo" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -18.0
+offset_top = 24.0
+offset_right = 323.0
+offset_bottom = 109.0
+mouse_filter = 2
+texture = ExtResource("1_logo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Brand" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 1.0
+theme_type_variation = &"SupportText"
+text = "РАЗМЕН\nЖЕТОНОВ"
+
+[node name="Support" type="Label" parent="."]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 19.0
+offset_right = 677.0
+offset_bottom = 105.0
+theme_type_variation = &"SupportText"
+theme_override_constants/line_spacing = 10
+theme_override_font_sizes/font_size = 24
+text = "ТЕХ ПОДДЕРЖКА:\n+7-XXX-XXX-XX-XX"
+vertical_alignment = 1
+mouse_filter = 2
+pivot_offset = Vector2(0, 43)
+scale = Vector2(1.35, 1)
+script = ExtResource("2_reference_label")
+format_mode = "support"

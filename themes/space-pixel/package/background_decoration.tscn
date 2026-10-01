@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Texture2D" path="assets/decorations/stars_1.png" id="1_stars_1"]
+[ext_resource type="Texture2D" path="assets/decorations/stars_2.png" id="2_stars_2"]
+[ext_resource type="Texture2D" path="assets/animations/ufo_small/frame_01.png" id="3_ufo_small"]
+[ext_resource type="Texture2D" path="assets/animations/ufo_large/frame_01.png" id="4_ufo_large"]
+[ext_resource type="Texture2D" path="assets/animations/ufo_small/frame_02.png" id="5_ufo_small_2"]
+[ext_resource type="Texture2D" path="assets/animations/ufo_large/frame_02.png" id="6_ufo_large_2"]
+[ext_resource type="Script" path="scripts/ufo_flight_controller.gd" id="7_flight_controller"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_stars"]
+animations = [{
+"frames": [{"duration": 1.0, "texture": ExtResource("1_stars_1")}, {"duration": 1.0, "texture": ExtResource("2_stars_2")}],
+"loop": true,
+"name": &"twinkle",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ufo_large"]
+animations = [{
+"frames": [{"duration": 1.0, "texture": ExtResource("4_ufo_large")}, {"duration": 1.0, "texture": ExtResource("6_ufo_large_2")}],
+"loop": true,
+"name": &"flight",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ufo_small"]
+animations = [{
+"frames": [{"duration": 1.0, "texture": ExtResource("3_ufo_small")}, {"duration": 1.0, "texture": ExtResource("5_ufo_small_2")}],
+"loop": true,
+"name": &"flight",
+"speed": 1.5
+}]
+
+[node name="SpacePixelDecoration" type="Node2D"]
+script = ExtResource("7_flight_controller")
+
+[node name="Stars" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+modulate = Color(1, 1, 1, 0.72)
+position = Vector2(540, 960)
+sprite_frames = SubResource("SpriteFrames_stars")
+animation = &"twinkle"
+autoplay = "twinkle"
+
+[node name="UfoLarge" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-380, 1350)
+sprite_frames = SubResource("SpriteFrames_ufo_large")
+animation = &"flight"
+autoplay = "flight"
+
+[node name="UfoSmall" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-160, 1550)
+sprite_frames = SubResource("SpriteFrames_ufo_small")
+animation = &"flight"
+autoplay = "flight"

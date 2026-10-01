@@ -1,0 +1,191 @@
+[gd_scene format=3 uid="uid://cs8me8jggvo48"]
+
+[ext_resource type="PackedScene" path="res://preview_scenes/PreviewFooter.tscn" id="1_footer"]
+[ext_resource type="Texture2D" uid="uid://btsthd6xtskwu" path="res://exchanger_theme_dlc/assets/decorations/alien1.png" id="2_alien_left"]
+[ext_resource type="Texture2D" uid="uid://niifdcrv3ap" path="res://exchanger_theme_dlc/assets/decorations/alien2.png" id="3_alien_right"]
+[ext_resource type="Texture2D" uid="uid://bdyjsoj5lwxu0" path="res://exchanger_theme_dlc/assets/ui/bubble_text.png" id="4_bubble"]
+[ext_resource type="Texture2D" uid="uid://c0kbwcs8mic3f" path="res://exchanger_theme_dlc/assets/ui/billboard_ads.png" id="5_billboard"]
+
+[node name="HOME" type="Control" unique_id=388200253]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AlienLeft" type="TextureRect" parent="." unique_id=415598416]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 22.0
+offset_right = 172.0
+offset_bottom = 176.0
+mouse_filter = 2
+texture = ExtResource("2_alien_left")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PricePanel" type="PanelContainer" parent="." unique_id=952610858]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 24.0
+offset_right = 398.0
+offset_bottom = 184.0
+theme_type_variation = &"WhitePanel"
+
+[node name="Content" type="VBoxContainer" parent="PricePanel" unique_id=1295849823]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="Title" type="Label" parent="PricePanel/Content" unique_id=123962868]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_type_variation = &"PanelTitle"
+text = "ЦЕНА ЖЕТОНА"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Price" type="Label" parent="PricePanel/Content" unique_id=245845008]
+layout_mode = 2
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 32
+text = "10 РУБ."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AlienRight" type="TextureRect" parent="." unique_id=552282646]
+texture_filter = 1
+layout_mode = 0
+offset_left = 532.0
+offset_top = 26.0
+offset_right = 696.0
+offset_bottom = 190.0
+mouse_filter = 2
+texture = ExtResource("3_alien_right")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Speech" type="TextureRect" parent="." unique_id=1409022347]
+texture_filter = 1
+layout_mode = 0
+offset_left = 394.0
+offset_top = 30.0
+offset_right = 574.0
+offset_bottom = 122.0
+mouse_filter = 2
+texture = ExtResource("4_bubble")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SpeechText" type="Label" parent="." unique_id=545656950]
+layout_mode = 0
+offset_left = 412.0
+offset_top = 48.0
+offset_right = 548.0
+offset_bottom = 102.0
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 12
+text = "ПОЛУЧИ
+СВОИ ЖЕТОНЫ!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StockPanel" type="PanelContainer" parent="." unique_id=1108839080]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 206.0
+offset_right = 690.0
+offset_bottom = 340.0
+theme_type_variation = &"StatusPanel"
+
+[node name="Content" type="VBoxContainer" parent="StockPanel" unique_id=676038112]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="Title" type="Label" parent="StockPanel/Content" unique_id=2120524316]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+theme_type_variation = &"PanelTitle"
+text = "ДОСТУПНО К ВЫДАЧЕ"
+vertical_alignment = 1
+
+[node name="State" type="Label" parent="StockPanel/Content" unique_id=419001717]
+layout_mode = 2
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 29
+text = "МНОГО ЖЕТОНОВ :)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PaymentPanel" type="PanelContainer" parent="." unique_id=2009320934]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 360.0
+offset_right = 690.0
+offset_bottom = 548.0
+theme_type_variation = &"WhitePanel"
+
+[node name="Content" type="VBoxContainer" parent="PaymentPanel" unique_id=773738540]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="Title" type="Label" parent="PaymentPanel/Content" unique_id=706439829]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_type_variation = &"PanelTitle"
+text = "ВЫБЕРИТЕ СПОСОБ ОПЛАТЫ"
+vertical_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="PaymentPanel/Content" unique_id=1766802133]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Cash" type="Button" parent="PaymentPanel/Content/Buttons" unique_id=1036074934]
+custom_minimum_size = Vector2(280, 70)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "НАЛИЧНЫЕ"
+
+[node name="Card" type="Button" parent="PaymentPanel/Content/Buttons" unique_id=1970038171]
+custom_minimum_size = Vector2(280, 70)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "БЕЗНАЛИЧНЫЕ"
+
+[node name="AdvertisementFrame" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 590.0
+offset_right = 658.0
+offset_bottom = 938.0
+mouse_filter = 2
+theme_type_variation = &"AdvertisementPanel"
+
+[node name="Billboard" type="TextureRect" parent="." unique_id=943947521]
+texture_filter = 1
+layout_mode = 0
+offset_left = 72.0
+offset_top = 602.0
+offset_right = 648.0
+offset_bottom = 926.0
+mouse_filter = 2
+texture = ExtResource("5_billboard")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AdLabel" type="Label" parent="." unique_id=353224380]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 730.0
+offset_right = 546.0
+offset_bottom = 792.0
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 20
+text = "ПРОМО-БЛОК"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Footer" parent="." unique_id=279899163 instance=ExtResource("1_footer")]
+layout_mode = 1

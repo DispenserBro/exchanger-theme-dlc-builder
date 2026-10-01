@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://d252sroyl85e6"]
+
+[ext_resource type="Texture2D" path="res://themes/space-pixel/package/assets/background/background.png" id="1_background"]
+[ext_resource type="Theme" path="res://themes/space-pixel/package/ui_theme.tres" id="2_theme"]
+[ext_resource type="PackedScene" path="res://themes/space-pixel/package/background_decoration.tscn" id="3_decoration"]
+[ext_resource type="PackedScene" uid="uid://cs8me8jggvo48" path="res://preview_scenes/HomePreview.tscn" id="4_home"]
+[ext_resource type="PackedScene" uid="uid://cr4uwvtqa6nlw" path="res://preview_scenes/CashPreview.tscn" id="5_cash"]
+[ext_resource type="PackedScene" uid="uid://c4bbashsu0wad" path="res://preview_scenes/CardAmountPreview.tscn" id="6_sum"]
+[ext_resource type="PackedScene" uid="uid://dmbn0n0i8vyij" path="res://preview_scenes/CardCustomPreview.tscn" id="7_keypad"]
+[ext_resource type="PackedScene" uid="uid://dadn5uck0dn57" path="res://preview_scenes/CardTerminalPreview.tscn" id="8_card"]
+[ext_resource type="PackedScene" uid="uid://cyepwpigxpvau" path="res://preview_scenes/SuccessPreview.tscn" id="9_success"]
+[ext_resource type="PackedScene" uid="uid://bvynyjtfxum6i" path="res://preview_scenes/ErrorPreview.tscn" id="10_error"]
+[ext_resource type="Script" uid="uid://b0fuom2r8d6vj" path="res://preview_scenes/PreviewLiveReload.gd" id="11_live_reload"]
+[ext_resource type="PackedScene" path="res://preview_scenes/ServiceAccessPreview.tscn" id="12_service"]
+[ext_resource type="PackedScene" path="res://preview_scenes/SettingsPreview.tscn" id="13_settings"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tabs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_tab_unselected"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(0.005, 0.03, 0.09, 0.9)
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_tab_hovered"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(0.08, 0.28, 0.2, 0.96)
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_tab_selected"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(0.45, 0.86, 0.31, 0.98)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.72, 1, 0.58, 1)
+
+[node name="SpacePixelPreviewGallery" type="Control" unique_id=2025692250]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("11_live_reload")
+
+[node name="Background" type="TextureRect" parent="." unique_id=242445040]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_background")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Decoration" parent="." unique_id=1738874259 instance=ExtResource("3_decoration")]
+scale = Vector2(0.666667, 0.666667)
+
+[node name="Screens" type="TabContainer" parent="." unique_id=2074523310]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_selected_color = Color(0.02, 0.08, 0.18, 1)
+theme_override_colors/font_unselected_color = Color(0.92, 0.98, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tabs")
+theme_override_styles/tab_unselected = SubResource("StyleBox_tab_unselected")
+theme_override_styles/tab_hovered = SubResource("StyleBox_tab_hovered")
+theme_override_styles/tab_selected = SubResource("StyleBox_tab_selected")
+tab_alignment = 1
+current_tab = 0
+use_hidden_tabs_for_min_size = true
+
+[node name="HOME" parent="Screens" unique_id=1309203819 instance=ExtResource("4_home")]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="CASH" parent="Screens" unique_id=1335897324 instance=ExtResource("5_cash")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="SUM" parent="Screens" unique_id=467515431 instance=ExtResource("6_sum")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="KEYPAD" parent="Screens" unique_id=674122645 instance=ExtResource("7_keypad")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="CARD" parent="Screens" unique_id=883192782 instance=ExtResource("8_card")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="SUCCESS" parent="Screens" unique_id=1292278757 instance=ExtResource("9_success")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 5
+
+[node name="ERROR" parent="Screens" unique_id=2137224203 instance=ExtResource("10_error")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 6
+
+[node name="SERVICE" parent="Screens" unique_id=2084691589 instance=ExtResource("12_service")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 7
+
+[node name="SETTINGS" parent="Screens" unique_id=943449370 instance=ExtResource("13_settings")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 8

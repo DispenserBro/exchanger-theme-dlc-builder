@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Texture2D" path="../assets/decorations/alien3.png" id="1_alien"]
+[ext_resource type="Texture2D" path="../assets/ui/bubble_text.png" id="2_bubble"]
+
+[node name="CashTip" type="Control"]
+custom_minimum_size = Vector2(303, 125)
+mouse_filter = 2
+
+[node name="Bubble" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = -75.0
+offset_top = -1.0
+offset_right = 266.0
+offset_bottom = 84.0
+mouse_filter = 2
+texture = ExtResource("2_bubble")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="Header" type="Label" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 177.0
+offset_bottom = 35.0
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 11
+text = "ОЙ, СОВСЕМ ЗАБЫЛ:"
+vertical_alignment = 1
+pivot_offset = Vector2(0, 11.5)
+scale = Vector2(1.31, 1)
+
+[node name="Message" type="Label" parent="."]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 37.0
+offset_right = 180.0
+offset_bottom = 75.0
+theme_type_variation = &"PanelText"
+theme_override_colors/font_color = Color(0, 0.0627451, 0.552941, 1)
+theme_override_font_sizes/font_size = 11
+text = "АВТОМАТ ВЕДЬ\nСДАЧИ НЕ ДАЁТ!"
+vertical_alignment = 1
+pivot_offset = Vector2(0, 18)
+scale = Vector2(1.2, 1)
+
+[node name="Alien" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 146.0
+offset_top = -17.0
+offset_right = 317.0
+offset_bottom = 154.0
+mouse_filter = 2
+texture = ExtResource("1_alien")
+expand_mode = 1
+stretch_mode = 0

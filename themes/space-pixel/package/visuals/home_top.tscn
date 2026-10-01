@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Texture2D" path="../assets/decorations/alien1.png" id="1_left"]
+[ext_resource type="Texture2D" path="../assets/decorations/alien2.png" id="2_right"]
+[ext_resource type="Texture2D" path="../assets/ui/bubble_text.png" id="3_bubble"]
+[ext_resource type="Script" path="../scripts/home_ufo_bobbing.gd" id="4_bobbing"]
+
+[node name="HomeTop" type="Control"]
+custom_minimum_size = Vector2(720, 300)
+mouse_filter = 2
+script = ExtResource("4_bobbing")
+
+[node name="AlienLeft" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 17.0
+offset_top = 130.0
+offset_right = 187.0
+offset_bottom = 300.0
+mouse_filter = 2
+texture = ExtResource("1_left")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CustomTextBlock" type="Control" parent="."]
+metadata/exchanger_binding_id = "home.decoration.custom_text_block"
+mouse_filter = 2
+
+[node name="AlienRight" type="TextureRect" parent="CustomTextBlock"]
+metadata/exchanger_binding_id = "home.decoration.right_character"
+texture_filter = 1
+offset_left = 536.0
+offset_top = 83.0
+offset_right = 706.0
+offset_bottom = 253.0
+mouse_filter = 2
+texture = ExtResource("2_right")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Speech" type="TextureRect" parent="CustomTextBlock"]
+texture_filter = 1
+offset_left = 331.0
+offset_top = 59.0
+offset_right = 667.0
+offset_bottom = 141.0
+mouse_filter = 2
+texture = ExtResource("3_bubble")
+expand_mode = 1
+stretch_mode = 0

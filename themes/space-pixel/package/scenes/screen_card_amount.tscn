@@ -1,0 +1,873 @@
+[gd_scene load_steps=29 format=3]
+
+[ext_resource type="Theme" path="../ui_theme.tres" id="1_screen_theme"]
+[ext_resource type="Texture2D" path="../assets/background/background.png" id="2_screen_background"]
+[ext_resource type="PackedScene" path="../background_decoration.tscn" id="3_screen_decoration"]
+[ext_resource type="PackedScene" path="../components/footer.tscn" id="4_footer"]
+[ext_resource type="Texture2D" path="../assets/ui/button_long.png" id="5_button_long"]
+[ext_resource type="Texture2D" path="../assets/animations/banner/frame_01.png" id="6_banner_1"]
+[ext_resource type="Texture2D" path="../assets/animations/banner/frame_02.png" id="7_banner_2"]
+[ext_resource type="Texture2D" path="../assets/ui/panel_medium.png" id="8_panel_medium"]
+[ext_resource type="Texture2D" path="../assets/ui/button_big.png" id="9_button_big"]
+[ext_resource type="Script" path="../scripts/stable_banner_animation.gd" id="10_banner_script"]
+[ext_resource type="Texture2D" path="../assets/ui/interactive_pet/home.png" id="11_home_icon"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_card_amount_banner"]
+animations = [{"frames": [{"duration": 1.0, "texture": ExtResource("6_banner_1")}, {"duration": 1.0, "texture": ExtResource("7_banner_2")}], "loop": true, "name": &"default", "speed": 1.0}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBox_preset_normal"]
+content_margin_left = 16.0
+content_margin_top = 4.0
+content_margin_right = 16.0
+content_margin_bottom = 8.0
+texture = ExtResource("5_button_long")
+texture_margin_left = 20.0
+texture_margin_top = 16.0
+texture_margin_right = 20.0
+texture_margin_bottom = 16.0
+region_rect = Rect2(55, 0, 402, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBox_preset_hover"]
+content_margin_left = 16.0
+content_margin_top = 4.0
+content_margin_right = 16.0
+content_margin_bottom = 8.0
+texture = ExtResource("5_button_long")
+texture_margin_left = 20.0
+texture_margin_top = 16.0
+texture_margin_right = 20.0
+texture_margin_bottom = 16.0
+region_rect = Rect2(55, 0, 402, 64)
+modulate_color = Color(1.08, 1.08, 1.08, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBox_preset_pressed"]
+content_margin_left = 16.0
+content_margin_top = 6.0
+content_margin_right = 16.0
+content_margin_bottom = 6.0
+texture = ExtResource("5_button_long")
+texture_margin_left = 20.0
+texture_margin_top = 16.0
+texture_margin_right = 20.0
+texture_margin_bottom = 16.0
+region_rect = Rect2(55, 0, 402, 64)
+modulate_color = Color(0.78, 0.84, 0.8, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBox_preset_disabled"]
+content_margin_left = 16.0
+content_margin_top = 4.0
+content_margin_right = 16.0
+content_margin_bottom = 8.0
+texture = ExtResource("5_button_long")
+texture_margin_left = 20.0
+texture_margin_top = 16.0
+texture_margin_right = 20.0
+texture_margin_bottom = 16.0
+region_rect = Rect2(55, 0, 402, 64)
+modulate_color = Color(0.42, 0.48, 0.54, 0.72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_panel_header"]
+atlas = ExtResource("8_panel_medium")
+region = Rect2(4, 34, 504, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_panel_body"]
+atlas = ExtResource("8_panel_medium")
+region = Rect2(5, 102, 502, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_panel_bottom"]
+atlas = ExtResource("8_panel_medium")
+region = Rect2(5, 200, 502, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_reward_panel"]
+atlas = ExtResource("8_panel_medium")
+region = Rect2(4, 34, 504, 186)
+
+[sub_resource type="StyleBoxTexture" id="StyleBox_confirm_normal"]
+content_margin_left = 40.0
+content_margin_top = 11.0
+content_margin_right = 30.0
+content_margin_bottom = 18.0
+texture = ExtResource("9_button_big")
+texture_margin_left = 28.0
+texture_margin_top = 24.0
+texture_margin_right = 28.0
+texture_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBox_confirm_hover"]
+content_margin_left = 40.0
+content_margin_top = 11.0
+content_margin_right = 30.0
+content_margin_bottom = 18.0
+texture = ExtResource("9_button_big")
+texture_margin_left = 28.0
+texture_margin_top = 24.0
+texture_margin_right = 28.0
+texture_margin_bottom = 24.0
+modulate_color = Color(1.12, 1.12, 1.12, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBox_confirm_pressed"]
+content_margin_left = 40.0
+content_margin_top = 13.0
+content_margin_right = 30.0
+content_margin_bottom = 16.0
+texture = ExtResource("9_button_big")
+texture_margin_left = 28.0
+texture_margin_top = 24.0
+texture_margin_right = 28.0
+texture_margin_bottom = 24.0
+modulate_color = Color(0.72, 0.8, 0.76, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBox_confirm_disabled"]
+content_margin_left = 40.0
+content_margin_top = 11.0
+content_margin_right = 30.0
+content_margin_bottom = 18.0
+texture = ExtResource("9_button_big")
+texture_margin_left = 28.0
+texture_margin_top = 24.0
+texture_margin_right = 28.0
+texture_margin_bottom = 24.0
+modulate_color = Color(0.42, 0.48, 0.54, 0.72)
+
+[sub_resource type="StyleBoxTexture" id="StyleBox_other_normal"]
+content_margin_left = 17.0
+content_margin_top = 6.0
+content_margin_right = 16.0
+content_margin_bottom = 6.0
+texture = ExtResource("5_button_long")
+texture_margin_left = 20.0
+texture_margin_top = 16.0
+texture_margin_right = 20.0
+texture_margin_bottom = 16.0
+region_rect = Rect2(55, 0, 402, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBox_other_hover"]
+content_margin_left = 17.0
+content_margin_top = 6.0
+content_margin_right = 16.0
+content_margin_bottom = 6.0
+texture = ExtResource("5_button_long")
+texture_margin_left = 20.0
+texture_margin_top = 16.0
+texture_margin_right = 20.0
+texture_margin_bottom = 16.0
+region_rect = Rect2(55, 0, 402, 64)
+modulate_color = Color(1.08, 1.08, 1.08, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBox_other_pressed"]
+content_margin_left = 17.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 4.0
+texture = ExtResource("5_button_long")
+texture_margin_left = 20.0
+texture_margin_top = 16.0
+texture_margin_right = 20.0
+texture_margin_bottom = 16.0
+region_rect = Rect2(55, 0, 402, 64)
+modulate_color = Color(0.78, 0.84, 0.8, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBox_other_disabled"]
+content_margin_left = 17.0
+content_margin_top = 6.0
+content_margin_right = 16.0
+content_margin_bottom = 6.0
+texture = ExtResource("5_button_long")
+texture_margin_left = 20.0
+texture_margin_top = 16.0
+texture_margin_right = 20.0
+texture_margin_bottom = 16.0
+region_rect = Rect2(55, 0, 402, 64)
+modulate_color = Color(0.42, 0.48, 0.54, 0.72)
+
+[node name="ThemeScreen_CardAmount" type="Control"]
+texture_filter = 1
+metadata/exchanger_screen_binding_id = "screen.card_amount"
+metadata/exchanger_self_contained_visuals = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_screen_theme")
+
+[node name="ThemeBackground" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_screen_background")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BackgroundDecoration" parent="." instance=ExtResource("3_screen_decoration")]
+scale = Vector2(0.666667, 0.666667)
+
+[node name="PetNavigation" type="Node2D" parent="."]
+metadata/exchanger_pet_navigation_root = true
+metadata/exchanger_pet_navigation_version = 1
+metadata/exchanger_pet_default_surface_id = &"floor"
+metadata/exchanger_pet_roaming_bounds = Rect2(32, 32, 656, 1208)
+
+[node name="Floor" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"floor"
+metadata/exchanger_pet_surface_from_x = 40.0
+metadata/exchanger_pet_surface_to_x = 680.0
+metadata/exchanger_pet_surface_y = 1240.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(96, 360, 624)
+
+[node name="BackButton" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"back_button"
+metadata/exchanger_pet_surface_from_x = 49.0
+metadata/exchanger_pet_surface_to_x = 161.0
+metadata/exchanger_pet_surface_y = 43.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(72.5, 135)
+
+[node name="RewardWindow" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"reward_window"
+metadata/exchanger_pet_surface_from_x = 38.0
+metadata/exchanger_pet_surface_to_x = 684.0
+metadata/exchanger_pet_surface_y = 160.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(360)
+
+[node name="AmountWindow" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"amount_window"
+metadata/exchanger_pet_surface_from_x = 38.0
+metadata/exchanger_pet_surface_to_x = 684.0
+metadata/exchanger_pet_surface_y = 350.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(360)
+
+[node name="PresetRow1" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"preset_row_1"
+metadata/exchanger_pet_surface_from_x = 76.0
+metadata/exchanger_pet_surface_to_x = 605.0
+metadata/exchanger_pet_surface_y = 451.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(192, 488)
+
+[node name="PresetRow2" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"preset_row_2"
+metadata/exchanger_pet_surface_from_x = 76.0
+metadata/exchanger_pet_surface_to_x = 605.0
+metadata/exchanger_pet_surface_y = 511.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(192, 488)
+
+[node name="PresetRow3" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"preset_row_3"
+metadata/exchanger_pet_surface_from_x = 76.0
+metadata/exchanger_pet_surface_to_x = 605.0
+metadata/exchanger_pet_surface_y = 571.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(192, 488)
+
+[node name="PresetRow4" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"preset_row_4"
+metadata/exchanger_pet_surface_from_x = 76.0
+metadata/exchanger_pet_surface_to_x = 605.0
+metadata/exchanger_pet_surface_y = 631.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(192, 488)
+
+[node name="OtherAmountButton" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"other_amount_button"
+metadata/exchanger_pet_surface_from_x = 224.0
+metadata/exchanger_pet_surface_to_x = 451.0
+metadata/exchanger_pet_surface_y = 704.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(337.5)
+
+[node name="ConfirmButton" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"confirm_button"
+metadata/exchanger_pet_surface_from_x = 34.0
+metadata/exchanger_pet_surface_to_x = 571.5
+metadata/exchanger_pet_surface_y = 873.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(303)
+
+[node name="FloorToBack" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_back"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"back_button"
+metadata/exchanger_pet_climb_x = 49.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 43.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToReward" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_reward"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"reward_window"
+metadata/exchanger_pet_climb_x = 40.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 160.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToAmount" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_amount"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"amount_window"
+metadata/exchanger_pet_climb_x = 40.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 350.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToPreset1" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_preset_1"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"preset_row_1"
+metadata/exchanger_pet_climb_x = 76.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 451.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToPreset2" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_preset_2"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"preset_row_2"
+metadata/exchanger_pet_climb_x = 76.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 511.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToPreset3" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_preset_3"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"preset_row_3"
+metadata/exchanger_pet_climb_x = 76.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 571.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToPreset4" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_preset_4"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"preset_row_4"
+metadata/exchanger_pet_climb_x = 76.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 631.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToOther" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_other"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"other_amount_button"
+metadata/exchanger_pet_climb_x = 224.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 704.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToConfirm" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_confirm"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"confirm_button"
+metadata/exchanger_pet_climb_x = 40.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 873.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="SafeMargin" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Content" type="Control" parent="SafeMargin"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopBar" type="Control" parent="SafeMargin/Content"]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 122.0
+
+[node name="BackButton" type="Button" parent="SafeMargin/Content/TopBar"]
+metadata/exchanger_binding_id = "card_amount.content.top_bar.back_button"
+layout_mode = 0
+offset_left = 49.0
+offset_top = 43.0
+offset_right = 96.0
+offset_bottom = 90.0
+theme_type_variation = &"BackButton"
+
+[node name="HomeNavigationButton" type="Button" parent="SafeMargin/Content/TopBar"]
+metadata/exchanger_binding_id = "card_amount.content.top_bar.home_navigation_button"
+layout_mode = 0
+offset_left = 109.0
+offset_top = 42.0
+offset_right = 161.0
+offset_bottom = 94.0
+tooltip_text = "ГЛАВНАЯ"
+theme_type_variation = &"KeypadButton"
+icon = ExtResource("11_home_icon")
+expand_icon = true
+icon_max_width = 30
+
+[node name="BackText" type="Label" parent="SafeMargin/Content/TopBar"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 94.0
+offset_right = 108.0
+offset_bottom = 118.0
+mouse_filter = 2
+theme_type_variation = &"SupportText"
+theme_override_font_sizes/font_size = 14
+text = "НАЗАД"
+horizontal_alignment = 1
+pivot_offset = Vector2(35.5, 12)
+scale = Vector2(1.45, 1)
+
+[node name="Title" type="Label" parent="SafeMargin/Content"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 44.0
+offset_right = 728.0
+offset_bottom = 108.0
+theme_type_variation = &"ScreenTitle"
+text = "ОПЛАТА КАРТОЙ"
+horizontal_alignment = 1
+pivot_offset = Vector2(264, 32)
+scale = Vector2(1.35, 1)
+
+[node name="RewardPanel" type="PanelContainer" parent="SafeMargin/Content"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 148.0
+offset_right = 685.0
+offset_bottom = 273.0
+theme_type_variation = &"ReferencePanel"
+
+[node name="Content" type="Control" parent="SafeMargin/Content/RewardPanel"]
+layout_mode = 2
+
+[node name="PanelTexture" type="TextureRect" parent="SafeMargin/Content/RewardPanel/Content"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -22.0
+offset_top = -10.0
+offset_right = 22.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_reward_panel")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="Header" type="Label" parent="SafeMargin/Content/RewardPanel/Content"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -9.0
+offset_right = 370.0
+offset_bottom = 34.0
+theme_type_variation = &"PanelTitle"
+text = "К ВЫДАЧЕ"
+vertical_alignment = 1
+pivot_offset = Vector2(0, 21)
+scale = Vector2(1.21, 1)
+
+[node name="Value" type="Label" parent="SafeMargin/Content/RewardPanel/Content"]
+metadata/exchanger_binding_id = "card_amount.content.reward_panel.content.value"
+layout_mode = 0
+offset_left = 2.0
+offset_top = 37.0
+offset_right = 300.0
+offset_bottom = 108.0
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 27
+text = "ВЫБЕРИТЕ СУММУ"
+vertical_alignment = 1
+pivot_offset = Vector2(0, 33.5)
+scale = Vector2(1.25, 1)
+
+[node name="Bonus" type="Label" parent="SafeMargin/Content/RewardPanel/Content"]
+metadata/exchanger_binding_id = "card_amount.content.reward_panel.content.bonus"
+layout_mode = 0
+offset_left = 295.0
+offset_top = 35.0
+offset_right = 595.0
+offset_bottom = 110.0
+theme_type_variation = &"PanelText"
+theme_override_colors/font_color = Color(0, 0.0627451, 0.552941, 1)
+theme_override_font_sizes/font_size = 25
+text = "БЕЗ БОНУСА"
+horizontal_alignment = 1
+vertical_alignment = 1
+pivot_offset = Vector2(150, 35.5)
+scale = Vector2(1.35, 1)
+
+[node name="AmountPanel" type="Control" parent="SafeMargin/Content"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 350.0
+offset_right = 684.0
+offset_bottom = 814.0
+
+[node name="Chrome" type="PanelContainer" parent="SafeMargin/Content/AmountPanel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_type_variation = &"ReferencePanel"
+
+[node name="BackgroundHeader" type="TextureRect" parent="SafeMargin/Content/AmountPanel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -3.0
+offset_right = 645.0
+offset_bottom = 46.0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_panel_header")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="BackgroundBody" type="TextureRect" parent="SafeMargin/Content/AmountPanel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -4.0
+offset_top = 46.0
+offset_right = 648.0
+offset_bottom = 456.0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_panel_body")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="BackgroundBottom" type="TextureRect" parent="SafeMargin/Content/AmountPanel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -4.0
+offset_top = 456.0
+offset_right = 648.0
+offset_bottom = 464.0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_panel_bottom")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="BottomBorder" type="ColorRect" parent="SafeMargin/Content/AmountPanel"]
+visible = false
+layout_mode = 0
+offset_left = 3.0
+offset_top = 462.0
+offset_right = 640.0
+offset_bottom = 464.0
+mouse_filter = 2
+color = Color(0.52549, 0.823529, 0.478431, 1)
+
+[node name="WhiteBody" type="ColorRect" parent="SafeMargin/Content/AmountPanel"]
+visible = false
+layout_mode = 0
+offset_left = 4.0
+offset_top = 44.0
+offset_right = 642.0
+offset_bottom = 463.0
+mouse_filter = 2
+color = Color(1, 1, 1, 1)
+
+[node name="Divider" type="ColorRect" parent="SafeMargin/Content/AmountPanel"]
+visible = false
+layout_mode = 0
+offset_left = 4.0
+offset_top = 44.0
+offset_right = 642.0
+offset_bottom = 47.0
+mouse_filter = 2
+color = Color(0.82, 0.77, 0.89, 1)
+
+[node name="Header" type="Label" parent="SafeMargin/Content/AmountPanel"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 0.0
+offset_right = 620.0
+offset_bottom = 44.0
+theme_type_variation = &"PanelTitle"
+theme_override_font_sizes/font_size = 30
+text = "ОПЛАТА"
+vertical_alignment = 1
+pivot_offset = Vector2(0, 22)
+scale = Vector2(1.125, 1)
+
+[node name="Margin" type="Control" parent="SafeMargin/Content/AmountPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Content" type="Control" parent="SafeMargin/Content/AmountPanel/Margin"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PresetGrid" type="GridContainer" parent="SafeMargin/Content/AmountPanel/Margin/Content"]
+metadata/exchanger_binding_id = "card_amount.content.amount_panel.margin.content.preset_grid"
+layout_mode = 0
+offset_left = 38.0
+offset_top = 101.0
+offset_right = 604.0
+offset_bottom = 325.0
+pivot_offset = Vector2(0, 112.5)
+scale = Vector2(1.16, 1)
+theme_override_constants/h_separation = 22
+theme_override_constants/v_separation = 15
+columns = 2
+
+[node name="PresetSlot00" type="Button" parent="SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid"]
+metadata/exchanger_binding_id = "card_amount.content.amount_panel.margin.content.preset_grid.slot_00"
+custom_minimum_size = Vector2(233, 45)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+theme_override_styles/disabled = SubResource("StyleBox_preset_disabled")
+theme_override_styles/hover = SubResource("StyleBox_preset_hover")
+theme_override_styles/normal = SubResource("StyleBox_preset_normal")
+theme_override_styles/pressed = SubResource("StyleBox_preset_pressed")
+text = "10 РУБ."
+theme_override_font_sizes/font_size = 28
+
+[node name="PresetSlot01" type="Button" parent="SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid"]
+metadata/exchanger_binding_id = "card_amount.content.amount_panel.margin.content.preset_grid.slot_01"
+custom_minimum_size = Vector2(233, 45)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+theme_override_styles/disabled = SubResource("StyleBox_preset_disabled")
+theme_override_styles/hover = SubResource("StyleBox_preset_hover")
+theme_override_styles/normal = SubResource("StyleBox_preset_normal")
+theme_override_styles/pressed = SubResource("StyleBox_preset_pressed")
+text = "50 РУБ."
+theme_override_font_sizes/font_size = 28
+
+[node name="PresetSlot02" type="Button" parent="SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid"]
+metadata/exchanger_binding_id = "card_amount.content.amount_panel.margin.content.preset_grid.slot_02"
+custom_minimum_size = Vector2(233, 45)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+theme_override_styles/disabled = SubResource("StyleBox_preset_disabled")
+theme_override_styles/hover = SubResource("StyleBox_preset_hover")
+theme_override_styles/normal = SubResource("StyleBox_preset_normal")
+theme_override_styles/pressed = SubResource("StyleBox_preset_pressed")
+text = "100 РУБ."
+theme_override_font_sizes/font_size = 28
+
+[node name="PresetSlot03" type="Button" parent="SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid"]
+metadata/exchanger_binding_id = "card_amount.content.amount_panel.margin.content.preset_grid.slot_03"
+custom_minimum_size = Vector2(233, 45)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+theme_override_styles/disabled = SubResource("StyleBox_preset_disabled")
+theme_override_styles/hover = SubResource("StyleBox_preset_hover")
+theme_override_styles/normal = SubResource("StyleBox_preset_normal")
+theme_override_styles/pressed = SubResource("StyleBox_preset_pressed")
+text = "150 РУБ."
+theme_override_font_sizes/font_size = 28
+
+[node name="PresetSlot04" type="Button" parent="SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid"]
+metadata/exchanger_binding_id = "card_amount.content.amount_panel.margin.content.preset_grid.slot_04"
+custom_minimum_size = Vector2(233, 45)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+theme_override_styles/disabled = SubResource("StyleBox_preset_disabled")
+theme_override_styles/hover = SubResource("StyleBox_preset_hover")
+theme_override_styles/normal = SubResource("StyleBox_preset_normal")
+theme_override_styles/pressed = SubResource("StyleBox_preset_pressed")
+text = "200 РУБ."
+theme_override_font_sizes/font_size = 28
+
+[node name="PresetSlot05" type="Button" parent="SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid"]
+metadata/exchanger_binding_id = "card_amount.content.amount_panel.margin.content.preset_grid.slot_05"
+custom_minimum_size = Vector2(233, 45)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+theme_override_styles/disabled = SubResource("StyleBox_preset_disabled")
+theme_override_styles/hover = SubResource("StyleBox_preset_hover")
+theme_override_styles/normal = SubResource("StyleBox_preset_normal")
+theme_override_styles/pressed = SubResource("StyleBox_preset_pressed")
+text = "300 РУБ."
+theme_override_font_sizes/font_size = 28
+
+[node name="PresetSlot06" type="Button" parent="SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid"]
+metadata/exchanger_binding_id = "card_amount.content.amount_panel.margin.content.preset_grid.slot_06"
+custom_minimum_size = Vector2(233, 45)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+theme_override_styles/disabled = SubResource("StyleBox_preset_disabled")
+theme_override_styles/hover = SubResource("StyleBox_preset_hover")
+theme_override_styles/normal = SubResource("StyleBox_preset_normal")
+theme_override_styles/pressed = SubResource("StyleBox_preset_pressed")
+text = "400 РУБ."
+theme_override_font_sizes/font_size = 28
+
+[node name="PresetSlot07" type="Button" parent="SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid"]
+metadata/exchanger_binding_id = "card_amount.content.amount_panel.margin.content.preset_grid.slot_07"
+custom_minimum_size = Vector2(233, 45)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+theme_override_styles/disabled = SubResource("StyleBox_preset_disabled")
+theme_override_styles/hover = SubResource("StyleBox_preset_hover")
+theme_override_styles/normal = SubResource("StyleBox_preset_normal")
+theme_override_styles/pressed = SubResource("StyleBox_preset_pressed")
+text = "500 РУБ."
+theme_override_font_sizes/font_size = 28
+
+[node name="PresetSlot08" type="Button" parent="SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid"]
+metadata/exchanger_binding_id = "card_amount.content.amount_panel.margin.content.preset_grid.slot_08"
+visible = false
+custom_minimum_size = Vector2(200, 45)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "0 РУБ."
+
+[node name="PresetSlot09" type="Button" parent="SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid"]
+metadata/exchanger_binding_id = "card_amount.content.amount_panel.margin.content.preset_grid.slot_09"
+visible = false
+custom_minimum_size = Vector2(200, 45)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "0 РУБ."
+
+[node name="PresetSlot10" type="Button" parent="SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid"]
+metadata/exchanger_binding_id = "card_amount.content.amount_panel.margin.content.preset_grid.slot_10"
+visible = false
+custom_minimum_size = Vector2(200, 45)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "0 РУБ."
+
+[node name="PresetSlot11" type="Button" parent="SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid"]
+metadata/exchanger_binding_id = "card_amount.content.amount_panel.margin.content.preset_grid.slot_11"
+visible = false
+custom_minimum_size = Vector2(200, 45)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "0 РУБ."
+
+[node name="PresetSlot12" type="Button" parent="SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid"]
+metadata/exchanger_binding_id = "card_amount.content.amount_panel.margin.content.preset_grid.slot_12"
+visible = false
+custom_minimum_size = Vector2(200, 45)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "0 РУБ."
+
+[node name="PresetSlot13" type="Button" parent="SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid"]
+metadata/exchanger_binding_id = "card_amount.content.amount_panel.margin.content.preset_grid.slot_13"
+visible = false
+custom_minimum_size = Vector2(200, 45)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "0 РУБ."
+
+[node name="PresetSlot14" type="Button" parent="SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid"]
+metadata/exchanger_binding_id = "card_amount.content.amount_panel.margin.content.preset_grid.slot_14"
+visible = false
+custom_minimum_size = Vector2(200, 45)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "0 РУБ."
+
+[node name="PresetSlot15" type="Button" parent="SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid"]
+metadata/exchanger_binding_id = "card_amount.content.amount_panel.margin.content.preset_grid.slot_15"
+visible = false
+custom_minimum_size = Vector2(200, 45)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "0 РУБ."
+
+[node name="OtherAmountButton" type="Button" parent="SafeMargin/Content/AmountPanel/Margin/Content"]
+metadata/exchanger_binding_id = "card_amount.content.amount_panel.margin.content.other_amount_button"
+layout_mode = 0
+offset_left = 186.0
+offset_top = 354.0
+offset_right = 409.5
+offset_bottom = 399.0
+pivot_offset = Vector2(0, 22.5)
+scale = Vector2(1.208, 1)
+theme_type_variation = &"CompactButton"
+theme_override_styles/disabled = SubResource("StyleBox_other_disabled")
+theme_override_styles/hover = SubResource("StyleBox_other_hover")
+theme_override_styles/normal = SubResource("StyleBox_other_normal")
+theme_override_styles/pressed = SubResource("StyleBox_other_pressed")
+text = "ДРУГАЯ СУММА"
+theme_override_font_sizes/font_size = 27
+
+[node name="ConfirmButton" type="Button" parent="SafeMargin/Content"]
+metadata/exchanger_binding_id = "card_amount.content.confirm_button"
+layout_mode = 0
+offset_left = 34.0
+offset_top = 873.0
+offset_right = 571.5
+offset_bottom = 949.0
+pivot_offset = Vector2(0, 38)
+scale = Vector2(1.2, 1)
+theme_type_variation = &"PrimaryButton"
+theme_override_font_sizes/font_size = 45
+theme_override_styles/disabled = SubResource("StyleBox_confirm_disabled")
+theme_override_styles/hover = SubResource("StyleBox_confirm_hover")
+theme_override_styles/normal = SubResource("StyleBox_confirm_normal")
+theme_override_styles/pressed = SubResource("StyleBox_confirm_pressed")
+text = "ПОДТВЕРДИТЬ"
+
+[node name="BottomTip" type="Control" parent="SafeMargin/Content"]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 1128.0
+mouse_filter = 2
+
+[node name="Banner" type="AnimatedSprite2D" parent="SafeMargin/Content/BottomTip"]
+texture_filter = 1
+position = Vector2(376.5, 1067.5)
+scale = Vector2(0.667, 0.667)
+sprite_frames = SubResource("SpriteFrames_card_amount_banner")
+autoplay = "default"
+script = ExtResource("10_banner_script")
+
+[node name="SelectionLabel" type="Label" parent="SafeMargin/Content"]
+metadata/exchanger_binding_id = "card_amount.content.selection_label"
+layout_mode = 0
+offset_left = 225.0
+offset_top = 1022.0
+offset_right = 660.0
+offset_bottom = 1092.0
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Footer" parent="SafeMargin/Content" instance=ExtResource("4_footer")]
+layout_mode = 1

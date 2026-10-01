@@ -1,0 +1,21 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Texture2D" path="../assets/animations/payment_success/frame_01.png" id="1"]
+[ext_resource type="Texture2D" path="../assets/animations/payment_success/frame_02.png" id="2"]
+[ext_resource type="Texture2D" path="../assets/animations/payment_success/frame_03.png" id="3"]
+[ext_resource type="Texture2D" path="../assets/animations/payment_success/frame_04.png" id="4"]
+[ext_resource type="Texture2D" path="../assets/animations/payment_success/frame_05.png" id="5"]
+
+[sub_resource type="SpriteFrames" id="Frames"]
+animations = [{"frames": [{"duration": 1.0, "texture": ExtResource("1")}, {"duration": 1.0, "texture": ExtResource("2")}, {"duration": 1.0, "texture": ExtResource("3")}, {"duration": 1.0, "texture": ExtResource("4")}, {"duration": 1.0, "texture": ExtResource("5")}], "loop": true, "name": &"default", "speed": 5.0}]
+
+[node name="ResultSuccess" type="Control"]
+custom_minimum_size = Vector2(484, 538)
+mouse_filter = 2
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(242, 220)
+scale = Vector2(0.72, 0.72)
+sprite_frames = SubResource("Frames")
+autoplay = "default"

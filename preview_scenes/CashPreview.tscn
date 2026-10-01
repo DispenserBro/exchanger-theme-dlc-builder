@@ -1,0 +1,222 @@
+[gd_scene format=3 uid="uid://cr4uwvtqa6nlw"]
+
+[ext_resource type="PackedScene" path="res://preview_scenes/PreviewFooter.tscn" id="1_footer"]
+[ext_resource type="Texture2D" uid="uid://sntindr0yqtc" path="res://exchanger_theme_dlc/assets/ui/back_button.png" id="2_back"]
+[ext_resource type="Texture2D" uid="uid://co8f6snofsikl" path="res://exchanger_theme_dlc/assets/animations/bill/frame_01.png" id="3_bill_1"]
+[ext_resource type="Texture2D" uid="uid://dfobk36rg1j0q" path="res://exchanger_theme_dlc/assets/animations/bill/frame_02.png" id="4_bill_2"]
+[ext_resource type="Texture2D" uid="uid://bcpdaecm5egr8" path="res://exchanger_theme_dlc/assets/animations/bill/frame_03.png" id="5_bill_3"]
+[ext_resource type="Texture2D" uid="uid://cl2qmi0ieqhd" path="res://exchanger_theme_dlc/assets/animations/bill/frame_04.png" id="6_bill_4"]
+[ext_resource type="Texture2D" uid="uid://sv5r7i74bs5" path="res://exchanger_theme_dlc/assets/animations/coin/frame_01.png" id="7_coin_1"]
+[ext_resource type="Texture2D" uid="uid://d2iaks2d6flqb" path="res://exchanger_theme_dlc/assets/animations/coin/frame_02.png" id="8_coin_2"]
+[ext_resource type="Texture2D" uid="uid://ddo0fm0ophvci" path="res://exchanger_theme_dlc/assets/animations/coin/frame_03.png" id="9_coin_3"]
+[ext_resource type="Texture2D" uid="uid://wxf81owt4q13" path="res://exchanger_theme_dlc/assets/decorations/alien3.png" id="10_alien"]
+[ext_resource type="Texture2D" uid="uid://bdyjsoj5lwxu0" path="res://exchanger_theme_dlc/assets/ui/bubble_text.png" id="11_bubble"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bill"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bill_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bill_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bill_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bill_4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_coin"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_coin_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_coin_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_coin_3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="CASH" type="Control" unique_id=617693511]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackIcon" type="TextureRect" parent="." unique_id=46384435]
+texture_filter = 1
+layout_mode = 0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 76.0
+offset_bottom = 68.0
+texture = ExtResource("2_back")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BackText" type="Label" parent="." unique_id=2102036995]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 66.0
+offset_right = 84.0
+offset_bottom = 92.0
+theme_type_variation = &"SupportText"
+theme_override_font_sizes/font_size = 13
+text = "НАЗАД"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="." unique_id=382438172]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 20.0
+offset_right = 696.0
+offset_bottom = 80.0
+theme_type_variation = &"ScreenTitle"
+text = "ОПЛАТА НАЛИЧНЫМИ"
+horizontal_alignment = 1
+
+[node name="BalancePanel" type="PanelContainer" parent="." unique_id=744516633]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 108.0
+offset_right = 686.0
+offset_bottom = 244.0
+theme_type_variation = &"WhitePanel"
+
+[node name="Content" type="VBoxContainer" parent="BalancePanel" unique_id=677837882]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="Header" type="Label" parent="BalancePanel/Content" unique_id=1604443831]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+theme_type_variation = &"PanelTitle"
+text = "ТЕКУЩИЙ БАЛАНС"
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="BalancePanel/Content" unique_id=530140376]
+layout_mode = 2
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 30
+text = "100 РУБЛЕЙ  •  10 ЖЕТОНОВ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InstructionPanel" type="PanelContainer" parent="." unique_id=1702548195]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 264.0
+offset_right = 686.0
+offset_bottom = 750.0
+theme_type_variation = &"WhitePanel"
+
+[node name="Content" type="VBoxContainer" parent="InstructionPanel" unique_id=1466233221]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="Header" type="Label" parent="InstructionPanel/Content" unique_id=249944596]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_type_variation = &"PanelTitle"
+text = "КАК ВНЕСТИ"
+vertical_alignment = 1
+
+[node name="Body" type="Control" parent="InstructionPanel/Content" unique_id=1172503487]
+custom_minimum_size = Vector2(0, 380)
+layout_mode = 2
+
+[node name="Bill" type="AnimatedSprite2D" parent="InstructionPanel/Content/Body" unique_id=1473978289]
+texture_filter = 1
+position = Vector2(108, 106)
+scale = Vector2(0.52, 0.52)
+sprite_frames = SubResource("SpriteFrames_bill")
+autoplay = "default"
+
+[node name="BillText" type="Label" parent="InstructionPanel/Content/Body" unique_id=1142826781]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 58.0
+offset_right = 566.0
+offset_bottom = 154.0
+theme_type_variation = &"PanelText"
+text = "ВСТАВЬТЕ КУПЮРЫ
+В КУПЮРОПРИЁМНИК"
+vertical_alignment = 1
+
+[node name="Coin" type="AnimatedSprite2D" parent="InstructionPanel/Content/Body" unique_id=839503345]
+texture_filter = 1
+position = Vector2(108, 274)
+scale = Vector2(0.52, 0.52)
+sprite_frames = SubResource("SpriteFrames_coin")
+autoplay = "default"
+
+[node name="CoinText" type="Label" parent="InstructionPanel/Content/Body" unique_id=1769314122]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 224.0
+offset_right = 566.0
+offset_bottom = 326.0
+theme_type_variation = &"PanelText"
+text = "ЛИБО МОНЕТЫ
+В МОНЕТОПРИЕМНИК"
+vertical_alignment = 1
+
+[node name="Action" type="Button" parent="." unique_id=1957243040]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 774.0
+offset_right = 686.0
+offset_bottom = 866.0
+theme_type_variation = &"PrimaryButton"
+text = "ВЫДАТЬ"
+
+[node name="Alien" type="TextureRect" parent="." unique_id=775495492]
+texture_filter = 1
+layout_mode = 0
+offset_left = 34.0
+offset_top = 892.0
+offset_right = 174.0
+offset_bottom = 1032.0
+texture = ExtResource("10_alien")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Bubble" type="TextureRect" parent="." unique_id=2111671620]
+texture_filter = 1
+layout_mode = 0
+offset_left = 164.0
+offset_top = 914.0
+offset_right = 676.0
+offset_bottom = 1042.0
+texture = ExtResource("11_bubble")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BubbleText" type="Label" parent="." unique_id=1764793564]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 938.0
+offset_right = 570.0
+offset_bottom = 1018.0
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 14
+text = "АВТОМАТ НЕ ВЫДАЁТ СДАЧУ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Footer" parent="." unique_id=1630848867 instance=ExtResource("1_footer")]
+layout_mode = 1

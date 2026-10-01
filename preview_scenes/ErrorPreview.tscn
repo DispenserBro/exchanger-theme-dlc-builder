@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://bvynyjtfxum6i"]
+
+[ext_resource type="PackedScene" path="res://preview_scenes/PreviewFooter.tscn" id="1_footer"]
+[ext_resource type="Texture2D" uid="uid://dwvk6pkpvh63t" path="res://exchanger_theme_dlc/assets/animations/payment_failed/frame_01.png" id="2_failed_1"]
+[ext_resource type="Texture2D" uid="uid://bmv4rutkbnudh" path="res://exchanger_theme_dlc/assets/animations/payment_failed/frame_02.png" id="3_failed_2"]
+[ext_resource type="Texture2D" uid="uid://b5v7kqjrfhqjw" path="res://exchanger_theme_dlc/assets/animations/payment_failed/frame_03.png" id="4_failed_3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_failed"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_failed_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_failed_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_failed_3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="ERROR" type="Control" unique_id=111555268]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="." unique_id=152037192]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 44.0
+offset_right = 680.0
+offset_bottom = 112.0
+theme_type_variation = &"ScreenTitle"
+text = "ОПЛАТА НЕ ПРОШЛА"
+horizontal_alignment = 1
+
+[node name="ErrorPanel" type="PanelContainer" parent="." unique_id=2060585109]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 176.0
+offset_right = 624.0
+offset_bottom = 826.0
+theme_type_variation = &"WhitePanel"
+
+[node name="Content" type="VBoxContainer" parent="ErrorPanel" unique_id=35202737]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="Header" type="Label" parent="ErrorPanel/Content" unique_id=910778326]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_type_variation = &"PanelTitle"
+text = "ОШИБКА ОПЛАТЫ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Body" type="Control" parent="ErrorPanel/Content" unique_id=159572421]
+custom_minimum_size = Vector2(0, 538)
+layout_mode = 2
+
+[node name="Animation" type="AnimatedSprite2D" parent="ErrorPanel/Content/Body" unique_id=13659618]
+texture_filter = 1
+position = Vector2(242, 220)
+scale = Vector2(0.72, 0.72)
+sprite_frames = SubResource("SpriteFrames_failed")
+autoplay = "default"
+
+[node name="Message" type="Label" parent="ErrorPanel/Content/Body" unique_id=685857508]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 410.0
+offset_right = 454.0
+offset_bottom = 506.0
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 22
+text = "ПОПРОБУЙТЕ ЕЩЁ РАЗ
+ИЛИ ВЫБЕРИТЕ ДРУГОЙ СПОСОБ"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Home" type="Button" parent="." unique_id=1613589566]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 862.0
+offset_right = 636.0
+offset_bottom = 956.0
+theme_type_variation = &"PrimaryButton"
+text = "НА ГЛАВНЫЙ ЭКРАН"
+
+[node name="Footer" parent="." unique_id=214379731 instance=ExtResource("1_footer")]
+layout_mode = 1

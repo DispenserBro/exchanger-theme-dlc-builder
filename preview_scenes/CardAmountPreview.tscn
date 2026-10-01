@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://c4bbashsu0wad"]
+
+[ext_resource type="PackedScene" path="res://preview_scenes/PreviewFooter.tscn" id="1_footer"]
+[ext_resource type="Texture2D" uid="uid://sntindr0yqtc" path="res://exchanger_theme_dlc/assets/ui/back_button.png" id="2_back"]
+
+[node name="SUM" type="Control" unique_id=21701794]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackIcon" type="TextureRect" parent="." unique_id=727102079]
+texture_filter = 1
+layout_mode = 0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 76.0
+offset_bottom = 68.0
+texture = ExtResource("2_back")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BackText" type="Label" parent="." unique_id=1863709339]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 66.0
+offset_right = 84.0
+offset_bottom = 92.0
+theme_type_variation = &"SupportText"
+theme_override_font_sizes/font_size = 13
+text = "НАЗАД"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="." unique_id=959122858]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 20.0
+offset_right = 696.0
+offset_bottom = 80.0
+theme_type_variation = &"ScreenTitle"
+text = "ОПЛАТА КАРТОЙ"
+horizontal_alignment = 1
+
+[node name="RewardPanel" type="PanelContainer" parent="." unique_id=749756036]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 110.0
+offset_right = 686.0
+offset_bottom = 250.0
+theme_type_variation = &"WhitePanel"
+
+[node name="Content" type="VBoxContainer" parent="RewardPanel" unique_id=703241980]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="Header" type="Label" parent="RewardPanel/Content" unique_id=1676855582]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+theme_type_variation = &"PanelTitle"
+text = "К ВЫДАЧЕ"
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="RewardPanel/Content" unique_id=459557488]
+layout_mode = 2
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 27
+text = "100 ЖЕТОНОВ  +  50 В ПОДАРОК"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AmountPanel" type="PanelContainer" parent="." unique_id=1806004633]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 274.0
+offset_right = 686.0
+offset_bottom = 828.0
+theme_type_variation = &"WhitePanel"
+
+[node name="Content" type="VBoxContainer" parent="AmountPanel" unique_id=205229911]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="Header" type="Label" parent="AmountPanel/Content" unique_id=1947589315]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_type_variation = &"PanelTitle"
+text = "ОПЛАТА"
+vertical_alignment = 1
+
+[node name="Grid" type="GridContainer" parent="AmountPanel/Content" unique_id=1392864743]
+custom_minimum_size = Vector2(0, 350)
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 14
+columns = 2
+
+[node name="Amount10" type="Button" parent="AmountPanel/Content/Grid" unique_id=505006584]
+custom_minimum_size = Vector2(292, 68)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "10 РУБ."
+
+[node name="Amount50" type="Button" parent="AmountPanel/Content/Grid" unique_id=606799949]
+custom_minimum_size = Vector2(292, 68)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "50 РУБ."
+
+[node name="Amount100" type="Button" parent="AmountPanel/Content/Grid" unique_id=987842818]
+custom_minimum_size = Vector2(292, 68)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "100 РУБ."
+
+[node name="Amount150" type="Button" parent="AmountPanel/Content/Grid" unique_id=218471006]
+custom_minimum_size = Vector2(292, 68)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "150 РУБ."
+
+[node name="Amount200" type="Button" parent="AmountPanel/Content/Grid" unique_id=273401422]
+custom_minimum_size = Vector2(292, 68)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "200 РУБ."
+
+[node name="Amount300" type="Button" parent="AmountPanel/Content/Grid" unique_id=605529934]
+custom_minimum_size = Vector2(292, 68)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "300 РУБ."
+
+[node name="Amount400" type="Button" parent="AmountPanel/Content/Grid" unique_id=2050233395]
+custom_minimum_size = Vector2(292, 68)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "400 РУБ."
+
+[node name="Amount500" type="Button" parent="AmountPanel/Content/Grid" unique_id=1413881908]
+custom_minimum_size = Vector2(292, 68)
+layout_mode = 2
+theme_type_variation = &"CompactButton"
+text = "500 РУБ."
+
+[node name="Other" type="Button" parent="AmountPanel/Content" unique_id=558538431]
+custom_minimum_size = Vector2(340, 68)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"CompactButton"
+text = "ДРУГАЯ СУММА"
+
+[node name="Confirm" type="Button" parent="." unique_id=229954390]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 858.0
+offset_right = 686.0
+offset_bottom = 952.0
+theme_type_variation = &"PrimaryButton"
+text = "ПОДТВЕРДИТЬ"
+
+[node name="Hint" type="Label" parent="." unique_id=1898482115]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 974.0
+offset_right = 660.0
+offset_bottom = 1038.0
+theme_type_variation = &"SupportText"
+theme_override_font_sizes/font_size = 18
+text = "ВЫБЕРИТЕ СУММУ ДЛЯ ПЕРЕХОДА К ТЕРМИНАЛУ"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Footer" parent="." unique_id=756615138 instance=ExtResource("1_footer")]
+layout_mode = 1

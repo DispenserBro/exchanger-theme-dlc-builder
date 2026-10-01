@@ -1,0 +1,3929 @@
+{
+  "Format": "ExchangerThemeBindingContract",
+  "Version": 2,
+  "ScreenMetadataKey": "exchanger_screen_binding_id",
+  "ElementMetadataKey": "exchanger_binding_id",
+  "Source": "Immutable Exchanger ThemeView contract: host binds existing theme-owned nodes only",
+  "Screens": [
+    {
+      "BindingId": "screen.home",
+      "Key": "home",
+      "RootName": "ThemeScreen_Home",
+      "Path": "res://exchanger_theme_dlc/scenes/screen_home.tscn",
+      "Bindings": [
+        {
+          "Id": "home.scroll.content.footer.margin.content.brand",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/Footer/Margin/Content/Brand"
+        },
+        {
+          "Id": "home.scroll.content.speech_text",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/SpeechText"
+        },
+        {
+          "Id": "home.scroll.content.price_panel.margin.content.price",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/PricePanel/Margin/Content/Price"
+        },
+        {
+          "Id": "home.scroll.content.payment_panel.margin.content.buttons.cash_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/PaymentPanel/Margin/Content/Buttons/CashButton"
+        },
+        {
+          "Id": "home.scroll.content.payment_panel.margin.content.buttons.card_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/PaymentPanel/Margin/Content/Buttons/CardButton"
+        },
+        {
+          "Id": "home.scroll.content.footer.margin.content.support",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/Footer/Margin/Content/Support"
+        },
+        {
+          "Id": "home.scroll.content.stock_status",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/StockStatus"
+        },
+        {
+          "Id": "home.scroll.content.footer.margin.content.connection_status",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/Footer/Margin/Content/ConnectionStatus"
+        },
+        {
+          "Id": "home.scroll.content.stock_status.state",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/StockStatus/Margin/Content/State"
+        },
+        {
+          "Id": "home.scroll.content.footer.margin.content.connection_status.label",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/Footer/Margin/Content/ConnectionStatus/Panel/Margin/Label"
+        },
+        {
+          "Id": "home.scroll.content.advertisement_panel.layer.content",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPanel/Layer/Content"
+        },
+        {
+          "Id": "home.scroll.content.advertisement_panel.layer.content.poster",
+          "Types": [
+            "TextureRect"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPanel/Layer/Content/Poster"
+        },
+        {
+          "Id": "home.scroll.content.advertisement_panel.layer.content.video_player",
+          "Types": [
+            "VideoStreamPlayer"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPanel/Layer/Content/VideoPlayer"
+        },
+        {
+          "Id": "home.scroll.content.advertisement_panel.layer.content.fallback_label",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPanel/Layer/Content/FallbackLabel"
+        }
+      ]
+    },
+    {
+      "BindingId": "screen.cash_payment",
+      "Key": "cash_payment",
+      "RootName": "ThemeScreen_CashPayment",
+      "Path": "res://exchanger_theme_dlc/scenes/screen_cash_payment.tscn",
+      "Bindings": [
+        {
+          "Id": "cash_payment.content.top_bar.back_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/TopBar/BackButton"
+        },
+        {
+          "Id": "cash_payment.content.summary.margin.values.balance",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/Summary/Margin/Values/Balance"
+        },
+        {
+          "Id": "cash_payment.content.summary.margin.values.tokens",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/Summary/Margin/Values/Tokens"
+        },
+        {
+          "Id": "cash_payment.content.summary.margin.values.bonus",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/Summary/Margin/Values/Bonus"
+        },
+        {
+          "Id": "cash_payment.content.dispense_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/DispenseButton"
+        },
+        {
+          "Id": "cash_payment.content.debug_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/DebugPanel"
+        },
+        {
+          "Id": "cash_payment.content.debug_panel.add10_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/DebugPanel/Add10Button"
+        },
+        {
+          "Id": "cash_payment.content.debug_panel.add50_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/DebugPanel/Add50Button"
+        },
+        {
+          "Id": "cash_payment.content.debug_panel.add100_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/DebugPanel/Add100Button"
+        }
+      ]
+    },
+    {
+      "BindingId": "screen.card_amount",
+      "Key": "card_amount",
+      "RootName": "ThemeScreen_CardAmount",
+      "Path": "res://exchanger_theme_dlc/scenes/screen_card_amount.tscn",
+      "Bindings": [
+        {
+          "Id": "card_amount.content.top_bar.back_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/TopBar/BackButton"
+        },
+        {
+          "Id": "card_amount.content.amount_panel.margin.content.preset_grid.slot_13",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid/PresetSlot13"
+        },
+        {
+          "Id": "card_amount.content.amount_panel.margin.content.preset_grid.slot_12",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid/PresetSlot12"
+        },
+        {
+          "Id": "card_amount.content.amount_panel.margin.content.preset_grid.slot_11",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid/PresetSlot11"
+        },
+        {
+          "Id": "card_amount.content.amount_panel.margin.content.preset_grid.slot_10",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid/PresetSlot10"
+        },
+        {
+          "Id": "card_amount.content.amount_panel.margin.content.preset_grid.slot_09",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid/PresetSlot09"
+        },
+        {
+          "Id": "card_amount.content.amount_panel.margin.content.preset_grid.slot_08",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid/PresetSlot08"
+        },
+        {
+          "Id": "card_amount.content.amount_panel.margin.content.preset_grid.slot_07",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid/PresetSlot07"
+        },
+        {
+          "Id": "card_amount.content.amount_panel.margin.content.preset_grid.slot_06",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid/PresetSlot06"
+        },
+        {
+          "Id": "card_amount.content.amount_panel.margin.content.preset_grid.slot_05",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid/PresetSlot05"
+        },
+        {
+          "Id": "card_amount.content.amount_panel.margin.content.preset_grid.slot_04",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid/PresetSlot04"
+        },
+        {
+          "Id": "card_amount.content.amount_panel.margin.content.preset_grid.slot_03",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid/PresetSlot03"
+        },
+        {
+          "Id": "card_amount.content.amount_panel.margin.content.preset_grid.slot_02",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid/PresetSlot02"
+        },
+        {
+          "Id": "card_amount.content.amount_panel.margin.content.preset_grid.slot_01",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid/PresetSlot01"
+        },
+        {
+          "Id": "card_amount.content.amount_panel.margin.content.preset_grid.slot_00",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid/PresetSlot00"
+        },
+        {
+          "Id": "card_amount.content.confirm_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/ConfirmButton"
+        },
+        {
+          "Id": "card_amount.content.reward_panel.content.value",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/RewardPanel/Content/Value"
+        },
+        {
+          "Id": "card_amount.content.selection_label",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/SelectionLabel"
+        },
+        {
+          "Id": "card_amount.content.amount_panel.margin.content.other_amount_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AmountPanel/Margin/Content/OtherAmountButton"
+        },
+        {
+          "Id": "card_amount.content.amount_panel.margin.content.preset_grid",
+          "Types": [
+            "GridContainer"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid"
+        },
+        {
+          "Id": "card_amount.content.amount_panel.margin.content.preset_grid.slot_14",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid/PresetSlot14"
+        },
+        {
+          "Id": "card_amount.content.amount_panel.margin.content.preset_grid.slot_15",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AmountPanel/Margin/Content/PresetGrid/PresetSlot15"
+        }
+      ]
+    },
+    {
+      "BindingId": "screen.card_custom_amount",
+      "Key": "card_custom_amount",
+      "RootName": "ThemeScreen_CardCustomAmount",
+      "Path": "res://exchanger_theme_dlc/scenes/screen_card_custom_amount.tscn",
+      "Bindings": [
+        {
+          "Id": "card_custom_amount.content.top_bar.back_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/TopBar/BackButton"
+        },
+        {
+          "Id": "card_custom_amount.content.keypad_panel.content.keypad.digit7",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/KeypadPanel/Content/Keypad/Digit7"
+        },
+        {
+          "Id": "card_custom_amount.content.keypad_panel.content.keypad.digit6",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/KeypadPanel/Content/Keypad/Digit6"
+        },
+        {
+          "Id": "card_custom_amount.content.keypad_panel.content.keypad.digit5",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/KeypadPanel/Content/Keypad/Digit5"
+        },
+        {
+          "Id": "card_custom_amount.content.keypad_panel.content.keypad.digit4",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/KeypadPanel/Content/Keypad/Digit4"
+        },
+        {
+          "Id": "card_custom_amount.content.keypad_panel.content.keypad.digit3",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/KeypadPanel/Content/Keypad/Digit3"
+        },
+        {
+          "Id": "card_custom_amount.content.keypad_panel.content.keypad.digit2",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/KeypadPanel/Content/Keypad/Digit2"
+        },
+        {
+          "Id": "card_custom_amount.content.keypad_panel.content.keypad.digit1",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/KeypadPanel/Content/Keypad/Digit1"
+        },
+        {
+          "Id": "card_custom_amount.content.keypad_panel.content.keypad.digit0",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/KeypadPanel/Content/Keypad/Digit0"
+        },
+        {
+          "Id": "card_custom_amount.content.confirm_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/ConfirmButton"
+        },
+        {
+          "Id": "card_custom_amount.content.keypad_panel.content.keypad.backspace_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/KeypadPanel/Content/Keypad/BackspaceButton"
+        },
+        {
+          "Id": "card_custom_amount.content.keypad_panel.content.keypad.clear_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/KeypadPanel/Content/Keypad/ClearButton"
+        },
+        {
+          "Id": "card_custom_amount.content.hint",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/Hint"
+        },
+        {
+          "Id": "card_custom_amount.content.keypad_panel.content.input_value",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/KeypadPanel/Content/InputValue"
+        },
+        {
+          "Id": "card_custom_amount.content.amount_panel.margin.values.tokens",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AmountPanel/Margin/Values/Tokens"
+        },
+        {
+          "Id": "card_custom_amount.content.amount_panel.margin.values.amount",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AmountPanel/Margin/Values/Amount"
+        },
+        {
+          "Id": "card_custom_amount.content.keypad_panel.content.keypad.digit8",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/KeypadPanel/Content/Keypad/Digit8"
+        },
+        {
+          "Id": "card_custom_amount.content.keypad_panel.content.keypad.digit9",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/KeypadPanel/Content/Keypad/Digit9"
+        }
+      ]
+    },
+    {
+      "BindingId": "screen.card_terminal",
+      "Key": "card_terminal",
+      "RootName": "ThemeScreen_CardTerminal",
+      "Path": "res://exchanger_theme_dlc/scenes/screen_card_terminal.tscn",
+      "Bindings": [
+        {
+          "Id": "card_terminal.content.top_bar.back_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/TopBar/BackButton"
+        },
+        {
+          "Id": "card_terminal.content.cancel_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/CancelButton"
+        },
+        {
+          "Id": "card_terminal.content.amount",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/Amount"
+        },
+        {
+          "Id": "card_terminal.content.tokens",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/Tokens"
+        },
+        {
+          "Id": "card_terminal.content.countdown",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/Countdown"
+        },
+        {
+          "Id": "card_terminal.content.debug_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/DebugPanel"
+        },
+        {
+          "Id": "card_terminal.content.debug_panel.approve_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/DebugPanel/ApproveButton"
+        },
+        {
+          "Id": "card_terminal.content.debug_panel.decline_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/DebugPanel/DeclineButton"
+        },
+        {
+          "Id": "card_terminal.content.debug_panel.dispense_failure_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/DebugPanel/DispenseFailureButton"
+        },
+        {
+          "Id": "card_terminal.content.debug_panel.partial_dispense_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/DebugPanel/PartialDispenseButton"
+        },
+        {
+          "Id": "card_terminal.content.debug_panel.connection_loss_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/DebugPanel/ConnectionLossButton"
+        }
+      ]
+    },
+    {
+      "BindingId": "screen.success",
+      "Key": "success",
+      "RootName": "ThemeScreen_Success",
+      "Path": "res://exchanger_theme_dlc/scenes/screen_success.tscn",
+      "Bindings": [
+        {
+          "Id": "success.content.result_panel.margin.values.title",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/ResultPanel/Margin/Values/Title"
+        },
+        {
+          "Id": "success.content.result_panel.margin.values.body.message",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/ResultPanel/Margin/Values/Body/Message"
+        },
+        {
+          "Id": "success.content.countdown",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/Countdown"
+        },
+        {
+          "Id": "success.content.home_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/HomeButton"
+        }
+      ]
+    },
+    {
+      "BindingId": "screen.error",
+      "Key": "error",
+      "RootName": "ThemeScreen_Error",
+      "Path": "res://exchanger_theme_dlc/scenes/screen_error.tscn",
+      "Bindings": [
+        {
+          "Id": "error.content.error_panel.margin.values.title",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/ErrorPanel/Margin/Values/Title"
+        },
+        {
+          "Id": "error.content.error_panel.margin.values.body.message",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/ErrorPanel/Margin/Values/Body/Message"
+        },
+        {
+          "Id": "error.content.countdown",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/Countdown"
+        },
+        {
+          "Id": "error.content.home_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/HomeButton"
+        }
+      ]
+    },
+    {
+      "BindingId": "screen.service_access",
+      "Key": "service_access",
+      "RootName": "ThemeScreen_ServiceAccess",
+      "Path": "res://exchanger_theme_dlc/scenes/screen_service_access.tscn",
+      "Bindings": [
+        {
+          "Id": "service_access.content.header",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/Header"
+        },
+        {
+          "Id": "service_access.content.access_panel.fields.keypad.digit7",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AccessPanel/Fields/Keypad/Digit7"
+        },
+        {
+          "Id": "service_access.content.access_panel.fields.keypad.digit6",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AccessPanel/Fields/Keypad/Digit6"
+        },
+        {
+          "Id": "service_access.content.access_panel.fields.keypad.digit5",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AccessPanel/Fields/Keypad/Digit5"
+        },
+        {
+          "Id": "service_access.content.access_panel.fields.keypad.digit4",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AccessPanel/Fields/Keypad/Digit4"
+        },
+        {
+          "Id": "service_access.content.access_panel.fields.keypad.digit3",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AccessPanel/Fields/Keypad/Digit3"
+        },
+        {
+          "Id": "service_access.content.access_panel.fields.keypad.digit2",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AccessPanel/Fields/Keypad/Digit2"
+        },
+        {
+          "Id": "service_access.content.access_panel.fields.keypad.digit1",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AccessPanel/Fields/Keypad/Digit1"
+        },
+        {
+          "Id": "service_access.content.access_panel.fields.keypad.digit8",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AccessPanel/Fields/Keypad/Digit8"
+        },
+        {
+          "Id": "service_access.content.access_panel.fields.keypad.digit0",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AccessPanel/Fields/Keypad/Digit0"
+        },
+        {
+          "Id": "service_access.content.access_panel.fields.enter_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AccessPanel/Fields/EnterButton"
+        },
+        {
+          "Id": "service_access.content.access_panel.fields.keypad.erase",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AccessPanel/Fields/Keypad/Erase"
+        },
+        {
+          "Id": "service_access.content.access_panel.fields.keypad.clear",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AccessPanel/Fields/Keypad/Clear"
+        },
+        {
+          "Id": "service_access.content.access_panel.fields.status",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AccessPanel/Fields/Status"
+        },
+        {
+          "Id": "service_access.content.access_panel.fields.pin_display",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AccessPanel/Fields/PinDisplay"
+        },
+        {
+          "Id": "service_access.content.access_panel.fields.pin_label",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AccessPanel/Fields/PinLabel"
+        },
+        {
+          "Id": "service_access.content.description",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/Description"
+        },
+        {
+          "Id": "service_access.content.cancel_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/CancelButton"
+        },
+        {
+          "Id": "service_access.content.access_panel.fields.keypad.digit9",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Content/AccessPanel/Fields/Keypad/Digit9"
+        }
+      ]
+    },
+    {
+      "BindingId": "screen.settings",
+      "Key": "settings",
+      "RootName": "ThemeScreen_Settings",
+      "Path": "res://exchanger_theme_dlc/scenes/screen_settings.tscn",
+      "Bindings": [
+        {
+          "Id": "settings.scroll.content.section_tabs.general_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/SectionTabs/GeneralButton"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_14.bonus",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot14/Row/Bonus"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_14.threshold",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot14/Row/Threshold"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_14",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot14"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_13.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot13/Error"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_13.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot13/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_13.bonus",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot13/Row/Bonus"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_13.threshold",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot13/Row/Threshold"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_13",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot13"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_12.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot12/Error"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_12.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot12/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_12.bonus",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot12/Row/Bonus"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_12.threshold",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot12/Row/Threshold"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_12",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot12"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_11.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot11/Error"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_11.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot11/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_11.bonus",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot11/Row/Bonus"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_11.threshold",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot11/Row/Threshold"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_11",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot11"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_10.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot10/Error"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_14.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot14/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_14.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot14/Error"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_15",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot15"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_15.threshold",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot15/Row/Threshold"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_03.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot03/Error"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_03.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot03/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_03.amount",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot03/Row/Amount"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_03",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot03"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_02.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot02/Error"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_02.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot02/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_02.amount",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot02/Row/Amount"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_02",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot02"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_01.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot01/Error"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_10.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot10/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_01.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot01/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_01",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot01"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_00.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot00/Error"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_00.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot00/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_00.amount",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot00/Row/Amount"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_00",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot00"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.empty_state",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/EmptyState"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_15.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot15/Error"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_15.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot15/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_15.bonus",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot15/Row/Bonus"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_01.amount",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot01/Row/Amount"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_10.bonus",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot10/Row/Bonus"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_10.threshold",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot10/Row/Threshold"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_10",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot10"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_05",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot05"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_04.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot04/Error"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_04.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot04/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_04.bonus",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot04/Row/Bonus"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_04.threshold",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot04/Row/Threshold"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_04",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot04"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_03.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot03/Error"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_03.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot03/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_03.bonus",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot03/Row/Bonus"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_05.threshold",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot05/Row/Threshold"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_03.threshold",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot03/Row/Threshold"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_02.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot02/Error"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_02.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot02/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_02.bonus",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot02/Row/Bonus"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_02.threshold",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot02/Row/Threshold"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_02",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot02"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_01.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot01/Error"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_01.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot01/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_01.bonus",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot01/Row/Bonus"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_01.threshold",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot01/Row/Threshold"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_03",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot03"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_04",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot04"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_05.bonus",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot05/Row/Bonus"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_05.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot05/Error"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_09.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot09/Error"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_09.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot09/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_09.bonus",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot09/Row/Bonus"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_09.threshold",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot09/Row/Threshold"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_09",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot09"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_08.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot08/Error"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_08.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot08/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_08.bonus",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot08/Row/Bonus"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_08.threshold",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot08/Row/Threshold"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_05.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot05/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_08",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot08"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_07.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot07/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_07.bonus",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot07/Row/Bonus"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_07.threshold",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot07/Row/Threshold"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_07",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot07"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_06.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot06/Error"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_06.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot06/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_06.bonus",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot06/Row/Bonus"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_06.threshold",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot06/Row/Threshold"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_06",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot06"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_07.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot07/Error"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_01",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot01"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_04.amount",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot04/Row/Amount"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_04.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot04/Error"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_05.path",
+          "Types": [
+            "LineEdit"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot05/Row/Path"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_05",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot05"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_04.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot04/Error"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_04.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot04/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_04.path",
+          "Types": [
+            "LineEdit"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot04/Row/Path"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_04",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot04"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_03.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot03/Error"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_03.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot03/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_03.path",
+          "Types": [
+            "LineEdit"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot03/Row/Path"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_03",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot03"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_02.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot02/Error"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_02.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot02/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_02.path",
+          "Types": [
+            "LineEdit"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot02/Row/Path"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_02",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot02"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_01.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot01/Error"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_01.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot01/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_01.path",
+          "Types": [
+            "LineEdit"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot01/Row/Path"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_01",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot01"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_00.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot00/Error"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_05.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot05/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_05.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot05/Error"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_06",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot06"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_06.path",
+          "Types": [
+            "LineEdit"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot06/Row/Path"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_11.path",
+          "Types": [
+            "LineEdit"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot11/Row/Path"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_11",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot11"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_10.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot10/Error"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_10.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot10/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_10.path",
+          "Types": [
+            "LineEdit"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot10/Row/Path"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_10",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot10"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_09.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot09/Error"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_09.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot09/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_09.path",
+          "Types": [
+            "LineEdit"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot09/Row/Path"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_00.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot00/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_09",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot09"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_08.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot08/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_08.path",
+          "Types": [
+            "LineEdit"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot08/Row/Path"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_08",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot08"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_07.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot07/Error"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_07.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot07/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_07.path",
+          "Types": [
+            "LineEdit"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot07/Row/Path"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_07",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot07"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_06.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot06/Error"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_06.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot06/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_08.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot08/Error"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_00.path",
+          "Types": [
+            "LineEdit"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot00/Row/Path"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_00",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot00"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.empty_state",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/EmptyState"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_09.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot09/Error"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_09.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot09/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_09.amount",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot09/Row/Amount"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_09",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot09"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_08.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot08/Error"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_08.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot08/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_08.amount",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot08/Row/Amount"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_08",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot08"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_07.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot07/Error"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_10",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot10"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_07.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot07/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_07",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot07"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_06.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot06/Error"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_06.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot06/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_06.amount",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot06/Row/Amount"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_06",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot06"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_05.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot05/Error"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_05.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot05/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_05.amount",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot05/Row/Amount"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_05",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot05"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_07.amount",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot07/Row/Amount"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_04.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot04/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_10.amount",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot10/Row/Amount"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_10.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot10/Error"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_15.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot15/Error"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_15.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot15/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_15.amount",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot15/Row/Amount"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_15",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot15"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_14.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot14/Error"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_14.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot14/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_14.amount",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot14/Row/Amount"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_14",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot14"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_13.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot13/Error"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_10.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot10/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_13.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot13/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_13",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot13"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_12.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot12/Error"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_12.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot12/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_12.amount",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot12/Row/Amount"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_12",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot12"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_11.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot11/Error"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_11.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot11/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_11.amount",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot11/Row/Amount"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_11",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot11"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows.slot_13.amount",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows/Slot13/Row/Amount"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_00.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot00/Error"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_00.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot00/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_00.bonus",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot00/Row/Bonus"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.preset_rows",
+          "Types": [
+            "VBoxContainer"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetRows"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.limits_error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/LimitsError"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.limits.custom_step",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/Limits/CustomStep"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.limits.max_amount",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/Limits/MaxAmount"
+        },
+        {
+          "Id": "settings.scroll.content.payment_methods_panel.margin.content.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/PaymentMethodsPanel/Margin/Content/Error"
+        },
+        {
+          "Id": "settings.scroll.content.payment_methods_panel.margin.content.card_enabled",
+          "Types": [
+            "CheckButton"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/PaymentMethodsPanel/Margin/Content/CardEnabled"
+        },
+        {
+          "Id": "settings.scroll.content.payment_methods_panel.margin.content.cash_enabled",
+          "Types": [
+            "CheckButton"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/PaymentMethodsPanel/Margin/Content/CashEnabled"
+        },
+        {
+          "Id": "settings.scroll.content.preview_panel.margin.content.values",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/PreviewPanel/Margin/Content/Values"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Error"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.add_rule_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/AddRuleButton"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows",
+          "Types": [
+            "VBoxContainer"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows"
+        },
+        {
+          "Id": "settings.scroll.content.price_panel.margin.content.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/PricePanel/Margin/Content/Error"
+        },
+        {
+          "Id": "settings.scroll.content.price_panel.margin.content.price",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/PricePanel/Margin/Content/Price"
+        },
+        {
+          "Id": "settings.scroll.content.test_panel.margin.content.status",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/TestPanel/Margin/Content/Status"
+        },
+        {
+          "Id": "settings.scroll.content.test_panel.margin.content.test_sound_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/TestPanel/Margin/Content/TestSoundButton"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_panel.margin.content.volume_row.value",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPanel/Margin/Content/VolumeRow/Value"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_panel.margin.content.volume_row.slider",
+          "Types": [
+            "HSlider"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPanel/Margin/Content/VolumeRow/Slider"
+        },
+        {
+          "Id": "settings.scroll.content.master_panel.margin.content.mute",
+          "Types": [
+            "CheckButton"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/MasterPanel/Margin/Content/Mute"
+        },
+        {
+          "Id": "settings.scroll.content.master_panel.margin.content.volume_row.value",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/MasterPanel/Margin/Content/VolumeRow/Value"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.add_preset_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/AddPresetButton"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel.margin.content.presets_error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel/Margin/Content/PresetsError"
+        },
+        {
+          "Id": "settings.scroll.content.timeouts_panel.margin.content.grid.idle",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/TimeoutsPanel/Margin/Content/Grid/Idle"
+        },
+        {
+          "Id": "settings.scroll.content.timeouts_panel.margin.content.grid.cash_payment",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/TimeoutsPanel/Margin/Content/Grid/CashPayment"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_poster_panel.margin.content.poster_path",
+          "Types": [
+            "LineEdit"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPosterPanel/Margin/Content/PosterPath"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_settings_panel.margin.content.fallback_error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementSettingsPanel/Margin/Content/FallbackError"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_settings_panel.margin.content.fallback_text",
+          "Types": [
+            "LineEdit"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementSettingsPanel/Margin/Content/FallbackText"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_settings_panel.margin.content.muted",
+          "Types": [
+            "CheckButton"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementSettingsPanel/Margin/Content/Muted"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_settings_panel.margin.content.enabled",
+          "Types": [
+            "CheckButton"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementSettingsPanel/Margin/Content/Enabled"
+        },
+        {
+          "Id": "settings.scroll.content.security_panel.margin.content.status",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/SecurityPanel/Margin/Content/Status"
+        },
+        {
+          "Id": "settings.scroll.content.security_panel.margin.content.reset_pin_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/SecurityPanel/Margin/Content/ResetPinButton"
+        },
+        {
+          "Id": "settings.scroll.content.security_panel.margin.content.enabled",
+          "Types": [
+            "CheckButton"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/SecurityPanel/Margin/Content/Enabled"
+        },
+        {
+          "Id": "settings.scroll.content.branding_preview_panel.margin.content.support_phone",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BrandingPreviewPanel/Margin/Content/SupportPhone"
+        },
+        {
+          "Id": "settings.scroll.content.master_panel.margin.content.volume_row.slider",
+          "Types": [
+            "HSlider"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/MasterPanel/Margin/Content/VolumeRow/Slider"
+        },
+        {
+          "Id": "settings.scroll.content.branding_preview_panel.margin.content.short_text",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BrandingPreviewPanel/Margin/Content/ShortText"
+        },
+        {
+          "Id": "settings.scroll.content.branding_panel.margin.content.support_phone_error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BrandingPanel/Margin/Content/SupportPhoneError"
+        },
+        {
+          "Id": "settings.scroll.content.branding_panel.margin.content.short_text_error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BrandingPanel/Margin/Content/ShortTextError"
+        },
+        {
+          "Id": "settings.scroll.content.branding_panel.margin.content.application_name_error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BrandingPanel/Margin/Content/ApplicationNameError"
+        },
+        {
+          "Id": "settings.scroll.content.branding_panel.margin.content.support_phone",
+          "Types": [
+            "LineEdit"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BrandingPanel/Margin/Content/SupportPhone"
+        },
+        {
+          "Id": "settings.scroll.content.branding_panel.margin.content.short_text",
+          "Types": [
+            "LineEdit"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BrandingPanel/Margin/Content/ShortText"
+        },
+        {
+          "Id": "settings.scroll.content.branding_panel.margin.content.application_name",
+          "Types": [
+            "LineEdit"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BrandingPanel/Margin/Content/ApplicationName"
+        },
+        {
+          "Id": "settings.scroll.content.timeouts_panel.margin.content.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/TimeoutsPanel/Margin/Content/Error"
+        },
+        {
+          "Id": "settings.scroll.content.timeouts_panel.margin.content.grid.success",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/TimeoutsPanel/Margin/Content/Grid/Success"
+        },
+        {
+          "Id": "settings.scroll.content.timeouts_panel.margin.content.grid.cashless_payment",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/TimeoutsPanel/Margin/Content/Grid/CashlessPayment"
+        },
+        {
+          "Id": "settings.scroll.content.branding_preview_panel.margin.content.application_name",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BrandingPreviewPanel/Margin/Content/ApplicationName"
+        },
+        {
+          "Id": "settings.service_dialog_overlay.dialog.margin.content.buttons.confirm_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/ServiceDialogOverlay/Dialog/Margin/Content/Buttons/ConfirmButton"
+        },
+        {
+          "Id": "settings.service_dialog_overlay.dialog.margin.content.buttons.cancel_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/ServiceDialogOverlay/Dialog/Margin/Content/Buttons/CancelButton"
+        },
+        {
+          "Id": "settings.service_dialog_overlay.dialog.margin.content.amount",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/ServiceDialogOverlay/Dialog/Margin/Content/Amount"
+        },
+        {
+          "Id": "settings.scroll.content.appearance_effects_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AppearanceEffectsPanel"
+        },
+        {
+          "Id": "settings.scroll.content.appearance_theme_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AppearanceThemePanel"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_preview_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPreviewPanel"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_poster_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPosterPanel"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_settings_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementSettingsPanel"
+        },
+        {
+          "Id": "settings.scroll.content.test_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/TestPanel"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPanel"
+        },
+        {
+          "Id": "settings.scroll.content.master_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/MasterPanel"
+        },
+        {
+          "Id": "settings.scroll.content.appearance_notice_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AppearanceNoticePanel"
+        },
+        {
+          "Id": "settings.scroll.content.security_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/SecurityPanel"
+        },
+        {
+          "Id": "settings.scroll.content.branding_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BrandingPanel"
+        },
+        {
+          "Id": "settings.scroll.content.section_tabs.diagnostics_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/SectionTabs/DiagnosticsButton"
+        },
+        {
+          "Id": "settings.scroll.content.section_tabs.equipment_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/SectionTabs/EquipmentButton"
+        },
+        {
+          "Id": "settings.scroll.content.section_tabs.service_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/SectionTabs/ServiceButton"
+        },
+        {
+          "Id": "settings.scroll.content.section_tabs.payment_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/SectionTabs/PaymentButton"
+        },
+        {
+          "Id": "settings.scroll.content.section_tabs.pricing_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/SectionTabs/PricingButton"
+        },
+        {
+          "Id": "settings.scroll.content.section_tabs.appearance_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/SectionTabs/AppearanceButton"
+        },
+        {
+          "Id": "settings.scroll.content.section_tabs.advertisement_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/SectionTabs/AdvertisementButton"
+        },
+        {
+          "Id": "settings.scroll.content.section_tabs.audio_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/SectionTabs/AudioButton"
+        },
+        {
+          "Id": "settings.scroll.content.branding_preview_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BrandingPreviewPanel"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_poster_panel.margin.content.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPosterPanel/Margin/Content/Error"
+        },
+        {
+          "Id": "settings.scroll.content.price_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/PricePanel"
+        },
+        {
+          "Id": "settings.scroll.content.preview_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/PreviewPanel"
+        },
+        {
+          "Id": "settings.service_dialog_overlay.dialog.margin.content.description",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/ServiceDialogOverlay/Dialog/Margin/Content/Description"
+        },
+        {
+          "Id": "settings.service_dialog_overlay.dialog.margin.content.title",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/ServiceDialogOverlay/Dialog/Margin/Content/Title"
+        },
+        {
+          "Id": "settings.service_dialog_overlay",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/ServiceDialogOverlay"
+        },
+        {
+          "Id": "settings.scroll.content.service_inventory_panel.margin.content.status",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/ServiceInventoryPanel/Margin/Content/Status"
+        },
+        {
+          "Id": "settings.scroll.content.service_inventory_panel.margin.content.hopper2.manual_add_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/ServiceInventoryPanel/Margin/Content/Hopper2/ManualAddButton"
+        },
+        {
+          "Id": "settings.scroll.content.service_inventory_panel.margin.content.hopper2.recount_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/ServiceInventoryPanel/Margin/Content/Hopper2/RecountButton"
+        },
+        {
+          "Id": "settings.scroll.content.service_inventory_panel.margin.content.hopper2_label",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/ServiceInventoryPanel/Margin/Content/Hopper2Label"
+        },
+        {
+          "Id": "settings.scroll.content.service_inventory_panel.margin.content.hopper1.manual_add_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/ServiceInventoryPanel/Margin/Content/Hopper1/ManualAddButton"
+        },
+        {
+          "Id": "settings.scroll.content.service_inventory_panel.margin.content.hopper1.recount_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/ServiceInventoryPanel/Margin/Content/Hopper1/RecountButton"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel"
+        },
+        {
+          "Id": "settings.scroll.content.service_inventory_panel.margin.content.hopper1_label",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/ServiceInventoryPanel/Margin/Content/Hopper1Label"
+        },
+        {
+          "Id": "settings.scroll.content.service_inventory_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/ServiceInventoryPanel"
+        },
+        {
+          "Id": "settings.scroll.content.diagnostics_test_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/DiagnosticsTestPanel"
+        },
+        {
+          "Id": "settings.scroll.content.diagnostics_logging_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/DiagnosticsLoggingPanel"
+        },
+        {
+          "Id": "settings.scroll.content.diagnostics_status_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/DiagnosticsStatusPanel"
+        },
+        {
+          "Id": "settings.scroll.content.equipment_window_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/EquipmentWindowPanel"
+        },
+        {
+          "Id": "settings.scroll.content.equipment_connection_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/EquipmentConnectionPanel"
+        },
+        {
+          "Id": "settings.scroll.content.timeouts_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/TimeoutsPanel"
+        },
+        {
+          "Id": "settings.scroll.content.card_options_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/CardOptionsPanel"
+        },
+        {
+          "Id": "settings.scroll.content.payment_methods_panel",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/PaymentMethodsPanel"
+        },
+        {
+          "Id": "settings.scroll.content.service_inventory_panel.margin.content.count",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/ServiceInventoryPanel/Margin/Content/Count"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows",
+          "Types": [
+            "VBoxContainer"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.add_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/AddButton"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Error"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.header.hide_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/Header/HideButton"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row2.key_32",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row2/Key_32"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row2.key_31",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row2/Key_31"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row2.key_30",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row2/Key_30"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row2.key_29",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row2/Key_29"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row2.key_28",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row2/Key_28"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row2.key_27",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row2/Key_27"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row2.key_26",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row2/Key_26"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row2.key_25",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row2/Key_25"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.primary_actions.language_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/PrimaryActions/LanguageButton"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row2.key_24",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row2/Key_24"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row1.key_22",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row1/Key_22"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row1.key_21",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row1/Key_21"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row1.key_20",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row1/Key_20"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row1.key_19",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row1/Key_19"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row1.key_18",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row1/Key_18"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row1.key_17",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row1/Key_17"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row1.key_16",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row1/Key_16"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row1.key_15",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row1/Key_15"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row1.key_14",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row1/Key_14"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row2.key_23",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row2/Key_23"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row1.key_13",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row1/Key_13"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.primary_actions.shift_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/PrimaryActions/ShiftButton"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.primary_actions.backspace_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/PrimaryActions/BackspaceButton"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_00.threshold",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot00/Row/Threshold"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.slot_00",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/Slot00"
+        },
+        {
+          "Id": "settings.scroll.content.bonus_panel.margin.content.rows.empty_state",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/BonusPanel/Margin/Content/Rows/EmptyState"
+        },
+        {
+          "Id": "settings.keyboard_overlay.numeric_keyboard.content.grid.backspace_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/NumericKeyboard/Content/Grid/BackspaceButton"
+        },
+        {
+          "Id": "settings.keyboard_overlay.numeric_keyboard.content.grid.clear_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/NumericKeyboard/Content/Grid/ClearButton"
+        },
+        {
+          "Id": "settings.keyboard_overlay.numeric_keyboard.content.header.hide_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/NumericKeyboard/Content/Header/HideButton"
+        },
+        {
+          "Id": "settings.keyboard_overlay.numeric_keyboard.content.grid.digit9",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/NumericKeyboard/Content/Grid/Digit9"
+        },
+        {
+          "Id": "settings.keyboard_overlay.numeric_keyboard.content.grid.digit8",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/NumericKeyboard/Content/Grid/Digit8"
+        },
+        {
+          "Id": "settings.keyboard_overlay.numeric_keyboard.content.grid.digit7",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/NumericKeyboard/Content/Grid/Digit7"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.primary_actions.symbols_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/PrimaryActions/SymbolsButton"
+        },
+        {
+          "Id": "settings.keyboard_overlay.numeric_keyboard.content.grid.digit6",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/NumericKeyboard/Content/Grid/Digit6"
+        },
+        {
+          "Id": "settings.keyboard_overlay.numeric_keyboard.content.grid.digit4",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/NumericKeyboard/Content/Grid/Digit4"
+        },
+        {
+          "Id": "settings.keyboard_overlay.numeric_keyboard.content.grid.digit3",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/NumericKeyboard/Content/Grid/Digit3"
+        },
+        {
+          "Id": "settings.keyboard_overlay.numeric_keyboard.content.grid.digit2",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/NumericKeyboard/Content/Grid/Digit2"
+        },
+        {
+          "Id": "settings.keyboard_overlay.numeric_keyboard.content.grid.digit1",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/NumericKeyboard/Content/Grid/Digit1"
+        },
+        {
+          "Id": "settings.keyboard_overlay.numeric_keyboard.content.grid.digit0",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/NumericKeyboard/Content/Grid/Digit0"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.secondary_actions.space_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/SecondaryActions/SpaceButton"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.secondary_actions.clear_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/SecondaryActions/ClearButton"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.secondary_actions.caret_right_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/SecondaryActions/CaretRightButton"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.secondary_actions.caret_left_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/SecondaryActions/CaretLeftButton"
+        },
+        {
+          "Id": "settings.keyboard_overlay.numeric_keyboard.content.grid.digit5",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/NumericKeyboard/Content/Grid/Digit5"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_11.remove_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot11/Row/RemoveButton"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row1.key_12",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row1/Key_12"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row0.key_10",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row0/Key_10"
+        },
+        {
+          "Id": "settings.scroll.content.diagnostics_logging_panel.margin.content.minimum_level",
+          "Types": [
+            "OptionButton"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/DiagnosticsLoggingPanel/Margin/Content/MinimumLevel"
+        },
+        {
+          "Id": "settings.scroll.content.diagnostics_status_panel.margin.content.recent_errors",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/DiagnosticsStatusPanel/Margin/Content/RecentErrors"
+        },
+        {
+          "Id": "settings.scroll.content.diagnostics_status_panel.margin.content.runtime_summary",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/DiagnosticsStatusPanel/Margin/Content/RuntimeSummary"
+        },
+        {
+          "Id": "settings.scroll.content.equipment_window_panel.margin.content.target_fps",
+          "Types": [
+            "OptionButton"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/EquipmentWindowPanel/Margin/Content/TargetFps"
+        },
+        {
+          "Id": "settings.scroll.content.equipment_window_panel.margin.content.debug_window",
+          "Types": [
+            "CheckButton"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/EquipmentWindowPanel/Margin/Content/DebugWindow"
+        },
+        {
+          "Id": "settings.scroll.content.equipment_window_panel.margin.content.borderless",
+          "Types": [
+            "CheckButton"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/EquipmentWindowPanel/Margin/Content/Borderless"
+        },
+        {
+          "Id": "settings.scroll.content.equipment_window_panel.margin.content.fullscreen",
+          "Types": [
+            "CheckButton"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/EquipmentWindowPanel/Margin/Content/Fullscreen"
+        },
+        {
+          "Id": "settings.scroll.content.equipment_connection_panel.margin.content.connection_error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/EquipmentConnectionPanel/Margin/Content/ConnectionError"
+        },
+        {
+          "Id": "settings.scroll.content.equipment_connection_panel.margin.content.reconnect_seconds",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/EquipmentConnectionPanel/Margin/Content/ReconnectSeconds"
+        },
+        {
+          "Id": "settings.scroll.content.diagnostics_logging_panel.margin.content.max_file_size",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/DiagnosticsLoggingPanel/Margin/Content/MaxFileSize"
+        },
+        {
+          "Id": "settings.scroll.content.equipment_connection_panel.margin.content.baud_rate",
+          "Types": [
+            "OptionButton"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/EquipmentConnectionPanel/Margin/Content/BaudRate"
+        },
+        {
+          "Id": "settings.scroll.content.equipment_connection_panel.margin.content.port_name",
+          "Types": [
+            "LineEdit"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/EquipmentConnectionPanel/Margin/Content/PortName"
+        },
+        {
+          "Id": "settings.scroll.content.equipment_connection_panel.margin.content.use_mock",
+          "Types": [
+            "CheckButton"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/EquipmentConnectionPanel/Margin/Content/UseMock"
+        },
+        {
+          "Id": "settings.scroll.content.appearance_notice_panel.margin.content.current_theme",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AppearanceNoticePanel/Margin/Content/CurrentTheme"
+        },
+        {
+          "Id": "settings.scroll.content.appearance_effects_panel.margin.content.reduced_effects",
+          "Types": [
+            "CheckButton"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AppearanceEffectsPanel/Margin/Content/ReducedEffects"
+        },
+        {
+          "Id": "settings.scroll.content.appearance_theme_panel.margin.content.package_status",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AppearanceThemePanel/Margin/Content/PackageStatus"
+        },
+        {
+          "Id": "settings.scroll.content.appearance_theme_panel.margin.content.path_error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AppearanceThemePanel/Margin/Content/PathError"
+        },
+        {
+          "Id": "settings.scroll.content.appearance_theme_panel.margin.content.external_path",
+          "Types": [
+            "LineEdit"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AppearanceThemePanel/Margin/Content/ExternalPath"
+        },
+        {
+          "Id": "settings.scroll.content.appearance_theme_panel.margin.content.external_enabled",
+          "Types": [
+            "CheckButton"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AppearanceThemePanel/Margin/Content/ExternalEnabled"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_preview_panel.margin.content.summary",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPreviewPanel/Margin/Content/Summary"
+        },
+        {
+          "Id": "settings.scroll.content.equipment_connection_panel.margin.content.port_error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/EquipmentConnectionPanel/Margin/Content/PortError"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row0.key_11",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row0/Key_11"
+        },
+        {
+          "Id": "settings.scroll.content.diagnostics_logging_panel.margin.content.retention_days",
+          "Types": [
+            "SpinBox"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/DiagnosticsLoggingPanel/Margin/Content/RetentionDays"
+        },
+        {
+          "Id": "settings.scroll.content.diagnostics_test_panel.margin.content.test_dispense_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/DiagnosticsTestPanel/Margin/Content/TestDispenseButton"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row0.key_09",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row0/Key_09"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row0.key_08",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row0/Key_08"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row0.key_07",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row0/Key_07"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row0.key_06",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row0/Key_06"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row0.key_05",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row0/Key_05"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row0.key_04",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row0/Key_04"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row0.key_03",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row0/Key_03"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row0.key_02",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row0/Key_02"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row0.key_01",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row0/Key_01"
+        },
+        {
+          "Id": "settings.scroll.content.diagnostics_logging_panel.margin.content.logging_error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/DiagnosticsLoggingPanel/Margin/Content/LoggingError"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard.content.letter_rows.row0.key_00",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard/Content/LetterRows/Row0/Key_00"
+        },
+        {
+          "Id": "settings.scroll.content.service_inventory_panel.margin.content.recount_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/ServiceInventoryPanel/Margin/Content/RecountButton"
+        },
+        {
+          "Id": "settings.scroll.content",
+          "Types": [
+            "Node"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content"
+        },
+        {
+          "Id": "settings.scroll.content.section_tabs",
+          "Types": [
+            "Node"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/SectionTabs"
+        },
+        {
+          "Id": "settings.scroll.content.header.margin.content.title",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/Header/Margin/Content/Title"
+        },
+        {
+          "Id": "settings.scroll.content.header",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/Header"
+        },
+        {
+          "Id": "settings.keyboard_overlay.numeric_keyboard",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/NumericKeyboard"
+        },
+        {
+          "Id": "settings.keyboard_overlay.text_keyboard",
+          "Types": [
+            "Control"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/KeyboardOverlay/TextKeyboard"
+        },
+        {
+          "Id": "settings.scroll",
+          "Types": [
+            "ScrollContainer"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll"
+        },
+        {
+          "Id": "settings.scroll.content.diagnostics_test_panel.margin.content.test_dispense_status",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/DiagnosticsTestPanel/Margin/Content/TestDispenseStatus"
+        },
+        {
+          "Id": "settings.scroll.content.service_inventory_panel.margin.content.manual_add_button",
+          "Types": [
+            "Button"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/ServiceInventoryPanel/Margin/Content/ManualAddButton"
+        },
+        {
+          "Id": "settings.scroll.content.advertisement_playlist_panel.margin.content.rows.slot_11.error",
+          "Types": [
+            "Label"
+          ],
+          "Required": true,
+          "FallbackPath": "SafeMargin/Scroll/Content/AdvertisementPlaylistPanel/Margin/Content/Rows/Slot11/Error"
+        }
+      ]
+    }
+  ]
+}

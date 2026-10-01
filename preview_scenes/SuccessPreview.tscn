@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://cyepwpigxpvau"]
+
+[ext_resource type="PackedScene" path="res://preview_scenes/PreviewFooter.tscn" id="1_footer"]
+[ext_resource type="Texture2D" uid="uid://bxc8ku68xb4r8" path="res://exchanger_theme_dlc/assets/animations/payment_success/frame_01.png" id="2_success_1"]
+[ext_resource type="Texture2D" uid="uid://clubcslpx4qdr" path="res://exchanger_theme_dlc/assets/animations/payment_success/frame_02.png" id="3_success_2"]
+[ext_resource type="Texture2D" uid="uid://ckqpek4skkm77" path="res://exchanger_theme_dlc/assets/animations/payment_success/frame_03.png" id="4_success_3"]
+[ext_resource type="Texture2D" uid="uid://c33lc27tqncru" path="res://exchanger_theme_dlc/assets/animations/payment_success/frame_04.png" id="5_success_4"]
+[ext_resource type="Texture2D" uid="uid://w8adsbfld640" path="res://exchanger_theme_dlc/assets/animations/payment_success/frame_05.png" id="6_success_5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_success"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_success_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_success_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_success_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_success_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_success_5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SUCCESS" type="Control" unique_id=542554992]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="." unique_id=1877645034]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 44.0
+offset_right = 680.0
+offset_bottom = 112.0
+theme_type_variation = &"ScreenTitle"
+text = "ОПЛАТА ПРОШЛА"
+horizontal_alignment = 1
+
+[node name="ResultPanel" type="PanelContainer" parent="." unique_id=1033809395]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 176.0
+offset_right = 624.0
+offset_bottom = 826.0
+theme_type_variation = &"WhitePanel"
+
+[node name="Content" type="VBoxContainer" parent="ResultPanel" unique_id=1107502705]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="Header" type="Label" parent="ResultPanel/Content" unique_id=3989466]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_type_variation = &"PanelTitle"
+text = "ВЫДАЧА ЖЕТОНОВ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Body" type="Control" parent="ResultPanel/Content" unique_id=652635619]
+custom_minimum_size = Vector2(0, 538)
+layout_mode = 2
+
+[node name="Animation" type="AnimatedSprite2D" parent="ResultPanel/Content/Body" unique_id=118426354]
+texture_filter = 1
+position = Vector2(242, 220)
+scale = Vector2(0.72, 0.72)
+sprite_frames = SubResource("SpriteFrames_success")
+autoplay = "default"
+
+[node name="Message" type="Label" parent="ResultPanel/Content/Body" unique_id=11368542]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 418.0
+offset_right = 456.0
+offset_bottom = 504.0
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 23
+text = "ЗАБЕРИТЕ 100 ЖЕТОНОВ
+СПАСИБО ЗА ПОКУПКУ!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Home" type="Button" parent="." unique_id=1638722420]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 862.0
+offset_right = 636.0
+offset_bottom = 956.0
+theme_type_variation = &"PrimaryButton"
+text = "НА ГЛАВНЫЙ ЭКРАН"
+
+[node name="Footer" parent="." unique_id=1175664387 instance=ExtResource("1_footer")]
+layout_mode = 1

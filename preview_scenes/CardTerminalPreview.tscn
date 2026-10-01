@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://dadn5uck0dn57"]
+
+[ext_resource type="PackedScene" path="res://preview_scenes/PreviewFooter.tscn" id="1_footer"]
+[ext_resource type="Texture2D" uid="uid://sntindr0yqtc" path="res://exchanger_theme_dlc/assets/ui/back_button.png" id="2_back"]
+[ext_resource type="Texture2D" uid="uid://b3usa242mfern" path="res://exchanger_theme_dlc/assets/animations/card/frame_01.png" id="3_card_1"]
+[ext_resource type="Texture2D" uid="uid://de6pb3jrexihf" path="res://exchanger_theme_dlc/assets/animations/card/frame_02.png" id="4_card_2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_card"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_card_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_card_2")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="CARD" type="Control" unique_id=2023585296]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackIcon" type="TextureRect" parent="." unique_id=838274810]
+texture_filter = 1
+layout_mode = 0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 76.0
+offset_bottom = 68.0
+texture = ExtResource("2_back")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BackText" type="Label" parent="." unique_id=1051493463]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 66.0
+offset_right = 84.0
+offset_bottom = 92.0
+theme_type_variation = &"SupportText"
+theme_override_font_sizes/font_size = 13
+text = "НАЗАД"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="." unique_id=861663064]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 20.0
+offset_right = 696.0
+offset_bottom = 80.0
+theme_type_variation = &"ScreenTitle"
+text = "ОПЛАТА КАРТОЙ"
+horizontal_alignment = 1
+
+[node name="PaymentPanel" type="PanelContainer" parent="." unique_id=648967317]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 204.0
+offset_right = 608.0
+offset_bottom = 826.0
+theme_type_variation = &"WhitePanel"
+
+[node name="Content" type="VBoxContainer" parent="PaymentPanel" unique_id=2112945038]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="Header" type="Label" parent="PaymentPanel/Content" unique_id=1931358880]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+theme_type_variation = &"PanelTitle"
+text = "ОПЛАТА"
+vertical_alignment = 1
+
+[node name="Body" type="Control" parent="PaymentPanel/Content" unique_id=1680174075]
+custom_minimum_size = Vector2(0, 520)
+layout_mode = 2
+
+[node name="CardAnimation" type="AnimatedSprite2D" parent="PaymentPanel/Content/Body" unique_id=1670614075]
+texture_filter = 1
+position = Vector2(226, 224)
+scale = Vector2(0.72, 0.72)
+sprite_frames = SubResource("SpriteFrames_card")
+autoplay = "default"
+
+[node name="Instruction" type="Label" parent="PaymentPanel/Content/Body" unique_id=805003299]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 404.0
+offset_right = 426.0
+offset_bottom = 494.0
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 21
+text = "ПРИЛОЖИТЕ КАРТУ
+К ТЕРМИНАЛУ ОПЛАТЫ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Amount" type="Label" parent="." unique_id=1532983865]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 856.0
+offset_right = 610.0
+offset_bottom = 924.0
+theme_type_variation = &"SupportText"
+theme_override_font_sizes/font_size = 24
+text = "К ОПЛАТЕ: 1000 ₽  •  100 ЖЕТОНОВ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cancel" type="Button" parent="." unique_id=1065301015]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 946.0
+offset_right = 510.0
+offset_bottom = 1018.0
+theme_type_variation = &"CompactButton"
+text = "ОТМЕНА"
+
+[node name="Footer" parent="." unique_id=1866459506 instance=ExtResource("1_footer")]
+layout_mode = 1

@@ -1,0 +1,586 @@
+[gd_scene load_steps=16 format=3]
+
+[ext_resource type="Theme" path="../ui_theme.tres" id="1_screen_theme"]
+[ext_resource type="Texture2D" path="../assets/background/background.png" id="2_screen_background"]
+[ext_resource type="PackedScene" path="../background_decoration.tscn" id="3_screen_decoration"]
+[ext_resource type="PackedScene" path="../components/footer.tscn" id="3_footer"]
+[ext_resource type="PackedScene" path="../visuals/cash_instructions.tscn" id="4_instructions"]
+[ext_resource type="PackedScene" path="../visuals/cash_tip.tscn" id="5_tip"]
+[ext_resource type="Texture2D" path="../assets/ui/panel_medium.png" id="6_panel"]
+[ext_resource type="Texture2D" path="../assets/animations/banner/frame_01.png" id="7_banner_1"]
+[ext_resource type="Texture2D" path="../assets/animations/banner/frame_02.png" id="8_banner_2"]
+[ext_resource type="Script" path="../scripts/stable_banner_animation.gd" id="9_banner_script"]
+[ext_resource type="Texture2D" path="../assets/ui/interactive_pet/home.png" id="10_home_icon"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cash_panel"]
+atlas = ExtResource("6_panel")
+region = Rect2(4, 34, 504, 186)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cash_panel_top"]
+atlas = ExtResource("6_panel")
+region = Rect2(4, 34, 504, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cash_panel_body"]
+atlas = ExtResource("6_panel")
+region = Rect2(4, 100, 504, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cash_banner"]
+animations = [{"frames": [{"duration": 1.0, "texture": ExtResource("7_banner_1")}, {"duration": 1.0, "texture": ExtResource("8_banner_2")}], "loop": true, "name": &"default", "speed": 1.0}]
+
+[node name="ThemeScreen_CashPayment" type="Control"]
+texture_filter = 1
+metadata/exchanger_screen_binding_id = "screen.cash_payment"
+metadata/exchanger_self_contained_visuals = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_screen_theme")
+
+[node name="ThemeBackground" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_screen_background")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BackgroundDecoration" parent="." instance=ExtResource("3_screen_decoration")]
+scale = Vector2(0.666667, 0.666667)
+
+[node name="PetNavigation" type="Node2D" parent="."]
+metadata/exchanger_pet_navigation_root = true
+metadata/exchanger_pet_navigation_version = 1
+metadata/exchanger_pet_default_surface_id = &"floor"
+metadata/exchanger_pet_roaming_bounds = Rect2(32, 32, 656, 1208)
+
+[node name="Floor" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"floor"
+metadata/exchanger_pet_surface_from_x = 40.0
+metadata/exchanger_pet_surface_to_x = 680.0
+metadata/exchanger_pet_surface_y = 1240.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(96, 360, 624)
+
+[node name="BackButton" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"back_button"
+metadata/exchanger_pet_surface_from_x = 49.0
+metadata/exchanger_pet_surface_to_x = 161.0
+metadata/exchanger_pet_surface_y = 42.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(75, 135)
+
+[node name="SummaryWindow" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"summary_window"
+metadata/exchanger_pet_surface_from_x = 36.0
+metadata/exchanger_pet_surface_to_x = 685.0
+metadata/exchanger_pet_surface_y = 148.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(360)
+
+[node name="BalanceWindow" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"balance_window"
+metadata/exchanger_pet_surface_from_x = 36.0
+metadata/exchanger_pet_surface_to_x = 372.0
+metadata/exchanger_pet_surface_y = 280.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(204)
+
+[node name="TipWindow" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"tip_window"
+metadata/exchanger_pet_surface_from_x = 381.0
+metadata/exchanger_pet_surface_to_x = 684.0
+metadata/exchanger_pet_surface_y = 281.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(532)
+
+[node name="InstructionWindow" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"instruction_window"
+metadata/exchanger_pet_surface_from_x = 35.0
+metadata/exchanger_pet_surface_to_x = 685.0
+metadata/exchanger_pet_surface_y = 451.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(360)
+
+[node name="DispenseButton" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"dispense_button"
+metadata/exchanger_pet_surface_from_x = 36.0
+metadata/exchanger_pet_surface_to_x = 684.0
+metadata/exchanger_pet_surface_y = 883.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(360)
+
+[node name="FloorToBack" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_back"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"back_button"
+metadata/exchanger_pet_climb_x = 49.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 42.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToSummary" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_summary"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"summary_window"
+metadata/exchanger_pet_climb_x = 40.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 148.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToBalance" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_balance"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"balance_window"
+metadata/exchanger_pet_climb_x = 40.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 280.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToTip" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_tip"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"tip_window"
+metadata/exchanger_pet_climb_x = 680.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 281.0
+metadata/exchanger_pet_climb_side = &"right"
+
+[node name="FloorToInstruction" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_instruction"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"instruction_window"
+metadata/exchanger_pet_climb_x = 40.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 451.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="FloorToDispense" type="Node2D" parent="PetNavigation"]
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"floor_to_dispense"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"dispense_button"
+metadata/exchanger_pet_climb_x = 680.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 883.0
+metadata/exchanger_pet_climb_side = &"right"
+
+[node name="SafeMargin" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Content" type="Control" parent="SafeMargin"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopBar" type="Control" parent="SafeMargin/Content"]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 92.0
+
+[node name="BackButton" type="Button" parent="SafeMargin/Content/TopBar"]
+metadata/exchanger_binding_id = "cash_payment.content.top_bar.back_button"
+layout_mode = 0
+offset_left = 49.0
+offset_top = 42.0
+offset_right = 101.0
+offset_bottom = 94.0
+theme_type_variation = &"BackButton"
+
+[node name="HomeNavigationButton" type="Button" parent="SafeMargin/Content/TopBar"]
+metadata/exchanger_binding_id = "cash_payment.content.top_bar.home_navigation_button"
+layout_mode = 0
+offset_left = 109.0
+offset_top = 42.0
+offset_right = 161.0
+offset_bottom = 94.0
+tooltip_text = "ГЛАВНАЯ"
+theme_type_variation = &"KeypadButton"
+icon = ExtResource("10_home_icon")
+expand_icon = true
+icon_max_width = 30
+
+[node name="BackText" type="Label" parent="SafeMargin/Content/TopBar"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 90.0
+offset_right = 103.0
+offset_bottom = 116.0
+mouse_filter = 2
+theme_type_variation = &"SupportText"
+theme_override_font_sizes/font_size = 16
+text = "НАЗАД"
+horizontal_alignment = 1
+vertical_alignment = 1
+pivot_offset = Vector2(32, 13)
+scale = Vector2(1.28, 1)
+
+[node name="Title" type="Label" parent="SafeMargin/Content/TopBar"]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 38.5
+offset_right = 680.0
+offset_bottom = 90.5
+theme_type_variation = &"ScreenTitle"
+text = "ОПЛАТА НАЛИЧНЫМИ"
+vertical_alignment = 1
+pivot_offset = Vector2(0, 26)
+scale = Vector2(1.355, 1.1)
+
+[node name="CurrentBalancePanel" type="PanelContainer" parent="SafeMargin/Content"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 280.0
+offset_right = 372.0
+offset_bottom = 406.0
+theme_type_variation = &"ReferencePanel"
+
+[node name="Content" type="Control" parent="SafeMargin/Content/CurrentBalancePanel"]
+layout_mode = 2
+
+[node name="PanelTexture" type="TextureRect" parent="SafeMargin/Content/CurrentBalancePanel/Content"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -22.0
+offset_top = -10.0
+offset_right = 22.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_cash_panel")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="Title" type="Label" parent="SafeMargin/Content/CurrentBalancePanel/Content"]
+layout_mode = 0
+offset_top = -8.0
+offset_right = 307.0
+offset_bottom = 34.0
+theme_type_variation = &"PanelTitle"
+text = "ТЕКУЩИЙ БАЛАНС"
+vertical_alignment = 1
+pivot_offset = Vector2(0, 21)
+scale = Vector2(1.23, 1)
+
+[node name="Summary" type="PanelContainer" parent="SafeMargin/Content"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 148.0
+offset_right = 685.0
+offset_bottom = 273.0
+theme_type_variation = &"ReferencePanel"
+
+[node name="Margin" type="Control" parent="SafeMargin/Content/Summary"]
+layout_mode = 2
+
+[node name="Values" type="Control" parent="SafeMargin/Content/Summary/Margin"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelTexture" type="TextureRect" parent="SafeMargin/Content/Summary/Margin/Values"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -22.0
+offset_top = -10.0
+offset_right = 22.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_cash_panel")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="Caption" type="Label" parent="SafeMargin/Content/Summary/Margin/Values"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -9.0
+offset_right = 370.0
+offset_bottom = 34.0
+theme_type_variation = &"PanelTitle"
+text = "К ВЫДАЧЕ"
+vertical_alignment = 1
+pivot_offset = Vector2(0, 21)
+scale = Vector2(1.21, 1)
+
+[node name="Balance" type="Label" parent="SafeMargin/Content/Summary/Margin/Values"]
+metadata/exchanger_binding_id = "cash_payment.content.summary.margin.values.balance"
+layout_mode = 0
+offset_left = 10.0
+offset_top = 165.0
+offset_right = 310.0
+offset_bottom = 240.0
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 27
+text = "1000 РУБЛЕЙ"
+vertical_alignment = 1
+pivot_offset = Vector2(0, 37)
+scale = Vector2(1.22, 1)
+
+[node name="Tokens" type="Label" parent="SafeMargin/Content/Summary/Margin/Values"]
+metadata/exchanger_binding_id = "cash_payment.content.summary.margin.values.tokens"
+layout_mode = 0
+offset_left = 2.0
+offset_top = 37.0
+offset_right = 300.0
+offset_bottom = 108.0
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 27
+text = "100 ЖЕТОНОВ"
+vertical_alignment = 1
+pivot_offset = Vector2(0, 33.5)
+scale = Vector2(1.25, 1)
+
+[node name="Bonus" type="Label" parent="SafeMargin/Content/Summary/Margin/Values"]
+metadata/exchanger_binding_id = "cash_payment.content.summary.margin.values.bonus"
+layout_mode = 0
+offset_left = 295.0
+offset_top = 35.0
+offset_right = 595.0
+offset_bottom = 110.0
+theme_type_variation = &"PanelText"
+theme_override_colors/font_color = Color(0, 0.0627451, 0.552941, 1)
+theme_override_font_sizes/font_size = 25
+text = "+ 50 ЖЕТОНОВ\nВ ПОДАРОК"
+horizontal_alignment = 1
+vertical_alignment = 1
+pivot_offset = Vector2(150, 35.5)
+scale = Vector2(1.35, 1)
+
+[node name="InstructionPanel" type="PanelContainer" parent="SafeMargin/Content"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 451.0
+offset_right = 685.0
+offset_bottom = 816.0
+theme_type_variation = &"ReferencePanel"
+
+[node name="Content" type="Control" parent="SafeMargin/Content/InstructionPanel"]
+layout_mode = 2
+
+[node name="PanelTop" type="TextureRect" parent="SafeMargin/Content/InstructionPanel/Content"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -22.0
+offset_top = -10.0
+offset_right = 22.0
+offset_bottom = 34.0
+grow_horizontal = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_cash_panel_top")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="PanelBody" type="NinePatchRect" parent="SafeMargin/Content/InstructionPanel/Content"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -22.0
+offset_top = 34.0
+offset_right = 22.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_cash_panel_body")
+patch_margin_left = 15
+patch_margin_right = 15
+patch_margin_bottom = 12
+
+[node name="Header" type="Label" parent="SafeMargin/Content/InstructionPanel/Content"]
+layout_mode = 0
+offset_top = -9.0
+offset_left = 4.0
+offset_right = 322.0
+offset_bottom = 33.0
+theme_type_variation = &"PanelTitle"
+text = "КАК ВНЕСТИ"
+vertical_alignment = 1
+pivot_offset = Vector2(0, 21)
+scale = Vector2(1.25, 1)
+
+[node name="Body" type="Control" parent="SafeMargin/Content/InstructionPanel/Content"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = 33.0
+offset_right = 627.0
+offset_bottom = 355.0
+mouse_filter = 2
+
+[node name="SpacePixelVisual" parent="SafeMargin/Content/InstructionPanel/Content/Body" instance=ExtResource("4_instructions")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BillText" type="Label" parent="SafeMargin/Content/InstructionPanel/Content/Body"]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 44.0
+offset_right = 551.0
+offset_bottom = 118.0
+mouse_filter = 2
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 21
+text = "ВСТАВЬТЕ КУПЮРЫ\nВ КУПЮРОПРИЁМНИК"
+vertical_alignment = 1
+pivot_offset = Vector2(0, 37)
+scale = Vector2(1.08, 1)
+
+[node name="CoinText" type="Label" parent="SafeMargin/Content/InstructionPanel/Content/Body"]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 183.0
+offset_right = 551.0
+offset_bottom = 265.0
+mouse_filter = 2
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 21
+text = "ИЛИ МОНЕТЫ\nВ МОНЕТОПРИЁМНИК"
+vertical_alignment = 1
+pivot_offset = Vector2(0, 41)
+scale = Vector2(1.08, 1)
+
+[node name="DispenseButton" type="Button" parent="SafeMargin/Content"]
+metadata/exchanger_binding_id = "cash_payment.content.dispense_button"
+layout_mode = 0
+offset_left = 36.0
+offset_top = 883.0
+offset_right = 684.0
+offset_bottom = 959.0
+theme_type_variation = &"PrimaryButton"
+text = ""
+
+[node name="Caption" type="Label" parent="SafeMargin/Content/DispenseButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_type_variation = &"PanelText"
+theme_override_colors/font_color = Color(0, 0.0627451, 0.552941, 1)
+theme_override_font_sizes/font_size = 40
+text = "ВЫДАТЬ"
+horizontal_alignment = 1
+vertical_alignment = 1
+pivot_offset = Vector2(324, 38)
+scale = Vector2(1.37, 1)
+
+[node name="Tip" type="Control" parent="SafeMargin/Content"]
+layout_mode = 0
+offset_left = 381.0
+offset_top = 281.0
+offset_right = 684.0
+offset_bottom = 406.0
+mouse_filter = 2
+
+[node name="SpacePixelVisual" parent="SafeMargin/Content/Tip" instance=ExtResource("5_tip")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TipText" type="Label" parent="SafeMargin/Content"]
+visible = false
+layout_mode = 0
+offset_left = 381.0
+offset_top = 281.0
+offset_right = 557.0
+offset_bottom = 365.0
+mouse_filter = 2
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 14
+text = "АВТОМАТ НЕ ВЫДАЁТ СДАЧУ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BottomTip" type="Control" parent="SafeMargin/Content"]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 1128.0
+mouse_filter = 2
+
+[node name="BannerText" type="Label" parent="SafeMargin/Content"]
+metadata/exchanger_binding_id = "cash_payment.content.banner_text"
+layout_mode = 0
+offset_left = 225.0
+offset_top = 1022.0
+offset_right = 660.0
+offset_bottom = 1092.0
+mouse_filter = 2
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 18
+text = "АВТОМАТ НЕ ВЫДАЁТ СДАЧУ"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Banner" type="AnimatedSprite2D" parent="SafeMargin/Content/BottomTip"]
+texture_filter = 1
+position = Vector2(376.5, 1067.5)
+scale = Vector2(0.667, 0.667)
+sprite_frames = SubResource("SpriteFrames_cash_banner")
+autoplay = "default"
+script = ExtResource("9_banner_script")
+
+[node name="DebugPanel" type="HBoxContainer" parent="SafeMargin/Content"]
+metadata/exchanger_binding_id = "cash_payment.content.debug_panel"
+visible = false
+
+[node name="Add10Button" type="Button" parent="SafeMargin/Content/DebugPanel"]
+metadata/exchanger_binding_id = "cash_payment.content.debug_panel.add10_button"
+text = "+10 ₽"
+
+[node name="Add50Button" type="Button" parent="SafeMargin/Content/DebugPanel"]
+metadata/exchanger_binding_id = "cash_payment.content.debug_panel.add50_button"
+text = "+50 ₽"
+
+[node name="Add100Button" type="Button" parent="SafeMargin/Content/DebugPanel"]
+metadata/exchanger_binding_id = "cash_payment.content.debug_panel.add100_button"
+text = "+100 ₽"
+
+[node name="Footer" parent="SafeMargin/Content" instance=ExtResource("3_footer")]
+layout_mode = 1

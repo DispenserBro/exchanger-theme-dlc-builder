@@ -1,0 +1,32 @@
+# Godot и локальные результаты сборки
+.godot/
+build/
+*.pck
+
+# Локальные визуальные референсы не входят в поставку
+themes_src/**/references/
+themes/**/source/references/
+
+# Метаданные ОС
+Thumbs.db
+.DS_Store
+
+# Public snapshot: local-only data
+.env
+.env.*
+!.env.example
+.codex/
+.agents/
+.vscode/
+Library/
+Temp/
+Logs/
+UserSettings/
+Builds/
+.godot/
+.venv/
+__pycache__/
+node_modules/
+**/bin/
+**/obj/
+*.log

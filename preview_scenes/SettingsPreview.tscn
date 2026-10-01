@@ -1,0 +1,100 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://preview_scenes/PreviewFooter.tscn" id="1_footer"]
+[ext_resource type="Script" path="res://preview_scenes/SettingsPreview.gd" id="2_script"]
+
+[node name="SETTINGS" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_script")
+
+[node name="Header" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 28.0
+offset_right = 692.0
+offset_bottom = 142.0
+
+[node name="Title" type="Label" parent="Header"]
+layout_mode = 2
+theme_type_variation = &"ScreenTitle"
+theme_override_font_sizes/font_size = 31
+text = "НАСТРОЙКИ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SectionTabs" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 162.0
+offset_right = 660.0
+offset_bottom = 319.0
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 3
+
+[node name="General" type="Button" parent="SectionTabs"]
+custom_minimum_size = Vector2(0, 73)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SectionTabButton"
+text = "ОБЩИЕ"
+toggle_mode = true
+
+[node name="Audio" type="Button" parent="SectionTabs"]
+custom_minimum_size = Vector2(0, 73)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SectionTabButton"
+text = "ЗВУК"
+toggle_mode = true
+
+[node name="Advertisement" type="Button" parent="SectionTabs"]
+custom_minimum_size = Vector2(0, 73)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SectionTabButton"
+text = "ПРОМО"
+toggle_mode = true
+
+[node name="Pricing" type="Button" parent="SectionTabs"]
+custom_minimum_size = Vector2(0, 73)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SectionTabButton"
+text = "ТАРИФЫ"
+toggle_mode = true
+
+[node name="Payment" type="Button" parent="SectionTabs"]
+custom_minimum_size = Vector2(0, 73)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SectionTabButton"
+text = "ОПЛАТА"
+toggle_mode = true
+
+[node name="PageScroll" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 340.0
+offset_right = 692.0
+offset_bottom = 1170.0
+horizontal_scroll_mode = 0
+
+[node name="PageMargin" type="MarginContainer" parent="PageScroll"]
+custom_minimum_size = Vector2(646, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 10
+
+[node name="Page" type="VBoxContainer" parent="PageScroll/PageMargin"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 19
+
+[node name="Footer" parent="." instance=ExtResource("1_footer")]
+layout_mode = 1

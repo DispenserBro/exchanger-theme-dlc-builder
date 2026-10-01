@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Texture2D" path="../assets/animations/card/frame_01.png" id="1_card"]
+[ext_resource type="Texture2D" path="../assets/animations/card/frame_02.png" id="2_card"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_card"]
+animations = [{"frames": [{"duration": 1.0, "texture": ExtResource("1_card")}, {"duration": 1.0, "texture": ExtResource("2_card")}], "loop": true, "name": &"default", "speed": 1.0}]
+
+[node name="CardTerminal" type="Control"]
+custom_minimum_size = Vector2(0, 0)
+mouse_filter = 2
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(286, 183)
+scale = Vector2(0.68, 0.68)
+sprite_frames = SubResource("SpriteFrames_card")
+autoplay = "default"

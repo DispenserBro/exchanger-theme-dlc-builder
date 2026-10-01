@@ -1,0 +1,902 @@
+[gd_scene format=3 uid="uid://bq5v17i2jq3ca"]
+
+[ext_resource type="Theme" uid="uid://dfq25gg23x0xh" path="res://themes/space-pixel/package/ui_theme.tres" id="1_screen_theme"]
+[ext_resource type="Texture2D" uid="uid://d1vaivunuaov7" path="res://themes/space-pixel/package/assets/background/background.png" id="2_screen_background"]
+[ext_resource type="PackedScene" path="res://themes/space-pixel/package/background_decoration.tscn" id="3_screen_decoration"]
+[ext_resource type="PackedScene" path="res://themes/space-pixel/package/visuals/home_top.tscn" id="6_theme_top"]
+[ext_resource type="PackedScene" path="res://themes/space-pixel/package/visuals/home_advertisement.tscn" id="7_theme_promo"]
+[ext_resource type="Texture2D" uid="uid://4uvc8mo74hy1" path="res://themes/space-pixel/package/assets/ui/bubble_large.png" id="8_price_bubble"]
+[ext_resource type="Texture2D" uid="uid://coavqhyjqqkda" path="res://themes/space-pixel/package/assets/ui/panel_wide.png" id="9_panel_wide"]
+[ext_resource type="Texture2D" uid="uid://c7wodqqe8yuij" path="res://themes/space-pixel/package/assets/ui/stock_low.png" id="10_stock_low"]
+[ext_resource type="Texture2D" uid="uid://dt26n4n470hnm" path="res://themes/space-pixel/package/assets/ui/stock_many.png" id="10_stock_many"]
+[ext_resource type="Texture2D" uid="uid://218aa00e5vns" path="res://themes/space-pixel/package/assets/ui/logo.png" id="11_logo"]
+[ext_resource type="Texture2D" uid="uid://b4gr7gwf5jyy6" path="res://themes/space-pixel/package/assets/ui/button_long.png" id="12_button_long"]
+[ext_resource type="Script" uid="uid://dqgrwkru1akc1" path="res://themes/space-pixel/package/scripts/home_reference_label.gd" id="13_reference_label"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_home_button_normal"]
+content_margin_left = 18.0
+content_margin_top = 8.0
+content_margin_right = 18.0
+content_margin_bottom = 8.0
+texture = ExtResource("12_button_long")
+texture_margin_left = 20.0
+texture_margin_top = 16.0
+texture_margin_right = 20.0
+texture_margin_bottom = 16.0
+region_rect = Rect2(55, 0, 402, 64)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_home_button_pressed"]
+content_margin_left = 18.0
+content_margin_top = 10.0
+content_margin_right = 18.0
+content_margin_bottom = 6.0
+texture = ExtResource("12_button_long")
+texture_margin_left = 20.0
+texture_margin_top = 16.0
+texture_margin_right = 20.0
+texture_margin_bottom = 16.0
+region_rect = Rect2(55, 0, 402, 64)
+modulate_color = Color(0.78, 0.84, 0.8, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_home_button_hover"]
+content_margin_left = 18.0
+content_margin_top = 8.0
+content_margin_right = 18.0
+content_margin_bottom = 8.0
+texture = ExtResource("12_button_long")
+texture_margin_left = 20.0
+texture_margin_top = 16.0
+texture_margin_right = 20.0
+texture_margin_bottom = 16.0
+region_rect = Rect2(55, 0, 402, 64)
+modulate_color = Color(1.08, 1.08, 1.08, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_home_button_disabled"]
+content_margin_left = 18.0
+content_margin_top = 8.0
+content_margin_right = 18.0
+content_margin_bottom = 8.0
+texture = ExtResource("12_button_long")
+texture_margin_left = 20.0
+texture_margin_top = 16.0
+texture_margin_right = 20.0
+texture_margin_bottom = 16.0
+region_rect = Rect2(55, 0, 402, 64)
+modulate_color = Color(0.42, 0.48, 0.54, 0.72)
+
+[node name="ThemeScreen_Home" type="Control" unique_id=1804336361]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_screen_theme")
+metadata/exchanger_screen_binding_id = "screen.home"
+metadata/exchanger_self_contained_visuals = true
+
+[node name="ThemeBackground" type="TextureRect" parent="." unique_id=1992534830]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_screen_background")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BackgroundDecoration" parent="." unique_id=646343961 instance=ExtResource("3_screen_decoration")]
+scale = Vector2(0.666667, 0.666667)
+
+[node name="PetNavigation" type="Node2D" parent="." unique_id=616650133]
+metadata/exchanger_pet_navigation_root = true
+metadata/exchanger_pet_navigation_version = 1
+metadata/exchanger_pet_default_surface_id = &"floor"
+metadata/exchanger_pet_roaming_bounds = Rect2(32, 48, 656, 1192)
+
+[node name="Floor" type="Node2D" parent="PetNavigation" unique_id=449547698]
+position = Vector2(40, 1240)
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"floor"
+metadata/exchanger_pet_surface_from_x = 40.0
+metadata/exchanger_pet_surface_to_x = 680.0
+metadata/exchanger_pet_surface_y = 1240.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(96, 360, 624)
+
+[node name="AdvertisementWindow" type="Node2D" parent="PetNavigation" unique_id=1891603462]
+position = Vector2(144, 827)
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"advertisement_window"
+metadata/exchanger_pet_surface_visibility_binding_id = "home.scroll.content.advertisement_panel"
+metadata/exchanger_pet_surface_from_x = 144.0
+metadata/exchanger_pet_surface_to_x = 576.0
+metadata/exchanger_pet_surface_y = 827.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(360)
+
+[node name="PaymentWindow" type="Node2D" parent="PetNavigation" unique_id=836670345]
+position = Vector2(40, 490)
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"payment_window"
+metadata/exchanger_pet_surface_from_x = 40.0
+metadata/exchanger_pet_surface_to_x = 680.0
+metadata/exchanger_pet_surface_y = 490.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(360)
+
+[node name="StockWindow" type="Node2D" parent="PetNavigation" unique_id=826893497]
+position = Vector2(40, 337)
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"stock_window"
+metadata/exchanger_pet_surface_visibility_binding_id = "home.scroll.content.stock_status"
+metadata/exchanger_pet_surface_from_x = 40.0
+metadata/exchanger_pet_surface_to_x = 680.0
+metadata/exchanger_pet_surface_y = 337.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(360)
+
+[node name="CashButton" type="Node2D" parent="PetNavigation" unique_id=761084871]
+position = Vector2(76, 550)
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"cash_button"
+metadata/exchanger_pet_surface_from_x = 76.0
+metadata/exchanger_pet_surface_to_x = 346.0
+metadata/exchanger_pet_surface_y = 550.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(211)
+
+[node name="CardButton" type="Node2D" parent="PetNavigation" unique_id=1171221989]
+position = Vector2(375, 550)
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"card_button"
+metadata/exchanger_pet_surface_from_x = 375.0
+metadata/exchanger_pet_surface_to_x = 645.0
+metadata/exchanger_pet_surface_y = 550.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(510)
+
+[node name="PriceWindow" type="Node2D" parent="PetNavigation" unique_id=600648955]
+position = Vector2(153, 60)
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"price_window"
+metadata/exchanger_pet_surface_from_x = 153.0
+metadata/exchanger_pet_surface_to_x = 397.0
+metadata/exchanger_pet_surface_y = 60.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(275)
+
+[node name="SpeechWindow" type="Node2D" parent="PetNavigation" unique_id=1263112927]
+position = Vector2(406, 61)
+metadata/exchanger_pet_surface = true
+metadata/exchanger_pet_surface_id = &"speech_window"
+metadata/exchanger_pet_surface_from_x = 406.0
+metadata/exchanger_pet_surface_to_x = 578.0
+metadata/exchanger_pet_surface_y = 61.0
+metadata/exchanger_pet_surface_sit_points = PackedFloat32Array(492)
+
+[node name="LeftFloorToPayment" type="Node2D" parent="PetNavigation" unique_id=668670166]
+position = Vector2(40, 1240)
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"left_floor_to_payment"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"payment_window"
+metadata/exchanger_pet_climb_x = 40.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 490.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="RightFloorToPayment" type="Node2D" parent="PetNavigation" unique_id=1777127755]
+position = Vector2(680, 1240)
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"right_floor_to_payment"
+metadata/exchanger_pet_climb_from_surface_id = &"floor"
+metadata/exchanger_pet_climb_to_surface_id = &"payment_window"
+metadata/exchanger_pet_climb_x = 680.0
+metadata/exchanger_pet_climb_from_y = 1240.0
+metadata/exchanger_pet_climb_to_y = 490.0
+metadata/exchanger_pet_climb_side = &"right"
+
+[node name="LeftPaymentToStock" type="Node2D" parent="PetNavigation" unique_id=324222546]
+position = Vector2(40, 490)
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"left_payment_to_stock"
+metadata/exchanger_pet_climb_from_surface_id = &"payment_window"
+metadata/exchanger_pet_climb_to_surface_id = &"stock_window"
+metadata/exchanger_pet_climb_x = 40.0
+metadata/exchanger_pet_climb_from_y = 490.0
+metadata/exchanger_pet_climb_to_y = 337.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="RightPaymentToStock" type="Node2D" parent="PetNavigation" unique_id=294741352]
+position = Vector2(680, 490)
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"right_payment_to_stock"
+metadata/exchanger_pet_climb_from_surface_id = &"payment_window"
+metadata/exchanger_pet_climb_to_surface_id = &"stock_window"
+metadata/exchanger_pet_climb_x = 680.0
+metadata/exchanger_pet_climb_from_y = 490.0
+metadata/exchanger_pet_climb_to_y = 337.0
+metadata/exchanger_pet_climb_side = &"right"
+
+[node name="AdvertisementToFloor" type="Node2D" parent="PetNavigation" unique_id=867083212]
+position = Vector2(576, 827)
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"advertisement_to_floor"
+metadata/exchanger_pet_climb_from_surface_id = &"advertisement_window"
+metadata/exchanger_pet_climb_to_surface_id = &"floor"
+metadata/exchanger_pet_climb_x = 576.0
+metadata/exchanger_pet_climb_from_y = 827.0
+metadata/exchanger_pet_climb_to_y = 1240.0
+metadata/exchanger_pet_climb_side = &"right"
+
+[node name="AdvertisementToPayment" type="Node2D" parent="PetNavigation" unique_id=1856161019]
+position = Vector2(576, 827)
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"advertisement_to_payment"
+metadata/exchanger_pet_climb_from_surface_id = &"advertisement_window"
+metadata/exchanger_pet_climb_to_surface_id = &"payment_window"
+metadata/exchanger_pet_climb_x = 576.0
+metadata/exchanger_pet_climb_from_y = 827.0
+metadata/exchanger_pet_climb_to_y = 490.0
+metadata/exchanger_pet_climb_side = &"right"
+
+[node name="CashButtonToPayment" type="Node2D" parent="PetNavigation" unique_id=1999912169]
+position = Vector2(76, 550)
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"cash_button_to_payment"
+metadata/exchanger_pet_climb_from_surface_id = &"cash_button"
+metadata/exchanger_pet_climb_to_surface_id = &"payment_window"
+metadata/exchanger_pet_climb_x = 76.0
+metadata/exchanger_pet_climb_from_y = 550.0
+metadata/exchanger_pet_climb_to_y = 490.0
+metadata/exchanger_pet_climb_side = &"left"
+
+[node name="CardButtonToPayment" type="Node2D" parent="PetNavigation" unique_id=738124591]
+position = Vector2(645, 550)
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"card_button_to_payment"
+metadata/exchanger_pet_climb_from_surface_id = &"card_button"
+metadata/exchanger_pet_climb_to_surface_id = &"payment_window"
+metadata/exchanger_pet_climb_x = 645.0
+metadata/exchanger_pet_climb_from_y = 550.0
+metadata/exchanger_pet_climb_to_y = 490.0
+metadata/exchanger_pet_climb_side = &"right"
+
+[node name="PriceToStock" type="Node2D" parent="PetNavigation" unique_id=1593757411]
+position = Vector2(397, 337)
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"price_to_stock"
+metadata/exchanger_pet_climb_from_surface_id = &"stock_window"
+metadata/exchanger_pet_climb_to_surface_id = &"price_window"
+metadata/exchanger_pet_climb_x = 397.0
+metadata/exchanger_pet_climb_from_y = 337.0
+metadata/exchanger_pet_climb_to_y = 60.0
+metadata/exchanger_pet_climb_side = &"right"
+
+[node name="SpeechToStock" type="Node2D" parent="PetNavigation" unique_id=291349586]
+position = Vector2(578, 337)
+metadata/exchanger_pet_climb_edge = true
+metadata/exchanger_pet_climb_edge_id = &"speech_to_stock"
+metadata/exchanger_pet_climb_from_surface_id = &"stock_window"
+metadata/exchanger_pet_climb_to_surface_id = &"speech_window"
+metadata/exchanger_pet_climb_x = 578.0
+metadata/exchanger_pet_climb_from_y = 337.0
+metadata/exchanger_pet_climb_to_y = 61.0
+metadata/exchanger_pet_climb_side = &"right"
+
+[node name="SafeMargin" type="Control" parent="." unique_id=690477283]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Scroll" type="Control" parent="SafeMargin" unique_id=1061057886]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Content" type="Control" parent="SafeMargin/Scroll" unique_id=1159952639]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ThemeTop" type="Control" parent="SafeMargin/Scroll/Content" unique_id=796161356]
+anchors_preset = 0
+offset_right = 720.0
+offset_bottom = 300.0
+mouse_filter = 2
+
+[node name="SpacePixelVisual" parent="SafeMargin/Scroll/Content/ThemeTop" unique_id=637818246 instance=ExtResource("6_theme_top")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PricePanel" type="Control" parent="SafeMargin/Scroll/Content" unique_id=928304235]
+anchors_preset = 0
+offset_right = 720.0
+offset_bottom = 280.0
+mouse_filter = 2
+
+[node name="Bubble" type="TextureRect" parent="SafeMargin/Scroll/Content/PricePanel" unique_id=1751255244]
+texture_filter = 1
+layout_mode = 0
+offset_left = 99.0
+offset_top = 58.0
+offset_right = 440.0
+offset_bottom = 228.0
+mouse_filter = 2
+texture = ExtResource("8_price_bubble")
+expand_mode = 1
+
+[node name="Margin" type="Control" parent="SafeMargin/Scroll/Content/PricePanel" unique_id=1737799399]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Content" type="Control" parent="SafeMargin/Scroll/Content/PricePanel/Margin" unique_id=1995513691]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Caption" type="Label" parent="SafeMargin/Scroll/Content/PricePanel/Margin/Content" unique_id=1162785127]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 67.0
+offset_right = 375.0
+offset_bottom = 126.0
+scale = Vector2(1.08, 0.891)
+pivot_offset = Vector2(97.5, 29.5)
+theme_type_variation = &"PanelTitle"
+theme_override_colors/font_color = Color(0, 0.0627451, 0.552941, 1)
+theme_override_font_sizes/font_size = 60
+text = "ЦЕНА"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TokenCaption" type="Label" parent="SafeMargin/Scroll/Content/PricePanel/Margin/Content" unique_id=854323000]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 116.0
+offset_right = 373.0
+offset_bottom = 159.0
+scale = Vector2(1, 0.85)
+pivot_offset = Vector2(97.5, 21.5)
+theme_type_variation = &"PanelTitle"
+theme_override_colors/font_color = Color(0, 0.0627451, 0.552941, 1)
+theme_override_font_sizes/font_size = 40
+text = "ЖЕТОНА"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Price" type="Label" parent="SafeMargin/Scroll/Content/PricePanel/Margin/Content" unique_id=501765176]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 163.0
+offset_right = 379.0
+offset_bottom = 214.0
+scale = Vector2(1.183, 1)
+pivot_offset = Vector2(99, 25.5)
+theme_type_variation = &"PanelText"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "10 руб."
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("13_reference_label")
+metadata/exchanger_binding_id = "home.scroll.content.price_panel.margin.content.price"
+
+[node name="SpeechText" type="Label" parent="SafeMargin/Scroll/Content" unique_id=329585995]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 62.0
+offset_right = 590.0
+offset_bottom = 135.0
+theme_type_variation = &"PanelText"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -2
+theme_override_font_sizes/font_size = 16
+text = "ТЕКСТ КЛИЕНТА"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
+max_lines_visible = 3
+metadata/exchanger_binding_id = "home.scroll.content.speech_text"
+
+[node name="StockStatus" type="Control" parent="SafeMargin/Scroll/Content" unique_id=479011076]
+anchors_preset = 0
+offset_left = 19.0
+offset_top = 315.0
+offset_right = 702.0
+offset_bottom = 486.0
+metadata/exchanger_binding_id = "home.scroll.content.stock_status"
+
+[node name="StockPanel" type="Control" parent="SafeMargin/Scroll/Content/StockStatus" unique_id=2048238646]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Background" type="TextureRect" parent="SafeMargin/Scroll/Content/StockStatus/StockPanel" unique_id=1713879349]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+offset_right = -1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_panel_wide")
+expand_mode = 1
+
+[node name="Margin" type="Control" parent="SafeMargin/Scroll/Content/StockStatus/StockPanel" unique_id=1964468884]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Content" type="Control" parent="SafeMargin/Scroll/Content/StockStatus/StockPanel/Margin" unique_id=920573597]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Title" type="Label" parent="SafeMargin/Scroll/Content/StockStatus/StockPanel/Margin/Content" unique_id=893970727]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 21.0
+offset_right = 651.0
+offset_bottom = 64.0
+scale = Vector2(1.047, 0.88)
+pivot_offset = Vector2(0, 21.5)
+theme_type_variation = &"PanelTitle"
+theme_override_colors/font_color = Color(0, 0.0627451, 0.552941, 1)
+theme_override_font_sizes/font_size = 32
+text = "ДОСТУПНО К ВЫДАЧЕ"
+vertical_alignment = 1
+
+[node name="StatusRow" type="CenterContainer" parent="SafeMargin/Scroll/Content/StockStatus/StockPanel/Margin/Content" unique_id=883118960]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 81.0
+offset_bottom = 129.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="Row" type="HBoxContainer" parent="SafeMargin/Scroll/Content/StockStatus/StockPanel/Margin/Content/StatusRow" unique_id=2091302252]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="State" type="Label" parent="SafeMargin/Scroll/Content/StockStatus/StockPanel/Margin/Content/StatusRow/Row" unique_id=966054930]
+custom_minimum_size = Vector2(134, 48)
+layout_mode = 2
+theme_type_variation = &"PanelText"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "МНОГО"
+horizontal_alignment = 2
+vertical_alignment = 1
+metadata/exchanger_binding_id = "home.scroll.content.stock_status.state"
+
+[node name="Meter" type="Control" parent="SafeMargin/Scroll/Content/StockStatus/StockPanel/Margin/Content/StatusRow/Row" unique_id=700812114]
+custom_minimum_size = Vector2(172, 43)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Empty" type="TextureRect" parent="SafeMargin/Scroll/Content/StockStatus/StockPanel/Margin/Content/StatusRow/Row/Meter" unique_id=45362449]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("10_stock_low")
+expand_mode = 1
+stretch_mode = 5
+metadata/exchanger_binding_id = "home.scroll.content.stock_status.meter.empty"
+
+[node name="Low" type="TextureRect" parent="SafeMargin/Scroll/Content/StockStatus/StockPanel/Margin/Content/StatusRow/Row/Meter" unique_id=1953397082]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("10_stock_low")
+expand_mode = 1
+stretch_mode = 5
+metadata/exchanger_binding_id = "home.scroll.content.stock_status.meter.low"
+
+[node name="Enough" type="TextureRect" parent="SafeMargin/Scroll/Content/StockStatus/StockPanel/Margin/Content/StatusRow/Row/Meter" unique_id=1501487737]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("10_stock_many")
+expand_mode = 1
+stretch_mode = 5
+metadata/exchanger_binding_id = "home.scroll.content.stock_status.meter.enough"
+
+[node name="Much" type="TextureRect" parent="SafeMargin/Scroll/Content/StockStatus/StockPanel/Margin/Content/StatusRow/Row/Meter" unique_id=1697165866]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("10_stock_many")
+expand_mode = 1
+stretch_mode = 5
+metadata/exchanger_binding_id = "home.scroll.content.stock_status.meter.much"
+
+[node name="ApproximateCount" type="Label" parent="SafeMargin/Scroll/Content/StockStatus/StockPanel/Margin/Content/StatusRow/Row" unique_id=1920944711]
+custom_minimum_size = Vector2(150, 48)
+layout_mode = 2
+theme_type_variation = &"PanelText"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
+text = "<100"
+vertical_alignment = 1
+clip_text = true
+metadata/exchanger_binding_id = "home.scroll.content.stock_status.approximate_count"
+
+[node name="PaymentPanel" type="Control" parent="SafeMargin/Scroll/Content" unique_id=1345480221]
+anchors_preset = 0
+offset_left = 19.0
+offset_top = 467.0
+offset_right = 702.0
+offset_bottom = 638.0
+mouse_filter = 2
+
+[node name="Background" type="TextureRect" parent="SafeMargin/Scroll/Content/PaymentPanel" unique_id=1295094144]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_right = -1.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_panel_wide")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Margin" type="Control" parent="SafeMargin/Scroll/Content/PaymentPanel" unique_id=991417353]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Content" type="Control" parent="SafeMargin/Scroll/Content/PaymentPanel/Margin" unique_id=1724603325]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Title" type="Label" parent="SafeMargin/Scroll/Content/PaymentPanel/Margin/Content" unique_id=587555161]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 22.0
+offset_right = 650.0
+offset_bottom = 66.0
+scale = Vector2(1.05, 0.88)
+pivot_offset = Vector2(0, 22)
+theme_type_variation = &"PanelTitle"
+theme_override_colors/font_color = Color(0, 0.0627451, 0.552941, 1)
+theme_override_font_sizes/font_size = 32
+text = "ВЫБЕРИТЕ СПОСОБ ОПЛАТЫ"
+vertical_alignment = 1
+
+[node name="Buttons" type="Control" parent="SafeMargin/Scroll/Content/PaymentPanel/Margin/Content" unique_id=2136563870]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CashButton" type="Button" parent="SafeMargin/Scroll/Content/PaymentPanel/Margin/Content/Buttons" unique_id=391197948]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 82.0
+offset_right = 327.0
+offset_bottom = 127.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_home_button_normal")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_home_button_pressed")
+theme_override_styles/hover = SubResource("StyleBoxTexture_home_button_hover")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_home_button_disabled")
+theme_override_styles/focus = SubResource("StyleBoxTexture_home_button_normal")
+metadata/exchanger_binding_id = "home.scroll.content.payment_panel.margin.content.buttons.cash_button"
+
+[node name="Caption" type="Label" parent="SafeMargin/Scroll/Content/PaymentPanel/Margin/Content/Buttons/CashButton" unique_id=1403095620]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 1.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.02, 0.83)
+pivot_offset = Vector2(135, 22.5)
+theme_type_variation = &"PanelText"
+theme_override_colors/font_color = Color(0, 0.0627451, 0.552941, 1)
+theme_override_font_sizes/font_size = 32
+text = "НАЛИЧНЫЕ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardButton" type="Button" parent="SafeMargin/Scroll/Content/PaymentPanel/Margin/Content/Buttons" unique_id=1364251695]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 82.0
+offset_right = 626.0
+offset_bottom = 127.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_home_button_normal")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_home_button_pressed")
+theme_override_styles/hover = SubResource("StyleBoxTexture_home_button_hover")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_home_button_disabled")
+theme_override_styles/focus = SubResource("StyleBoxTexture_home_button_normal")
+metadata/exchanger_binding_id = "home.scroll.content.payment_panel.margin.content.buttons.card_button"
+
+[node name="Caption" type="Label" parent="SafeMargin/Scroll/Content/PaymentPanel/Margin/Content/Buttons/CardButton" unique_id=1993220316]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 1.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.02, 0.83)
+pivot_offset = Vector2(135, 22.5)
+theme_type_variation = &"PanelText"
+theme_override_colors/font_color = Color(0, 0.0627451, 0.552941, 1)
+theme_override_font_sizes/font_size = 32
+text = "БЕЗНАЛИЧНЫЕ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AdvertisementPanel" type="Control" parent="SafeMargin/Scroll/Content" unique_id=1981193011]
+anchors_preset = 0
+offset_top = 744.0
+offset_right = 720.0
+offset_bottom = 1086.0
+mouse_filter = 2
+metadata/exchanger_binding_id = "home.scroll.content.advertisement_panel"
+
+[node name="Layer" type="Control" parent="SafeMargin/Scroll/Content/AdvertisementPanel" unique_id=1438117421]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ThemeFrame" type="Control" parent="SafeMargin/Scroll/Content/AdvertisementPanel/Layer" unique_id=1074573756]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SpacePixelVisual" parent="SafeMargin/Scroll/Content/AdvertisementPanel/Layer/ThemeFrame" unique_id=696829693 instance=ExtResource("7_theme_promo")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Content" type="Control" parent="SafeMargin/Scroll/Content/AdvertisementPanel/Layer" unique_id=333120086]
+anchors_preset = 0
+offset_left = 154.0
+offset_top = 92.0
+offset_right = 567.0
+offset_bottom = 306.0
+metadata/exchanger_binding_id = "home.scroll.content.advertisement_panel.layer.content"
+
+[node name="Poster" type="TextureRect" parent="SafeMargin/Scroll/Content/AdvertisementPanel/Layer/Content" unique_id=123745090]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.0050000004
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.07000005
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
+metadata/exchanger_binding_id = "home.scroll.content.advertisement_panel.layer.content.poster"
+
+[node name="VideoPlayer" type="VideoStreamPlayer" parent="SafeMargin/Scroll/Content/AdvertisementPanel/Layer/Content" unique_id=1918075027]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.0050000004
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.07000005
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand = true
+metadata/exchanger_binding_id = "home.scroll.content.advertisement_panel.layer.content.video_player"
+
+[node name="FallbackLabel" type="Label" parent="SafeMargin/Scroll/Content/AdvertisementPanel/Layer/Content" unique_id=746293611]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0050000004
+anchor_top = 0.010000001
+anchor_right = 1.0070001
+anchor_bottom = 1.029
+offset_left = 50.428005
+offset_top = -0.09000015
+offset_right = -31.273163
+offset_bottom = -0.06100464
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.247, 1)
+pivot_offset = Vector2(204, 104.5)
+theme_type_variation = &"PanelText"
+theme_override_font_sizes/font_size = 20
+text = "(ВИДЕОРЕКЛАМА)"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/exchanger_binding_id = "home.scroll.content.advertisement_panel.layer.content.fallback_label"
+
+[node name="Footer" type="Control" parent="SafeMargin/Scroll/Content" unique_id=1745688783]
+anchors_preset = 0
+offset_top = 1128.0
+offset_right = 720.0
+offset_bottom = 1280.0
+
+[node name="Margin" type="Control" parent="SafeMargin/Scroll/Content/Footer" unique_id=2069983039]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Content" type="Control" parent="SafeMargin/Scroll/Content/Footer/Margin" unique_id=781378825]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Logo" type="TextureRect" parent="SafeMargin/Scroll/Content/Footer/Margin/Content" unique_id=1609648852]
+texture_filter = 1
+layout_mode = 0
+offset_left = -18.0
+offset_top = 24.0
+offset_right = 323.0
+offset_bottom = 109.0
+mouse_filter = 2
+texture = ExtResource("11_logo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Brand" type="Label" parent="SafeMargin/Scroll/Content/Footer/Margin/Content" unique_id=334741666]
+visible = false
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 1.0
+theme_type_variation = &"SupportText"
+text = "РАЗМЕН
+ЖЕТОНОВ"
+metadata/exchanger_binding_id = "home.scroll.content.footer.margin.content.brand"
+
+[node name="Support" type="Label" parent="SafeMargin/Scroll/Content/Footer/Margin/Content" unique_id=1638210773]
+layout_mode = 0
+offset_left = 341.0
+offset_top = 19.0
+offset_right = 677.0
+offset_bottom = 105.0
+scale = Vector2(1.35, 1)
+pivot_offset = Vector2(0, 43)
+theme_type_variation = &"SupportText"
+theme_override_constants/line_spacing = 10
+theme_override_font_sizes/font_size = 24
+text = "ТЕХ ПОДДЕРЖКА:
++7-XXX-XXX-XX-XX"
+vertical_alignment = 1
+script = ExtResource("13_reference_label")
+format_mode = "support"
+metadata/exchanger_binding_id = "home.scroll.content.footer.margin.content.support"
+
+[node name="ConnectionStatus" type="Control" parent="SafeMargin/Scroll/Content/Footer/Margin/Content" unique_id=1740402169]
+visible = false
+anchors_preset = 0
+offset_left = 110.0
+offset_top = -68.0
+offset_right = 610.0
+offset_bottom = -8.0
+metadata/exchanger_binding_id = "home.scroll.content.footer.margin.content.connection_status"
+
+[node name="Panel" type="PanelContainer" parent="SafeMargin/Scroll/Content/Footer/Margin/Content/ConnectionStatus" unique_id=1920745621]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"StatusPanel"
+
+[node name="Margin" type="MarginContainer" parent="SafeMargin/Scroll/Content/Footer/Margin/Content/ConnectionStatus/Panel" unique_id=1995352139]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="SafeMargin/Scroll/Content/Footer/Margin/Content/ConnectionStatus/Panel/Margin" unique_id=1995483906]
+layout_mode = 2
+theme_type_variation = &"StatusText"
+theme_override_font_sizes/font_size = 18
+text = "СЕРВИС: НЕТ СВЯЗИ С КОНТРОЛЛЕРОМ"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/exchanger_binding_id = "home.scroll.content.footer.margin.content.connection_status.label"
